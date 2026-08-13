@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Offline — UP Finance Handbook Archive</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 4rem;
+    line-height: 1.7;
+    background: light-dark(#faf7f0, #171717);
+    color: light-dark(#1c1917, #e7e5e4);
+  }
+  .banner {
+    font-family: system-ui, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #b45309;
+    border-bottom: 3px solid #b45309;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  h1 { font-size: 1.75rem; margin-bottom: 0.25rem; }
+  a { color: #b45309; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  td, th { border: 1px solid light-dark(#d6d3d1, #404040); padding: 0.4rem 0.6rem; vertical-align: top; }
+  #status { font-family: system-ui, sans-serif; font-size: 0.95rem; opacity: 0.7; }
+</style>
+</head>
+<body>
+  <p class="banner">Offline — showing a cached copy</p>
+  <div id="status">Looking for this page in your offline cache…</div>
+  <div id="content"></div>
+  <script>
+    (function () {
+      var slug = location.pathname.replace(/^\/+/, '');
+      var statusEl = document.getElementById('status');
+      var contentEl = document.getElementById('content');
+
+      function show(page) {
+        statusEl.style.display = 'none';
+        document.title = page.title + ' — UP Finance Handbook Archive (offline)';
+        var h1 = document.createElement('h1');
+        h1.textContent = page.title;
+        var src = document.createElement('p');
+        src.innerHTML = '<a href="' + page.sourceUrl + '" target="_blank" rel="noopener noreferrer">View original on budget.up.nic.in</a> (link needs a connection)';
+        var body = document.createElement('div');
+        body.innerHTML = page.html;
+        contentEl.append(h1, src, body);
+      }
+
+      function notFound() {
+        statusEl.textContent = "This page hasn't been cached on this device yet — reconnect once to make it available offline.";
+      }
+
+      if (!('indexedDB' in window) || !slug) { notFound(); return; }
+      var req = indexedDB.open('up-finance-handbook');
+      req.onerror = notFound;
+      req.onsuccess = function () {
+        try {
+          var tx = req.result.transaction('pages', 'readonly');
+          var getReq = tx.objectStore('pages').get(slug);
+          getReq.onsuccess = function () {
+            if (getReq.result) show(getReq.result); else notFound();
+          };
+          getReq.onerror = notFound;
+        } catch (e) { notFound(); }
+      };
+    })();
+  </script>
+</body>
+</html>

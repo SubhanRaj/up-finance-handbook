@@ -89,6 +89,24 @@ flowchart TD
   routes are fully dynamic (no `generateStaticParams`), so every navigation is a real D1 round
   trip; without a `loading.tsx`, Next shows nothing until that resolves and navigation feels like
   a full-page reload even though it's client-side. Don't delete it to "simplify."
+- **Kruti Dev is a non-Unicode "hack" font**, not a real Devanagari Unicode font — ~1000 source
+  pages use `<font face="Kruti Dev 020">` (and 2 use "010") where the underlying bytes are plain
+  ASCII that only display as Hindi when rendered with that specific font's glyph mapping.
+  `build_content.py`'s cleaning step deliberately preserves the `face` attribute (only strips
+  `color`/`bgcolor`); `globals.css` registers `web/public/fonts/kruti-dev-010.ttf` under *both*
+  family names (only one `.ttf` was available; "010"/"020" are glyph-compatible weight variants of
+  the same encoding). This is scoped by construction — nothing in the app's own UI ever sets
+  font-family to either name, so it can never leak into real Unicode Hindi or the general UI font
+  stack. Don't add a second real Devanagari webfont under either of these two family names.
+- **Offline fallback is a plain HTML+vanilla-JS file (`public/offline-shell.html`), not a Next.js
+  route** — it has to work when the Next.js RSC/D1 request has already failed, so it can't depend
+  on the framework being reachable. It reads the requested page straight out of the raw IndexedDB
+  API (same DB `client-db.ts`'s Dexie instance manages) using `location.pathname` as the slug — the
+  browser keeps the real URL in the address bar even though the service worker served this file's
+  content for it. **Reference it as `/offline-shell` (no extension) everywhere** (`sw.js`'s
+  `PRECACHE` array and its fetch-fallback `caches.match(...)`) — requesting the `.html` URL
+  directly gets a 307 to the extensionless path (Next.js's public-folder clean-URL behavior), and
+  a cached 307 doesn't serve real content when the service worker looks it up.
 
 ## Design system
 

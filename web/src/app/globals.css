@@ -208,6 +208,27 @@ html:not(.dark)::after {
   background-size: 180px 180px;
 }
 
+/* Kruti Dev — a non-Unicode "hack" font some source pages use for Hindi text
+   (<font face="Kruti Dev 020">…). Without it, the underlying bytes are plain
+   ASCII and render as gibberish; with it, the browser maps those same bytes
+   to the correct Devanagari glyphs. Registered under both "010" and "020"
+   (only the one .ttf is available; the two are glyph-compatible weight
+   variants of the same encoding) — scoped to legacy content by construction,
+   since nothing in the app's own UI ever sets font-face to either name. Real
+   Unicode Hindi elsewhere should never use this; it only exists to undo the
+   original encoding hack on pages that already committed to it.
+   Font file self-hosted (not on Google Fonts) — long-cached via public/_headers. */
+@font-face {
+  font-family: 'Kruti Dev 010';
+  src: url('/fonts/kruti-dev-010.ttf') format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Kruti Dev 020';
+  src: url('/fonts/kruti-dev-010.ttf') format('truetype');
+  font-display: swap;
+}
+
 /* Legacy table-based content from the source site — keep it readable inside the reading pane */
 .handbook-content table {
   border-collapse: collapse;

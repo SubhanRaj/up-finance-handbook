@@ -35,6 +35,14 @@ throughout. Design system (theme toggle, reading-customization panel, color toke
 - **`loading.tsx`** gives instant feedback on every navigation (content routes are fully dynamic,
   no static generation) — this is what makes it feel like an SPA despite being real SSR per
   request.
+- **Kruti Dev font** (`public/fonts/kruti-dev-010.ttf`) — ~1000 source pages use this non-Unicode
+  legacy Hindi font (`<font face="Kruti Dev 020">`); registered via `@font-face` in `globals.css`
+  so those specific pages render correctly instead of as ASCII gibberish. Never used for the app's
+  own UI or for real Unicode Hindi.
+- **Offline support**: the service worker (`public/sw.js`) caches every response it sees, so a
+  repeat visit — including the app shell (JS/CSS/fonts), since browsing any page pulls those in —
+  works offline. For a page never visited before going offline, `public/offline-shell.html` (a
+  standalone HTML+JS file, no React) reads it straight out of the IndexedDB corpus cache instead.
 
 ## Rebuilding content from a fresh crawl
 
