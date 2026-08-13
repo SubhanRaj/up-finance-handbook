@@ -1,0 +1,407 @@
+'use client';
+
+import { useState, useEffect, useCallback } from 'react';
+import {
+	IconAdjustments,
+	IconX,
+	IconRotate,
+	IconLoader2,
+} from '@tabler/icons-react';
+
+// ── Font catalogue ────────────────────────────────────────────────────────────
+
+interface FontOption {
+	id: string;
+	label: string;
+	category: 'Sans' | 'Serif' | 'Slab' | 'Mono';
+	cssFamily: string;
+	familyName: string | null;
+	googleUrl: string | null;
+}
+
+const FONTS: FontOption[] = [
+	{ id: 'inter',        label: 'Inter',          category: 'Sans',  cssFamily: "'Inter', sans-serif",                familyName: 'Inter',           googleUrl: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap' },
+	{ id: 'source-serif', label: 'Source Serif',   category: 'Serif', cssFamily: "'Source Serif 4', Georgia, serif",   familyName: 'Source Serif 4',  googleUrl: 'https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap' },
+	{ id: 'lora',         label: 'Lora',           category: 'Serif', cssFamily: "'Lora', Georgia, serif",             familyName: 'Lora',            googleUrl: 'https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&display=swap' },
+	{ id: 'merriweather', label: 'Merriweather',   category: 'Serif', cssFamily: "'Merriweather', Georgia, serif",     familyName: 'Merriweather',    googleUrl: 'https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap' },
+	{ id: 'playfair',     label: 'Playfair',       category: 'Serif', cssFamily: "'Playfair Display', Georgia, serif", familyName: 'Playfair Display', googleUrl: 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap' },
+	{ id: 'crimson',      label: 'Crimson',        category: 'Serif', cssFamily: "'Crimson Text', Georgia, serif",     familyName: 'Crimson Text',    googleUrl: 'https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&display=swap' },
+	{ id: 'bitter',       label: 'Bitter',         category: 'Slab',  cssFamily: "'Bitter', Georgia, serif",           familyName: 'Bitter',          googleUrl: 'https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&display=swap' },
+	{ id: 'geist-mono',   label: 'Geist Mono',     category: 'Mono',  cssFamily: "'Geist Mono', monospace",            familyName: 'Geist Mono',      googleUrl: 'https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&display=swap' },
+];
+
+// ── Preference shape ──────────────────────────────────────────────────────────
+
+type FontSizeId     = 'xs' | 'sm' | 'base' | 'lg' | 'xl';
+type LineHeightId   = 'compact' | 'comfortable' | 'spacious';
+type ReadingWidthId = 'narrow' | 'medium' | 'wide';
+type AccentId       = 'amber' | 'red' | 'blue' | 'emerald' | 'violet';
+
+interface Prefs {
+	fontId:       string;
+	fontSize:     FontSizeId;
+	lineHeight:   LineHeightId;
+	readingWidth: ReadingWidthId;
+	accent:       AccentId;
+}
+
+const DEFAULTS: Prefs = {
+	fontId:       'source-serif',
+	fontSize:     'base',
+	lineHeight:   'comfortable',
+	readingWidth: 'medium',
+	accent:       'amber',
+};
+
+const PREFS_KEY = 'handbook-reading-prefs-v1';
+
+const FONT_SIZES: { id: FontSizeId; label: string; title: string }[] = [
+	{ id: 'xs',   label: 'XS', title: 'Extra small' },
+	{ id: 'sm',   label: 'S',  title: 'Small' },
+	{ id: 'base', label: 'M',  title: 'Medium (default)' },
+	{ id: 'lg',   label: 'L',  title: 'Large' },
+	{ id: 'xl',   label: 'XL', title: 'Extra large' },
+];
+
+const LINE_HEIGHTS: { id: LineHeightId; label: string }[] = [
+	{ id: 'compact',     label: 'Compact' },
+	{ id: 'comfortable', label: 'Normal' },
+	{ id: 'spacious',    label: 'Spacious' },
+];
+
+const READING_WIDTHS: { id: ReadingWidthId; label: string }[] = [
+	{ id: 'narrow', label: 'Narrow' },
+	{ id: 'medium', label: 'Medium' },
+	{ id: 'wide',   label: 'Wide' },
+];
+
+const ACCENTS: { id: AccentId; color: string; darkColor: string; label: string }[] = [
+	{ id: 'amber',   color: '#b45309', darkColor: '#f59e0b', label: 'Amber' },
+	{ id: 'red',     color: '#dc2626', darkColor: '#ef4444', label: 'Red' },
+	{ id: 'blue',    color: '#2563eb', darkColor: '#60a5fa', label: 'Blue' },
+	{ id: 'emerald', color: '#059669', darkColor: '#34d399', label: 'Emerald' },
+	{ id: 'violet',  color: '#7c3aed', darkColor: '#a78bfa', label: 'Violet' },
+];
+
+// ── Utilities ─────────────────────────────────────────────────────────────────
+
+function loadPrefs(): Prefs {
+	try {
+		const raw = localStorage.getItem(PREFS_KEY);
+		if (raw) return { ...DEFAULTS, ...JSON.parse(raw) };
+	} catch { /* storage unavailable */ }
+	return DEFAULTS;
+}
+
+function savePrefs(p: Prefs) {
+	try { localStorage.setItem(PREFS_KEY, JSON.stringify(p)); } catch { /* */ }
+}
+
+function applyPrefs(p: Prefs, font: FontOption) {
+	const r = document.documentElement;
+	r.style.setProperty('--reading-font-family', font.cssFamily);
+	if (p.fontSize === 'base') r.removeAttribute('data-rs'); else r.setAttribute('data-rs', p.fontSize);
+	if (p.lineHeight === 'comfortable') r.removeAttribute('data-rlh'); else r.setAttribute('data-rlh', p.lineHeight);
+	if (p.readingWidth === 'medium') r.removeAttribute('data-rw'); else r.setAttribute('data-rw', p.readingWidth);
+	if (p.accent === 'amber') r.removeAttribute('data-accent'); else r.setAttribute('data-accent', p.accent);
+}
+
+const injectedUrls = new Set<string>();
+const readyUrls = new Set<string>();
+
+async function loadGoogleFont(url: string, familyName: string): Promise<void> {
+	if (readyUrls.has(url)) return;
+
+	if (!injectedUrls.has(url)) {
+		injectedUrls.add(url);
+		const link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.href = url;
+		link.crossOrigin = 'anonymous';
+		document.head.appendChild(link);
+	}
+
+	await Promise.race([
+		document.fonts.load(`400 16px "${familyName}"`),
+		new Promise<void>(resolve => setTimeout(resolve, 4000)),
+	]);
+	readyUrls.add(url);
+}
+
+// ── Component ─────────────────────────────────────────────────────────────────
+
+interface Props {
+	drawerOpen: boolean;
+}
+
+export default function CustomizationPanel({ drawerOpen }: Props) {
+	const [open, setOpen]             = useState(false);
+	const [prefs, setPrefs]           = useState<Prefs>(DEFAULTS);
+	const [ready, setReady]           = useState(false);
+	const [loadingFontId, setLoadingFontId] = useState<string | null>(null);
+
+	useEffect(() => {
+		const p = loadPrefs();
+		setPrefs(p);
+		const font = FONTS.find(f => f.id === p.fontId) ?? FONTS[0];
+		const init = async () => {
+			if (font.googleUrl && font.familyName) {
+				try { await loadGoogleFont(font.googleUrl, font.familyName); } catch { /* fall through to system fallback */ }
+			}
+			applyPrefs(p, font);
+			setReady(true);
+		};
+		init();
+	}, []);
+
+	useEffect(() => {
+		if (drawerOpen) setOpen(false);
+	}, [drawerOpen]);
+
+	useEffect(() => {
+		if (!ready) return;
+		const el = document.getElementById('main-scroll');
+		if (!el) return;
+		const onScroll = () => setOpen(false);
+		el.addEventListener('scroll', onScroll, { passive: true });
+		return () => el.removeEventListener('scroll', onScroll);
+	}, [ready]);
+
+	const update = useCallback((patch: Partial<Prefs>) => {
+		setPrefs(prev => {
+			const next = { ...prev, ...patch };
+			const font = FONTS.find(f => f.id === next.fontId) ?? FONTS[0];
+			applyPrefs(next, font);
+			savePrefs(next);
+			return next;
+		});
+	}, []);
+
+	const handleFontSelect = useCallback(async (font: FontOption) => {
+		if (loadingFontId !== null) return;
+
+		if (!font.googleUrl || !font.familyName || readyUrls.has(font.googleUrl)) {
+			update({ fontId: font.id });
+			return;
+		}
+
+		setLoadingFontId(font.id);
+		try {
+			await loadGoogleFont(font.googleUrl, font.familyName);
+		} catch { /* network failed — fall through; browser will use CSS fallback */ }
+		setLoadingFontId(null);
+		update({ fontId: font.id });
+	}, [loadingFontId, update]);
+
+	const reset = useCallback(() => {
+		if (loadingFontId !== null) return;
+		update(DEFAULTS);
+	}, [loadingFontId, update]);
+
+	if (!ready) return null;
+
+	const isDark = document.documentElement.classList.contains('dark');
+
+	return (
+		<>
+			{open && (
+				<div
+					className="fixed inset-0 z-20"
+					onClick={() => setOpen(false)}
+					aria-hidden="true"
+				/>
+			)}
+		<div
+			className="fixed right-4 sm:right-6 z-30 flex flex-col items-end gap-2 print:hidden pointer-events-none"
+			style={{ bottom: 'max(1rem, calc(env(safe-area-inset-bottom, 0px) + 1rem))' }}
+		>
+			<div
+				className={[
+					'transition-all duration-200 origin-bottom-right',
+					open
+						? 'opacity-100 scale-100 pointer-events-auto'
+						: 'opacity-0 scale-95 pointer-events-none select-none',
+				].join(' ')}
+			>
+				<div className="w-[min(18rem,calc(100vw-2rem))] rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-2xl overflow-hidden">
+
+					<div className="flex items-center justify-between px-4 py-3 border-b border-slate-100 dark:border-slate-800">
+						<p className="text-[10px] font-bold tracking-widest uppercase text-slate-500 dark:text-slate-400">
+							Customize
+						</p>
+						<div className="flex items-center gap-1">
+							<button
+								onClick={reset}
+								className="text-[10px] text-slate-400 dark:text-slate-600 hover:text-slate-600 dark:hover:text-slate-400 transition-colors px-1.5 py-0.5 rounded flex items-center gap-0.5"
+								title="Reset to defaults"
+							>
+								<IconRotate size={10} />
+								Reset
+							</button>
+							<button
+								onClick={() => setOpen(false)}
+								className="p-1 rounded-lg text-slate-400 hover:text-slate-700 dark:text-slate-600 dark:hover:text-slate-300 transition-colors"
+								aria-label="Close"
+							>
+								<IconX size={14} />
+							</button>
+						</div>
+					</div>
+
+					<div className="px-4 py-3 space-y-4 max-h-[70vh] overflow-y-auto">
+
+						<section>
+							<p className="text-[10px] font-bold tracking-widest uppercase text-slate-400 dark:text-slate-600 mb-2">
+								Font
+							</p>
+							<div className="grid grid-cols-2 gap-1">
+								{FONTS.map(font => {
+									const active    = prefs.fontId === font.id;
+									const isLoading = loadingFontId === font.id;
+									const dimmed    = loadingFontId !== null && !isLoading;
+									return (
+										<button
+											key={font.id}
+											onClick={() => handleFontSelect(font)}
+											disabled={dimmed}
+											style={{ fontFamily: font.cssFamily }}
+											className={[
+												'flex items-center justify-between px-2.5 py-1.5 rounded-lg text-left text-sm leading-none',
+												isLoading || active
+													? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900'
+													: dimmed
+														? 'opacity-30 cursor-not-allowed text-slate-600 dark:text-slate-400'
+														: 'hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition-colors',
+											].join(' ')}
+										>
+											{isLoading ? (
+												<>
+													<span className="truncate opacity-80">{font.label}</span>
+													<IconLoader2 size={12} className="shrink-0 ml-1 animate-spin" />
+												</>
+											) : (
+												<>
+													<span className="truncate">{font.label}</span>
+													<span className={['text-[9px] shrink-0 ml-1 font-mono', active ? 'opacity-60' : 'opacity-40'].join(' ')}>
+														{font.category}
+													</span>
+												</>
+											)}
+										</button>
+									);
+								})}
+							</div>
+						</section>
+
+						<section>
+							<p className="text-[10px] font-bold tracking-widest uppercase text-slate-400 dark:text-slate-600 mb-2">
+								Size
+							</p>
+							<div className="flex gap-1">
+								{FONT_SIZES.map(sz => (
+									<button
+										key={sz.id}
+										onClick={() => update({ fontSize: sz.id })}
+										title={sz.title}
+										className={[
+											'flex-1 py-1.5 rounded-lg text-sm font-medium transition-colors',
+											prefs.fontSize === sz.id
+												? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900'
+												: 'hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400',
+										].join(' ')}
+									>
+										{sz.label}
+									</button>
+								))}
+							</div>
+						</section>
+
+						<section>
+							<p className="text-[10px] font-bold tracking-widest uppercase text-slate-400 dark:text-slate-600 mb-2">
+								Spacing
+							</p>
+							<div className="flex gap-1">
+								{LINE_HEIGHTS.map(lh => (
+									<button
+										key={lh.id}
+										onClick={() => update({ lineHeight: lh.id })}
+										className={[
+											'flex-1 py-1.5 rounded-lg text-xs font-medium transition-colors',
+											prefs.lineHeight === lh.id
+												? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900'
+												: 'hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400',
+										].join(' ')}
+									>
+										{lh.label}
+									</button>
+								))}
+							</div>
+						</section>
+
+						<section>
+							<p className="text-[10px] font-bold tracking-widest uppercase text-slate-400 dark:text-slate-600 mb-2">
+								Width
+							</p>
+							<div className="flex gap-1">
+								{READING_WIDTHS.map(w => (
+									<button
+										key={w.id}
+										onClick={() => update({ readingWidth: w.id })}
+										className={[
+											'flex-1 py-1.5 rounded-lg text-xs font-medium transition-colors',
+											prefs.readingWidth === w.id
+												? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900'
+												: 'hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400',
+										].join(' ')}
+									>
+										{w.label}
+									</button>
+								))}
+							</div>
+						</section>
+
+						<section>
+							<p className="text-[10px] font-bold tracking-widest uppercase text-slate-400 dark:text-slate-600 mb-2">
+								Accent
+							</p>
+							<div className="flex gap-2">
+								{ACCENTS.map(a => {
+									const active = prefs.accent === a.id;
+									const color  = isDark ? a.darkColor : a.color;
+									return (
+										<button
+											key={a.id}
+											onClick={() => update({ accent: a.id })}
+											title={a.label}
+											style={{ backgroundColor: color, outline: active ? `2px solid ${color}` : undefined, outlineOffset: active ? '3px' : undefined }}
+											className={[
+												'w-7 h-7 rounded-full transition-all duration-150',
+												active ? 'scale-110' : 'opacity-60 hover:opacity-90 hover:scale-105',
+											].join(' ')}
+											aria-label={a.label}
+										/>
+									);
+								})}
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+
+			<button
+				onClick={() => setOpen(o => !o)}
+				className={[
+					'pointer-events-auto w-11 h-11 rounded-full shadow-lg flex items-center justify-center transition-all duration-200 border',
+					open
+						? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 border-transparent shadow-xl'
+						: 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:shadow-xl',
+				].join(' ')}
+				aria-label={open ? 'Close customization' : 'Customize reading experience'}
+				title={open ? 'Close' : 'Customize'}
+			>
+				<IconAdjustments size={18} />
+			</button>
+		</div>
+		</>
+	);
+}

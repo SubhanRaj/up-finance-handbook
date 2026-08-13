@@ -8,8 +8,8 @@ sprawling, decades-old table-based HTML site — thousands of individual
 search, no unified document, inconsistent encoding.
 
 This project mirrors that site, converts it into a small number of clean,
-bookmarked PDFs (one per volume, ideally), and — as a later, lower-priority
-phase — a browsable UI on top of the same crawled content.
+bookmarked PDFs (one per volume, ideally), and provides a browsable,
+searchable web UI (`web/`) on top of the same crawled content.
 
 See [ROADMAP.md](ROADMAP.md) for the plan and current status.
 
@@ -27,6 +27,16 @@ install requests beautifulsoup4 lxml chardet playwright pypdf reportlab &&
 
 `raw/`, `pdf_pages/`, and `pdf/` are gitignored (184 MiB / large PDFs) —
 not checked into this repo.
+
+### Web UI (`web/`)
+
+```
+.venv/bin/python build_content.py    # raw/ + manifest.json -> web/content/ + web/public/search-index.json
+cd web && pnpm install && pnpm dev   # http://localhost:3000
+```
+
+See [web/README.md](web/README.md) for local dev and Cloudflare Workers
+deploy instructions.
 
 ## Source structure (as surveyed 2026-08-13)
 

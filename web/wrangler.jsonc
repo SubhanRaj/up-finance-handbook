@@ -1,0 +1,18 @@
+{
+	"name": "up-finance-handbook",
+	"main": ".open-next/worker.js",
+	"compatibility_date": "2026-06-23",
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
+	"assets": {
+		"directory": ".open-next/assets",
+		"binding": "ASSETS"
+	},
+	"r2_buckets": [
+		{
+			"binding": "NEXT_INC_CACHE_R2_BUCKET",
+			"bucket_name": "up-finance-handbook-cache"
+		}
+	]
+}

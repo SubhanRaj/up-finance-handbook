@@ -1,0 +1,4383 @@
+{
+  "volumes": [
+    {
+      "key": "volume2",
+      "label": "Volume II — Service Conditions & Allowances",
+      "entrySlug": "volume2",
+      "tree": {
+        "title": "Volume II — Service Conditions & Allowances",
+        "slug": "volume2",
+        "url": "https://budget.up.nic.in/Fin_H_Book/volume2/financial handbook ii.html",
+        "children": [
+          {
+            "title": "001",
+            "slug": "volume2/01",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/01.html",
+            "children": [
+              {
+                "title": "Financial Hand book",
+                "slug": "volume2/01/financial-handbook-ii",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume2/financial%20handbook%20ii.html",
+                "children": []
+              }
+            ]
+          },
+          {
+            "title": "002",
+            "slug": "volume2/02",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/02.html",
+            "children": []
+          },
+          {
+            "title": "003",
+            "slug": "volume2/03",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/03.html",
+            "children": []
+          },
+          {
+            "title": "004",
+            "slug": "volume2/04",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/04.html",
+            "children": []
+          },
+          {
+            "title": "005",
+            "slug": "volume2/05",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/05.html",
+            "children": []
+          },
+          {
+            "title": "007",
+            "slug": "volume2/07",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/07.html",
+            "children": []
+          },
+          {
+            "title": "008",
+            "slug": "volume2/08",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/08.html",
+            "children": []
+          },
+          {
+            "title": "009",
+            "slug": "volume2/09",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/09.html",
+            "children": []
+          },
+          {
+            "title": "010",
+            "slug": "volume2/10",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/10.html",
+            "children": []
+          },
+          {
+            "title": "011",
+            "slug": "volume2/11",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/11.html",
+            "children": []
+          },
+          {
+            "title": "012",
+            "slug": "volume2/12",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/12.html",
+            "children": []
+          },
+          {
+            "title": "013",
+            "slug": "volume2/13",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/13.html",
+            "children": []
+          },
+          {
+            "title": "014",
+            "slug": "volume2/14",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/14.html",
+            "children": []
+          },
+          {
+            "title": "015",
+            "slug": "volume2/15",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/15.html",
+            "children": []
+          },
+          {
+            "title": "016",
+            "slug": "volume2/16",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/16.html",
+            "children": []
+          },
+          {
+            "title": "017",
+            "slug": "volume2/17",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/17.html",
+            "children": []
+          },
+          {
+            "title": "018",
+            "slug": "volume2/18",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/18.html",
+            "children": []
+          },
+          {
+            "title": "019",
+            "slug": "volume2/19",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/19.html",
+            "children": []
+          },
+          {
+            "title": "020",
+            "slug": "volume2/20",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/20.html",
+            "children": []
+          },
+          {
+            "title": "021",
+            "slug": "volume2/21",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/21.html",
+            "children": []
+          },
+          {
+            "title": "022",
+            "slug": "volume2/22",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/22.html",
+            "children": []
+          },
+          {
+            "title": "023",
+            "slug": "volume2/23",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/23.html",
+            "children": []
+          },
+          {
+            "title": "024",
+            "slug": "volume2/24",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/24.html",
+            "children": []
+          },
+          {
+            "title": "025",
+            "slug": "volume2/25",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/25.html",
+            "children": []
+          },
+          {
+            "title": "026",
+            "slug": "volume2/26",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/26.html",
+            "children": []
+          },
+          {
+            "title": "027",
+            "slug": "volume2/27",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/27.html",
+            "children": []
+          },
+          {
+            "title": "028",
+            "slug": "volume2/28",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/28.html",
+            "children": []
+          },
+          {
+            "title": "029",
+            "slug": "volume2/29",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/29.html",
+            "children": []
+          },
+          {
+            "title": "030",
+            "slug": "volume2/30",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/30.html",
+            "children": []
+          },
+          {
+            "title": "031",
+            "slug": "volume2/31",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/31.html",
+            "children": []
+          },
+          {
+            "title": "032",
+            "slug": "volume2/32",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/32.html",
+            "children": []
+          },
+          {
+            "title": "033",
+            "slug": "volume2/33",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/33.html",
+            "children": []
+          },
+          {
+            "title": "034",
+            "slug": "volume2/34",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/34.html",
+            "children": []
+          },
+          {
+            "title": "035",
+            "slug": "volume2/35",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/35.html",
+            "children": []
+          },
+          {
+            "title": "036",
+            "slug": "volume2/36",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/36.html",
+            "children": []
+          },
+          {
+            "title": "037",
+            "slug": "volume2/37",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/37.html",
+            "children": []
+          },
+          {
+            "title": "038",
+            "slug": "volume2/38",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/38.html",
+            "children": []
+          },
+          {
+            "title": "039",
+            "slug": "volume2/39",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/39.html",
+            "children": []
+          },
+          {
+            "title": "040",
+            "slug": "volume2/40",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/40.html",
+            "children": []
+          },
+          {
+            "title": "041",
+            "slug": "volume2/41",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/41.html",
+            "children": []
+          },
+          {
+            "title": "042",
+            "slug": "volume2/42",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/42.html",
+            "children": []
+          },
+          {
+            "title": "043",
+            "slug": "volume2/43",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/43.html",
+            "children": []
+          },
+          {
+            "title": "044",
+            "slug": "volume2/44",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/44.html",
+            "children": []
+          },
+          {
+            "title": "045",
+            "slug": "volume2/45",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/45.html",
+            "children": []
+          },
+          {
+            "title": "046",
+            "slug": "volume2/46",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/46.html",
+            "children": []
+          },
+          {
+            "title": "047",
+            "slug": "volume2/47",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/47.html",
+            "children": []
+          },
+          {
+            "title": "048",
+            "slug": "volume2/48",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/48.html",
+            "children": []
+          },
+          {
+            "title": "049",
+            "slug": "volume2/49",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/49.html",
+            "children": []
+          },
+          {
+            "title": "050",
+            "slug": "volume2/50",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/50.html",
+            "children": []
+          },
+          {
+            "title": "050",
+            "slug": "volume2/51",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/51.html",
+            "children": []
+          },
+          {
+            "title": "051",
+            "slug": "volume2/52",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/52.html",
+            "children": []
+          },
+          {
+            "title": "054",
+            "slug": "volume2/54",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/54.html",
+            "children": []
+          },
+          {
+            "title": "055",
+            "slug": "volume2/55",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/55.html",
+            "children": []
+          },
+          {
+            "title": "056",
+            "slug": "volume2/56",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/56.html",
+            "children": []
+          },
+          {
+            "title": "057",
+            "slug": "volume2/57",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/57.html",
+            "children": []
+          },
+          {
+            "title": "058",
+            "slug": "volume2/58",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/58.html",
+            "children": []
+          },
+          {
+            "title": "059",
+            "slug": "volume2/59",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/59.html",
+            "children": []
+          },
+          {
+            "title": "060",
+            "slug": "volume2/60",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/60.html",
+            "children": []
+          },
+          {
+            "title": "061",
+            "slug": "volume2/61",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/61.html",
+            "children": []
+          },
+          {
+            "title": "062",
+            "slug": "volume2/62",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/62.html",
+            "children": []
+          },
+          {
+            "title": "063",
+            "slug": "volume2/63",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/63.html",
+            "children": []
+          },
+          {
+            "title": "064",
+            "slug": "volume2/64",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/64.html",
+            "children": []
+          },
+          {
+            "title": "065",
+            "slug": "volume2/65",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/65.html",
+            "children": []
+          },
+          {
+            "title": "066",
+            "slug": "volume2/66",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/66.html",
+            "children": []
+          },
+          {
+            "title": "067",
+            "slug": "volume2/67",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/67.html",
+            "children": []
+          },
+          {
+            "title": "068",
+            "slug": "volume2/68",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/68.html",
+            "children": []
+          },
+          {
+            "title": "069",
+            "slug": "volume2/69",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/69.html",
+            "children": []
+          },
+          {
+            "title": "070",
+            "slug": "volume2/70",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume2/70.html",
+            "children": []
+          }
+        ]
+      }
+    },
+    {
+      "key": "volume3",
+      "label": "Volume III — Travelling Allowance Rules",
+      "entrySlug": "volume3",
+      "tree": {
+        "title": "Volume III — Travelling Allowance Rules",
+        "slug": "volume3",
+        "url": "https://budget.up.nic.in/Fin_H_Book/volume3/financial handbook1.html",
+        "children": [
+          {
+            "title": "Definitions.",
+            "slug": "volume3/001",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/001.HTML",
+            "children": [
+              {
+                "title": "FINANCIAL HANDBOOK1",
+                "slug": "volume3/001/financial-handbook1",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume3/financial%20handbook1.html",
+                "children": []
+              }
+            ]
+          },
+          {
+            "title": "General Principles.",
+            "slug": "volume3/002",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/002.HTML",
+            "children": []
+          },
+          {
+            "title": "Travel by alternative routes.",
+            "slug": "volume3/003",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/003.HTML",
+            "children": []
+          },
+          {
+            "title": "Classification of government servants.",
+            "slug": "volume3/004",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/004.HTML",
+            "children": []
+          },
+          {
+            "title": "Travelling allowance to private persons and part-time government servants.",
+            "slug": "volume3/005",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/005.HTML",
+            "children": []
+          },
+          {
+            "title": "Travelling allowance to witnesses.",
+            "slug": "volume3/006",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/006.HTML",
+            "children": []
+          },
+          {
+            "title": "Travelling allowance to honorary munsifs, etc. and private individuals.",
+            "slug": "volume3/007",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/007.HTML",
+            "children": []
+          },
+          {
+            "title": "21-21-A",
+            "slug": "volume3/007",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/007.html",
+            "children": []
+          },
+          {
+            "title": "Travelling allowance to lekhpals and patwaris.",
+            "slug": "volume3/008",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/008.html",
+            "children": []
+          },
+          {
+            "title": "21-B",
+            "slug": "volume3/008",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/008.HTML",
+            "children": []
+          },
+          {
+            "title": "Travelling allowance to daily wage earners.",
+            "slug": "volume3/009",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/009.HTML",
+            "children": []
+          },
+          {
+            "title": "Kinds of travelling allowance.",
+            "slug": "volume3/010",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/010.HTML",
+            "children": []
+          },
+          {
+            "title": "Mileage allowance for travel by rail including airconditioned coach.",
+            "slug": "volume3/011",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/011.HTML",
+            "children": []
+          },
+          {
+            "title": "Reimbursement of charges for reservation/cancellation of berth and/or seat.",
+            "slug": "volume3/012",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/012.HTML",
+            "children": []
+          },
+          {
+            "title": "Mileage allowance for travel by road.",
+            "slug": "volume3/013",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/013.HTML",
+            "children": []
+          },
+          {
+            "title": "Mileage allowance for travel by air.",
+            "slug": "volume3/014",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/014.HTML",
+            "children": []
+          },
+          {
+            "title": "Rates and conditions regulating the grant of daily allowance.",
+            "slug": "volume3/015",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/015.HTML",
+            "children": []
+          },
+          {
+            "title": "Allowances admissible for different journeys and absences, including night halt.",
+            "slug": "volume3/016",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/016.HTML",
+            "children": []
+          },
+          {
+            "title": "Halt during absence from headquarters on tour and also during training period.",
+            "slug": "volume3/017",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/017.HTML",
+            "children": []
+          },
+          {
+            "title": "Journey by motor car, motor truck, motor carrier or jeep car.",
+            "slug": "volume3/018",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/018.HTML",
+            "children": []
+          },
+          {
+            "title": "Journey in a Government aeroplane.",
+            "slug": "volume3/019",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/019.HTML",
+            "children": []
+          },
+          {
+            "title": "Transportation of conveyance.",
+            "slug": "volume3/020",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/020.HTML",
+            "children": []
+          },
+          {
+            "title": "Travelling allowance to government servants holding two posts.",
+            "slug": "volume3/021",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/021.HTML",
+            "children": []
+          },
+          {
+            "title": "Journey by special means of conveyance.",
+            "slug": "volume3/022",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/022.HTML",
+            "children": []
+          },
+          {
+            "title": "Permanent monthly allowance.",
+            "slug": "volume3/023",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/023.HTML",
+            "children": []
+          },
+          {
+            "title": "Travelling allowance on transfer.",
+            "slug": "volume3/024",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/024.HTML",
+            "children": []
+          },
+          {
+            "title": "Travelling allowance on temporary transfer.",
+            "slug": "volume3/025",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/025.HTML",
+            "children": []
+          },
+          {
+            "title": "Travelling allowance to join first appointment",
+            "slug": "volume3/026",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/026.HTML",
+            "children": []
+          },
+          {
+            "title": "Travelling allowance to attend examinations.",
+            "slug": "volume3/027",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/027.HTML",
+            "children": []
+          },
+          {
+            "title": "Travelling allowance for journeys occasioned by leave.",
+            "slug": "volume3/028",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/028.HTML",
+            "children": []
+          },
+          {
+            "title": "Travelling allowance for journeys during suspension or to give evidence.",
+            "slug": "volume3/029",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/029.HTML",
+            "children": []
+          },
+          {
+            "title": "Travelling allowance for journeys for obtaining medical advice or to accompany a sick government servant.",
+            "slug": "volume3/030",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/030.HTML",
+            "children": []
+          },
+          {
+            "title": "Travelling allowance for journeys on a course of training.",
+            "slug": "volume3/031",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/031.HTML",
+            "children": []
+          },
+          {
+            "title": "Travelling allowance for journeys to receive decorations, etc.",
+            "slug": "volume3/032",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/032.HTML",
+            "children": []
+          },
+          {
+            "title": "Travelling allowance for journeys to attend meeting, conferences in India.",
+            "slug": "volume3/033",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/033.HTML",
+            "children": []
+          },
+          {
+            "title": "Travelling allowance to non-gazetted members of Government Railway Police.",
+            "slug": "volume3/034",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/034.HTML",
+            "children": []
+          },
+          {
+            "title": "Travelling allowance for journeys for work connected with elections.",
+            "slug": "volume3/035",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/035.HTML",
+            "children": []
+          },
+          {
+            "title": "Travelling allowance to Police Officers for appearance in Court.",
+            "slug": "volume3/036",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/036.HTML",
+            "children": []
+          },
+          {
+            "title": "Travelling allowance to Provincial Armed Constabulary personnel below the rank of sub-inspector.",
+            "slug": "volume3/037",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/037.HTML",
+            "children": []
+          },
+          {
+            "title": "Rules for the members of the Secretariat and the personal staff of the Governor for recess.",
+            "slug": "volume3/038",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/038.HTML",
+            "children": []
+          },
+          {
+            "title": "Travelling allowance on death or retirement.",
+            "slug": "volume3/039",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/039.HTML",
+            "children": []
+          },
+          {
+            "title": "Conveyance allowances.",
+            "slug": "volume3/040",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/040.HTML",
+            "children": []
+          },
+          {
+            "title": "Rules of procedure.",
+            "slug": "volume3/041",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/041.HTML",
+            "children": []
+          },
+          {
+            "title": "The All-India Services (Travelling Allowance) Rules, 1954",
+            "slug": "volume3/042",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/042.HTML",
+            "children": []
+          },
+          {
+            "title": "List of government servants who are either not entitled to daily allowance or mileage allowance for journeys by road at all or are entitled only in special circumstances.",
+            "slug": "volume3/043",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/043.HTML",
+            "children": []
+          },
+          {
+            "title": "List of government servants exempted from the operation of rule 27(D) (i) regarding the inadmissibility of daily allowance in respect of a continuous halt of more than ten days.",
+            "slug": "volume3/044",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/044.HTML",
+            "children": []
+          },
+          {
+            "title": "Lists of posts in which the possession of a conveyance is advantageous for the efficiency of the government servants holding them.",
+            "slug": "volume3/045",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/045.HTML",
+            "children": []
+          },
+          {
+            "title": "Table of distances from the collector’s office to the railway station and/or bus station.",
+            "slug": "volume3/046",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/046.HTML",
+            "children": []
+          },
+          {
+            "title": "Orders regulating the grant of special travelling allowance to the personal staff and the secretarial, ministerial and inferior staff of the Governor during the summer recess.",
+            "slug": "volume3/047",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/047.HTML",
+            "children": []
+          },
+          {
+            "title": "Rules regulating the grant of travelling allowance to government servants and others for journeys performed in connection with a course of training.",
+            "slug": "volume3/048",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/048.HTML",
+            "children": []
+          },
+          {
+            "title": "Rules regarding the Residential Training Programmes.",
+            "slug": "volume3/049",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/049.HTML",
+            "children": []
+          },
+          {
+            "title": "List of conveyance allowances.",
+            "slug": "volume3/050",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/050.HTML",
+            "children": []
+          },
+          {
+            "title": "Authorities declared to be controlling officers for the purpose of travelling allowance.",
+            "slug": "volume3/051",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/051.HTML",
+            "children": []
+          },
+          {
+            "title": "List of delegations made under the travelling allowance rules.",
+            "slug": "volume3/052",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/052.HTML",
+            "children": []
+          },
+          {
+            "title": "Government orders regarding the submission of agreement bond for grant of travel expenses in case of death of government servant while in service.",
+            "slug": "volume3/053",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/053.HTML",
+            "children": []
+          },
+          {
+            "title": "List of some of the permanent monthly allowances.",
+            "slug": "volume3/054",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/054.HTML",
+            "children": []
+          },
+          {
+            "title": "Government order regarding the revision of road mileage allowance.",
+            "slug": "volume3/055",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume3/055.HTML",
+            "children": []
+          }
+        ]
+      }
+    },
+    {
+      "key": "volume5-part1",
+      "label": "Volume V Part I — Account Rules",
+      "entrySlug": "volume5-part1",
+      "tree": {
+        "title": "Volume V Part I — Account Rules",
+        "slug": "volume5-part1",
+        "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/index.html",
+        "children": [
+          {
+            "title": "CHAPTER I—EXTENT OF APPLICATION",
+            "slug": "volume5-part1/001",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/001.html",
+            "children": []
+          },
+          {
+            "title": "CHAPTER II—DEFINITIONS",
+            "slug": "volume5-part1/002",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/002.html",
+            "children": []
+          },
+          {
+            "title": "List of Head of Departments",
+            "slug": "volume5-part1/003",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/003.html",
+            "children": []
+          },
+          {
+            "title": "Receipt and custody of Government money",
+            "slug": "volume5-part1/004",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/004.html",
+            "children": []
+          },
+          {
+            "title": "Deposit of cash chests and valuables in the Treasury",
+            "slug": "volume5-part1/005",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/005.html",
+            "children": []
+          },
+          {
+            "title": "General",
+            "slug": "volume5-part1/006",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/006.html",
+            "children": []
+          },
+          {
+            "title": "Payment of claims of Partnership concerns",
+            "slug": "volume5-part1/007",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/007.html",
+            "children": []
+          },
+          {
+            "title": "Payment of private persons",
+            "slug": "volume5-part1/008",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/008.html",
+            "children": []
+          },
+          {
+            "title": "Vouchers",
+            "slug": "volume5-part1/009",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/009.html",
+            "children": []
+          },
+          {
+            "title": "Cheques",
+            "slug": "volume5-part1/010",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/010.html",
+            "children": []
+          },
+          {
+            "title": "Permanent Advances or Imprest Account",
+            "slug": "volume5-part1/011",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/011.html",
+            "children": []
+          },
+          {
+            "title": "Security Deposits",
+            "slug": "volume5-part1/012",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/012.html",
+            "children": []
+          },
+          {
+            "title": "Claims to arrears or increases of pay or allowances",
+            "slug": "volume5-part1/013",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/013.html",
+            "children": []
+          },
+          {
+            "title": "Issue of Duplicates or Copies of documents",
+            "slug": "volume5-part1/014",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/014.html",
+            "children": []
+          },
+          {
+            "title": "Responsibility for overcharges",
+            "slug": "volume5-part1/015",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/015.html",
+            "children": []
+          },
+          {
+            "title": "Check of charges",
+            "slug": "volume5-part1/016",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/016.html",
+            "children": []
+          },
+          {
+            "title": "Audit objections",
+            "slug": "volume5-part1/017",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/017.html",
+            "children": []
+          },
+          {
+            "title": "Defalcations and Losses",
+            "slug": "volume5-part1/018",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/018.html",
+            "children": []
+          },
+          {
+            "title": "Remissions and abandonments of claims to revenue",
+            "slug": "volume5-part1/019",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/019.html",
+            "children": []
+          },
+          {
+            "title": "Erasures",
+            "slug": "volume5-part1/020",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/020.html",
+            "children": []
+          },
+          {
+            "title": "Adjustments between Governments",
+            "slug": "volume5-part1/021",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/021.html",
+            "children": []
+          },
+          {
+            "title": "Receipts and disbursements of the State in the United Kingdom",
+            "slug": "volume5-part1/022",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/022.html",
+            "children": []
+          },
+          {
+            "title": "Destruction of Account Records",
+            "slug": "volume5-part1/023",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/023.html",
+            "children": []
+          },
+          {
+            "title": "General",
+            "slug": "volume5-part1/024",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/024.html",
+            "children": []
+          },
+          {
+            "title": "Departmental Revenue—General",
+            "slug": "volume5-part1/025",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/025.html",
+            "children": []
+          },
+          {
+            "title": "Recoveries of rents on buildings and lands",
+            "slug": "volume5-part1/026",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/026.html",
+            "children": []
+          },
+          {
+            "title": "Miscellaneous demands",
+            "slug": "volume5-part1/027",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/027.html",
+            "children": []
+          },
+          {
+            "title": "Convict charges recoverable from other Governments",
+            "slug": "volume5-part1/028",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/028.html",
+            "children": []
+          },
+          {
+            "title": "Due date",
+            "slug": "volume5-part1/029",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/029.html",
+            "children": []
+          },
+          {
+            "title": "Place of payment",
+            "slug": "volume5-part1/030",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/030.html",
+            "children": []
+          },
+          {
+            "title": "Death of payee",
+            "slug": "volume5-part1/031",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/031.html",
+            "children": []
+          },
+          {
+            "title": "Last pay certificate",
+            "slug": "volume5-part1/032",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/032.html",
+            "children": []
+          },
+          {
+            "title": "Bond of indemnity for drawing leave salaries etc.",
+            "slug": "volume5-part1/033",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/033.html",
+            "children": []
+          },
+          {
+            "title": "Deductions from pay—General",
+            "slug": "volume5-part1/034",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/034.html",
+            "children": []
+          },
+          {
+            "title": "Fund deductions",
+            "slug": "volume5-part1/035",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/035.html",
+            "children": []
+          },
+          {
+            "title": "Rent deductions",
+            "slug": "volume5-part1/036",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/036.html",
+            "children": []
+          },
+          {
+            "title": "Attachment of pay and allowances for debt",
+            "slug": "volume5-part1/037",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/037.html",
+            "children": []
+          },
+          {
+            "title": "Pay of civilian Government servants who are members of Auxiliary Force Units",
+            "slug": "volume5-part1/038",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/038.html",
+            "children": []
+          },
+          {
+            "title": "Recovery of Co-operative Societies dues",
+            "slug": "volume5-part1/039",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/039.html",
+            "children": []
+          },
+          {
+            "title": "Payment of pay and allowances due in respect of a Government servant certified to be a lunatic",
+            "slug": "volume5-part1/040",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/040.html",
+            "children": []
+          },
+          {
+            "title": "Presentation and payment of pay bills",
+            "slug": "volume5-part1/041",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/041.html",
+            "children": []
+          },
+          {
+            "title": "General",
+            "slug": "volume5-part1/042",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/042.html",
+            "children": []
+          },
+          {
+            "title": "Alterations of pay",
+            "slug": "volume5-part1/043",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/043.html",
+            "children": []
+          },
+          {
+            "title": "Transfer of office",
+            "slug": "volume5-part1/044",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/044.html",
+            "children": []
+          },
+          {
+            "title": "Pay to Government servants in England",
+            "slug": "volume5-part1/045",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/045.html",
+            "children": []
+          },
+          {
+            "title": "Travelling allowance bill",
+            "slug": "volume5-part1/046",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/046.html",
+            "children": []
+          },
+          {
+            "title": "Rewards for proficiency in oriental languages",
+            "slug": "volume5-part1/047",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/047.html",
+            "children": []
+          },
+          {
+            "title": "Place of payment",
+            "slug": "volume5-part1/048",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/048.html",
+            "children": []
+          },
+          {
+            "title": "Sections of Establishments",
+            "slug": "volume5-part1/049",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/049.html",
+            "children": []
+          },
+          {
+            "title": "Annual Returns",
+            "slug": "volume5-part1/050",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/050.html",
+            "children": []
+          },
+          {
+            "title": "Revision of Establishment",
+            "slug": "volume5-part1/051",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/051.html",
+            "children": []
+          },
+          {
+            "title": "Monthly bill",
+            "slug": "volume5-part1/052",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/052.html",
+            "children": []
+          },
+          {
+            "title": "Distribution of pay and allowance",
+            "slug": "volume5-part1/053",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/053.html",
+            "children": []
+          },
+          {
+            "title": "Last pay certificate",
+            "slug": "volume5-part1/054",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/054.html",
+            "children": []
+          },
+          {
+            "title": "Arrear bills",
+            "slug": "volume5-part1/055",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/055.html",
+            "children": []
+          },
+          {
+            "title": "Service books",
+            "slug": "volume5-part1/056",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/056.html",
+            "children": []
+          },
+          {
+            "title": "Travelling allowances",
+            "slug": "volume5-part1/057",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/057.html",
+            "children": []
+          },
+          {
+            "title": "Definition",
+            "slug": "volume5-part1/058",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/058.html",
+            "children": []
+          },
+          {
+            "title": "Classification",
+            "slug": "volume5-part1/059",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/059.html",
+            "children": []
+          },
+          {
+            "title": "General rules",
+            "slug": "volume5-part1/060",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/060.html",
+            "children": []
+          },
+          {
+            "title": "Prompt settlement of claims against the Government",
+            "slug": "volume5-part1/061",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/061.html",
+            "children": []
+          },
+          {
+            "title": "Inevitable payments",
+            "slug": "volume5-part1/062",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/062.html",
+            "children": []
+          },
+          {
+            "title": "Recurring contingencies",
+            "slug": "volume5-part1/063",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/063.html",
+            "children": []
+          },
+          {
+            "title": "Purchase of Service Postage Stamps",
+            "slug": "volume5-part1/064",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/064.html",
+            "children": []
+          },
+          {
+            "title": "Responsibility of different authorities",
+            "slug": "volume5-part1/065",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/065.html",
+            "children": []
+          },
+          {
+            "title": "Responsibility of Controlling authority",
+            "slug": "volume5-part1/066",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/066.html",
+            "children": []
+          },
+          {
+            "title": "Record of contingent expenditure-Contingent registers",
+            "slug": "volume5-part1/067",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/067.html",
+            "children": []
+          },
+          {
+            "title": "Bills for encashment",
+            "slug": "volume5-part1/068",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/068.html",
+            "children": []
+          },
+          {
+            "title": "Contract contingencies",
+            "slug": "volume5-part1/069",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/069.html",
+            "children": []
+          },
+          {
+            "title": "Contingent charges not countersigned",
+            "slug": "volume5-part1/070",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/070.html",
+            "children": []
+          },
+          {
+            "title": "Charges regulated by scales and special contingencies",
+            "slug": "volume5-part1/071",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/071.html",
+            "children": []
+          },
+          {
+            "title": "Countersigned contingencies",
+            "slug": "volume5-part1/072",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/072.html",
+            "children": []
+          },
+          {
+            "title": "Detailed bill",
+            "slug": "volume5-part1/073",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/073.html",
+            "children": []
+          },
+          {
+            "title": "Disallowances",
+            "slug": "volume5-part1/074",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/074.html",
+            "children": []
+          },
+          {
+            "title": "Contingencies countersigned before payment",
+            "slug": "volume5-part1/075",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/075.html",
+            "children": []
+          },
+          {
+            "title": "Inspecting Officer’s bill",
+            "slug": "volume5-part1/076",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/076.html",
+            "children": []
+          },
+          {
+            "title": "Inter-departmental transfers",
+            "slug": "volume5-part1/077",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/077.html",
+            "children": []
+          },
+          {
+            "title": "Expenditure for other Government servants",
+            "slug": "volume5-part1/078",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/078.html",
+            "children": []
+          },
+          {
+            "title": "Miscellaneous",
+            "slug": "volume5-part1/079",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/079.html",
+            "children": []
+          },
+          {
+            "title": "ANNEXURE ‘A’ (Referred to in paragraph 156)",
+            "slug": "volume5-part1/080",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/080.html",
+            "children": []
+          },
+          {
+            "title": "Refunds of Revenue",
+            "slug": "volume5-part1/081",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/081.html",
+            "children": []
+          },
+          {
+            "title": "Compensation for Land",
+            "slug": "volume5-part1/082",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/082.html",
+            "children": []
+          },
+          {
+            "title": "Discount on stamps",
+            "slug": "volume5-part1/083",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/083.html",
+            "children": []
+          },
+          {
+            "title": "Secret service expenditure",
+            "slug": "volume5-part1/084",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/084.html",
+            "children": []
+          },
+          {
+            "title": "Payments of Grant-in-aid and contributions",
+            "slug": "volume5-part1/085",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/085.html",
+            "children": []
+          },
+          {
+            "title": "ANNEXURE ‘A’ (Referred to in paragraph 209)",
+            "slug": "volume5-part1/086",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/086.html",
+            "children": []
+          },
+          {
+            "title": "General",
+            "slug": "volume5-part1/087",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/087.html",
+            "children": []
+          },
+          {
+            "title": "Interest",
+            "slug": "volume5-part1/088",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/088.html",
+            "children": []
+          },
+          {
+            "title": "Conditions of repayment",
+            "slug": "volume5-part1/089",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/089.html",
+            "children": []
+          },
+          {
+            "title": "Forms of drawing and repaying",
+            "slug": "volume5-part1/090",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/090.html",
+            "children": []
+          },
+          {
+            "title": "Calculation of interest",
+            "slug": "volume5-part1/091",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/091.html",
+            "children": []
+          },
+          {
+            "title": "Defaults in payment",
+            "slug": "volume5-part1/092",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/092.html",
+            "children": []
+          },
+          {
+            "title": "Definition",
+            "slug": "volume5-part1/093",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/093.html",
+            "children": []
+          },
+          {
+            "title": "Treasury Accounts and Procedure",
+            "slug": "volume5-part1/094",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/094.html",
+            "children": []
+          },
+          {
+            "title": "Plus and Minus Memorandum",
+            "slug": "volume5-part1/095",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/095.html",
+            "children": []
+          },
+          {
+            "title": "Revenue Department Returns",
+            "slug": "volume5-part1/096",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/096.html",
+            "children": []
+          },
+          {
+            "title": "Irrecoverable Loans and Advances",
+            "slug": "volume5-part1/097",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/097.html",
+            "children": []
+          },
+          {
+            "title": "Periodical Review",
+            "slug": "volume5-part1/098",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/098.html",
+            "children": []
+          },
+          {
+            "title": "Annual Returns to be submitted by the Accountant General",
+            "slug": "volume5-part1/099",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/099.html",
+            "children": []
+          },
+          {
+            "title": "Sanction",
+            "slug": "volume5-part1/100",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/100.html",
+            "children": []
+          },
+          {
+            "title": "Estimates",
+            "slug": "volume5-part1/101",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/101.html",
+            "children": []
+          },
+          {
+            "title": "House Building Advances",
+            "slug": "volume5-part1/102",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/102.html",
+            "children": []
+          },
+          {
+            "title": "Advance for the construction or repair of a house",
+            "slug": "volume5-part1/103",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/103.html",
+            "children": []
+          },
+          {
+            "title": "Advances for the purchase of land and construction of a house thereon",
+            "slug": "volume5-part1/104",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/104.html",
+            "children": []
+          },
+          {
+            "title": "Advance for the purchase of a house with land appurtenant thereto",
+            "slug": "volume5-part1/105",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/105.html",
+            "children": []
+          },
+          {
+            "title": "Advance for the purchase of a house and repairs to it",
+            "slug": "volume5-part1/106",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/106.html",
+            "children": []
+          },
+          {
+            "title": "Motor Car and Jeep etc.",
+            "slug": "volume5-part1/107",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/107.html",
+            "children": []
+          },
+          {
+            "title": "Motor Cycle or Scooter",
+            "slug": "volume5-part1/108",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/108.html",
+            "children": []
+          },
+          {
+            "title": "Cycle",
+            "slug": "volume5-part1/109",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/109.html",
+            "children": []
+          },
+          {
+            "title": "Other Advances",
+            "slug": "volume5-part1/110",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/110.html",
+            "children": []
+          },
+          {
+            "title": "Conditions of repayment",
+            "slug": "volume5-part1/111",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/111.html",
+            "children": []
+          },
+          {
+            "title": "Forms of drawing and repaying",
+            "slug": "volume5-part1/112",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/112.html",
+            "children": []
+          },
+          {
+            "title": "General rules",
+            "slug": "volume5-part1/113",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/113.html",
+            "children": []
+          },
+          {
+            "title": "Receipt of stores",
+            "slug": "volume5-part1/114",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/114.html",
+            "children": []
+          },
+          {
+            "title": "Issue of stores",
+            "slug": "volume5-part1/115",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/115.html",
+            "children": []
+          },
+          {
+            "title": "Accounts",
+            "slug": "volume5-part1/116",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/116.html",
+            "children": []
+          },
+          {
+            "title": "Stock-taking",
+            "slug": "volume5-part1/117",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/117.html",
+            "children": []
+          },
+          {
+            "title": "Purchase of stores",
+            "slug": "volume5-part1/118",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/118.html",
+            "children": []
+          },
+          {
+            "title": "Disposal of Government Property through public auction",
+            "slug": "volume5-part1/119",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/119.html",
+            "children": []
+          },
+          {
+            "title": "Extent of application",
+            "slug": "volume5-part1/120",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/120.html",
+            "children": []
+          },
+          {
+            "title": "Definitions",
+            "slug": "volume5-part1/121",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/121.html",
+            "children": []
+          },
+          {
+            "title": "General Rules",
+            "slug": "volume5-part1/122",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/122.html",
+            "children": []
+          },
+          {
+            "title": "Classification of repairs",
+            "slug": "volume5-part1/123",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/123.html",
+            "children": []
+          },
+          {
+            "title": "Provision of Funds",
+            "slug": "volume5-part1/124",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/124.html",
+            "children": []
+          },
+          {
+            "title": "Non residential and rent free buildings",
+            "slug": "volume5-part1/125",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/125.html",
+            "children": []
+          },
+          {
+            "title": "Residential buildings",
+            "slug": "volume5-part1/126",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/126.html",
+            "children": []
+          },
+          {
+            "title": "Preparations and sanctioning of Estimates",
+            "slug": "volume5-part1/127",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/127.html",
+            "children": []
+          },
+          {
+            "title": "Electric installations",
+            "slug": "volume5-part1/128",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/128.html",
+            "children": []
+          },
+          {
+            "title": "Assessment and recovery of rents",
+            "slug": "volume5-part1/129",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/129.html",
+            "children": []
+          },
+          {
+            "title": "Preparations and sanctioning of rent statements",
+            "slug": "volume5-part1/130",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/130.html",
+            "children": []
+          },
+          {
+            "title": "Intimation of Demands for Rent",
+            "slug": "volume5-part1/131",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/131.html",
+            "children": []
+          },
+          {
+            "title": "Instructions in regard to the term of occupation of Government Residences",
+            "slug": "volume5-part1/132",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/132.html",
+            "children": []
+          },
+          {
+            "title": "Renting of Residential or Non-residential Buildings",
+            "slug": "volume5-part1/133",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/133.html",
+            "children": []
+          },
+          {
+            "title": "Initiation",
+            "slug": "volume5-part1/134",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/134.html",
+            "children": []
+          },
+          {
+            "title": "Allotment of Funds",
+            "slug": "volume5-part1/135",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/135.html",
+            "children": []
+          },
+          {
+            "title": "Minor works",
+            "slug": "volume5-part1/136",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/136.html",
+            "children": []
+          },
+          {
+            "title": "Fees for the preparation of Projects and the supervision of works",
+            "slug": "volume5-part1/137",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/137.html",
+            "children": []
+          },
+          {
+            "title": "Contracts",
+            "slug": "volume5-part1/138",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/138.html",
+            "children": []
+          },
+          {
+            "title": "Muster Rolls",
+            "slug": "volume5-part1/139",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/139.html",
+            "children": []
+          },
+          {
+            "title": "Accounts",
+            "slug": "volume5-part1/140",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/140.html",
+            "children": []
+          },
+          {
+            "title": "Drawal of Money from Treasuries",
+            "slug": "volume5-part1/141",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/141.html",
+            "children": []
+          },
+          {
+            "title": "Payments for works done on Lump Sum contracts",
+            "slug": "volume5-part1/142",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/142.html",
+            "children": []
+          },
+          {
+            "title": "Advances to contractors and disbursers",
+            "slug": "volume5-part1/143",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/143.html",
+            "children": []
+          },
+          {
+            "title": "ANNEXURE ‘A’ (Referred to in paragraph 264-A (ii)",
+            "slug": "volume5-part1/144",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/144.html",
+            "children": []
+          },
+          {
+            "title": "ANNEXURE ‘B’ (Referred to in paragraphs 279 and 281)",
+            "slug": "volume5-part1/145",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/145.html",
+            "children": []
+          },
+          {
+            "title": "ANNEXURE ‘C’ (Referred to in paragraph 305)",
+            "slug": "volume5-part1/146",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/146.html",
+            "children": []
+          },
+          {
+            "title": "ANNEXURE ‘D’ (Referred to in paragraph 306)",
+            "slug": "volume5-part1/147",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/147.html",
+            "children": []
+          },
+          {
+            "title": "Introductory",
+            "slug": "volume5-part1/148",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/148.html",
+            "children": []
+          },
+          {
+            "title": "Telegraphic Transfers",
+            "slug": "volume5-part1/149",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/149.html",
+            "children": []
+          },
+          {
+            "title": "Explanations",
+            "slug": "volume5-part1/150",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/150.html",
+            "children": []
+          },
+          {
+            "title": "Form of Drafts",
+            "slug": "volume5-part1/151",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/151.html",
+            "children": []
+          },
+          {
+            "title": "Issue of Drafts",
+            "slug": "volume5-part1/152",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/152.html",
+            "children": []
+          },
+          {
+            "title": "Advice of Remittances drawn",
+            "slug": "volume5-part1/153",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/153.html",
+            "children": []
+          },
+          {
+            "title": "Regularity of signature",
+            "slug": "volume5-part1/154",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/154.html",
+            "children": []
+          },
+          {
+            "title": "Encashment of Drafts",
+            "slug": "volume5-part1/155",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/155.html",
+            "children": []
+          },
+          {
+            "title": "Doubtful drawings",
+            "slug": "volume5-part1/156",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/156.html",
+            "children": []
+          },
+          {
+            "title": "Form of receipt",
+            "slug": "volume5-part1/157",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/157.html",
+            "children": []
+          },
+          {
+            "title": "Record of drawings and encashments",
+            "slug": "volume5-part1/158",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/158.html",
+            "children": []
+          },
+          {
+            "title": "Issue of duplicates",
+            "slug": "volume5-part1/159",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/159.html",
+            "children": []
+          },
+          {
+            "title": "Cancellation and refund",
+            "slug": "volume5-part1/160",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/160.html",
+            "children": []
+          },
+          {
+            "title": "Exchange of Drafts",
+            "slug": "volume5-part1/161",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/161.html",
+            "children": []
+          },
+          {
+            "title": "Unpaid Drafts",
+            "slug": "volume5-part1/162",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/162.html",
+            "children": []
+          },
+          {
+            "title": "Lapse of Drafts",
+            "slug": "volume5-part1/163",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/163.html",
+            "children": []
+          },
+          {
+            "title": "Supply of forms",
+            "slug": "volume5-part1/164",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/164.html",
+            "children": []
+          },
+          {
+            "title": "Special rules for remittances of Policemen",
+            "slug": "volume5-part1/165",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/165.html",
+            "children": []
+          },
+          {
+            "title": "ANNEXURE (Referred to in paragraph 318-D)",
+            "slug": "volume5-part1/166",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/166.html",
+            "children": []
+          },
+          {
+            "title": "Explanations",
+            "slug": "volume5-part1/167",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/167.html",
+            "children": []
+          },
+          {
+            "title": "Limitations",
+            "slug": "volume5-part1/168",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/168.html",
+            "children": []
+          },
+          {
+            "title": "Revenue Deposits—Repayments",
+            "slug": "volume5-part1/169",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/169.html",
+            "children": []
+          },
+          {
+            "title": "Form of voucher",
+            "slug": "volume5-part1/170",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/170.html",
+            "children": []
+          },
+          {
+            "title": "Quarterly certificate",
+            "slug": "volume5-part1/171",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/171.html",
+            "children": []
+          },
+          {
+            "title": "Lapses—Annual account",
+            "slug": "volume5-part1/172",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/172.html",
+            "children": []
+          },
+          {
+            "title": "Civil and criminal court deposits",
+            "slug": "volume5-part1/173",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/173.html",
+            "children": []
+          },
+          {
+            "title": "Agreement with Treasury",
+            "slug": "volume5-part1/174",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/174.html",
+            "children": []
+          },
+          {
+            "title": "Personal deposits—Repayments",
+            "slug": "volume5-part1/175",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/175.html",
+            "children": []
+          },
+          {
+            "title": "Deposits of fees",
+            "slug": "volume5-part1/176",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/176.html",
+            "children": []
+          },
+          {
+            "title": "Explanation",
+            "slug": "volume5-part1/177",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/177.html",
+            "children": []
+          },
+          {
+            "title": "Receipts and payments",
+            "slug": "volume5-part1/178",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/178.html",
+            "children": []
+          },
+          {
+            "title": "Verification of balances",
+            "slug": "volume5-part1/179",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/179.html",
+            "children": []
+          },
+          {
+            "title": "Miscellaneous",
+            "slug": "volume5-part1/180",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/180.html",
+            "children": []
+          },
+          {
+            "title": "General rules for Grants-in-aid",
+            "slug": "volume5-part1/181",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/181.html",
+            "children": []
+          },
+          {
+            "title": "Communication and Effect of Sanction",
+            "slug": "volume5-part1/182",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/182.html",
+            "children": []
+          },
+          {
+            "title": "General Rules",
+            "slug": "volume5-part1/183",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/183.html",
+            "children": []
+          },
+          {
+            "title": "Advances from Fund-Forms",
+            "slug": "volume5-part1/184",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/184.html",
+            "children": []
+          },
+          {
+            "title": "Provident Funds",
+            "slug": "volume5-part1/185",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/185.html",
+            "children": []
+          },
+          {
+            "title": "Indian Civil Service Family Pension Regulation",
+            "slug": "volume5-part1/186",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/186.html",
+            "children": []
+          },
+          {
+            "title": "Superior Service (India) Family Pension Funds",
+            "slug": "volume5-part1/187",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/187.html",
+            "children": []
+          },
+          {
+            "title": "General Family Pension Fund, Hindu Family Annuity Fund and Bengal Christian Family Fund",
+            "slug": "volume5-part1/188",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/188.html",
+            "children": []
+          },
+          {
+            "title": "Responsibility for Observance of Account Rules etc.",
+            "slug": "volume5-part1/189",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/189.html",
+            "children": []
+          },
+          {
+            "title": "I— Extracts from Government of India (Audit and Accounts) Order, 1936, issued as an order of His Majesty in Council under sub-sections (2) and (3) of section 166 of the Act",
+            "slug": "volume5-part1/190",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/190.html",
+            "children": []
+          },
+          {
+            "title": "I-A—The Comptroller and Auditor-General’s (Duties, Powers and Conditions of Service) Act, 1971",
+            "slug": "volume5-part1/191",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/191.html",
+            "children": []
+          },
+          {
+            "title": "II— Treasury Rules issued by the Governor of Uttar Pradesh under clause (2) of Article 283 of the Constitution",
+            "slug": "volume5-part1/192",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/192.html",
+            "children": []
+          },
+          {
+            "title": "V— Rules regulating the preparation of last-pay certificates in cases of transfers on duty, or of return from leave",
+            "slug": "volume5-part1/193",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/193.html",
+            "children": []
+          },
+          {
+            "title": "VI— Form of bond of indemnity for drawing pay, pensions, annuities, etc.",
+            "slug": "volume5-part1/194",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/194.html",
+            "children": []
+          },
+          {
+            "title": "VII— Rules regarding payment of contingent bills by cheque",
+            "slug": "volume5-part1/195",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/195.html",
+            "children": []
+          },
+          {
+            "title": "VIII— Formulae for the calculation of the average cost of time scales of pay",
+            "slug": "volume5-part1/196",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/196.html",
+            "children": []
+          },
+          {
+            "title": "IX— Inter-departmental transfers",
+            "slug": "volume5-part1/197",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/197.html",
+            "children": []
+          },
+          {
+            "title": "X— Miscellaneous rulings regarding contingent expenditure",
+            "slug": "volume5-part1/198",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/198.html",
+            "children": []
+          },
+          {
+            "title": "X-A— General rules relating to Discretionary grants made by the Chief Minister/a Cabinet Minister",
+            "slug": "volume5-part1/199",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/199.html",
+            "children": []
+          },
+          {
+            "title": "XI— Rules for the payment of compensation for land taken up under the Land Acquisition Act I of 1894",
+            "slug": "volume5-part1/200",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/200.html",
+            "children": []
+          },
+          {
+            "title": "XV— List of vouchers (bills, cheques, etc.) referred to in the Account Rules and their periods of currency",
+            "slug": "volume5-part1/201",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/201.html",
+            "children": []
+          },
+          {
+            "title": "XVI— Rules regarding the destruction of accounts records in Offices rendering accounts to Accountant General",
+            "slug": "volume5-part1/202",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/202.html",
+            "children": []
+          },
+          {
+            "title": "XVII— Rules for the safe carriage of Government money",
+            "slug": "volume5-part1/203",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/203.html",
+            "children": []
+          },
+          {
+            "title": "XVIII— Rule for the purchase of stores (including printing and stationery stores) required for use in Government Departments",
+            "slug": "volume5-part1/204",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/204.html",
+            "children": []
+          },
+          {
+            "title": "XIX— General principles to be observed by Government officers in entering into contracts or agreements on behalf of Government",
+            "slug": "volume5-part1/205",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/205.html",
+            "children": []
+          },
+          {
+            "title": "XIX-A— Extracts form Public Works Accounts Rules, Financial Hand Book, Volume VI",
+            "slug": "volume5-part1/206",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/206.html",
+            "children": []
+          },
+          {
+            "title": "XIX-B— General principles to regulate the enforcement of responsibility for losses sustained by Government through the fraud or negligence of individuals",
+            "slug": "volume5-part1/207",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/207.html",
+            "children": []
+          },
+          {
+            "title": "XIX-C— General instructions regarding the entrusting to officials duty of looking after the Government property at the time of opening and closing of offices",
+            "slug": "volume5-part1/208",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/208.html",
+            "children": []
+          },
+          {
+            "title": "XIX-D— Rules for the disposal of Government property through public auction",
+            "slug": "volume5-part1/209",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/209.html",
+            "children": []
+          },
+          {
+            "title": "XX— Uttar Pradesh Personal Ledger Account Rules, 1998",
+            "slug": "volume5-part1/210",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/210.html",
+            "children": []
+          },
+          {
+            "title": "1.",
+            "slug": "volume5-part1/211",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/211.html",
+            "children": []
+          },
+          {
+            "title": "1-A.",
+            "slug": "volume5-part1/212",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/212.html",
+            "children": []
+          },
+          {
+            "title": "1-B.",
+            "slug": "volume5-part1/213",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/213.html",
+            "children": []
+          },
+          {
+            "title": "2.",
+            "slug": "volume5-part1/214",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/214.html",
+            "children": []
+          },
+          {
+            "title": "2-A.",
+            "slug": "volume5-part1/215",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/215.html",
+            "children": []
+          },
+          {
+            "title": "2-AA.",
+            "slug": "volume5-part1/216",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/216.html",
+            "children": []
+          },
+          {
+            "title": "2-B.",
+            "slug": "volume5-part1/217",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/217.html",
+            "children": []
+          },
+          {
+            "title": "2-BB.",
+            "slug": "volume5-part1/218",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/218.html",
+            "children": []
+          },
+          {
+            "title": "2-C.",
+            "slug": "volume5-part1/219",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/219.html",
+            "children": []
+          },
+          {
+            "title": "2-D.",
+            "slug": "volume5-part1/220",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/220.html",
+            "children": []
+          },
+          {
+            "title": "2-E.",
+            "slug": "volume5-part1/221",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/221.html",
+            "children": []
+          },
+          {
+            "title": "2-F.",
+            "slug": "volume5-part1/222",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/222.html",
+            "children": []
+          },
+          {
+            "title": "2-G.",
+            "slug": "volume5-part1/223",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/223.html",
+            "children": []
+          },
+          {
+            "title": "2-H.",
+            "slug": "volume5-part1/224",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/224.html",
+            "children": []
+          },
+          {
+            "title": "2-I.",
+            "slug": "volume5-part1/225",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/225.html",
+            "children": []
+          },
+          {
+            "title": "3.",
+            "slug": "volume5-part1/226",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/226.html",
+            "children": []
+          },
+          {
+            "title": "3-A.",
+            "slug": "volume5-part1/227",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/227.html",
+            "children": []
+          },
+          {
+            "title": "4-A.",
+            "slug": "volume5-part1/228",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/228.html",
+            "children": []
+          },
+          {
+            "title": "5.",
+            "slug": "volume5-part1/229",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/229.html",
+            "children": []
+          },
+          {
+            "title": "5-B.",
+            "slug": "volume5-part1/230",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/230.html",
+            "children": []
+          },
+          {
+            "title": "6.",
+            "slug": "volume5-part1/231",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/231.html",
+            "children": []
+          },
+          {
+            "title": "6-A.",
+            "slug": "volume5-part1/232",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/232.html",
+            "children": []
+          },
+          {
+            "title": "6-B.",
+            "slug": "volume5-part1/233",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/233.html",
+            "children": []
+          },
+          {
+            "title": "6-C.",
+            "slug": "volume5-part1/234",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/234.html",
+            "children": []
+          },
+          {
+            "title": "6-D.",
+            "slug": "volume5-part1/235",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/235.html",
+            "children": []
+          },
+          {
+            "title": "7.",
+            "slug": "volume5-part1/236",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/236.html",
+            "children": []
+          },
+          {
+            "title": "8.",
+            "slug": "volume5-part1/237",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/237.html",
+            "children": []
+          },
+          {
+            "title": "9.",
+            "slug": "volume5-part1/238",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/238.html",
+            "children": []
+          },
+          {
+            "title": "10.",
+            "slug": "volume5-part1/239",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/239.html",
+            "children": []
+          },
+          {
+            "title": "11.",
+            "slug": "volume5-part1/240",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/240.html",
+            "children": []
+          },
+          {
+            "title": "11-A.",
+            "slug": "volume5-part1/241",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/241.html",
+            "children": []
+          },
+          {
+            "title": "11-B.",
+            "slug": "volume5-part1/242",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/242.html",
+            "children": []
+          },
+          {
+            "title": "11-C.",
+            "slug": "volume5-part1/243",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/243.html",
+            "children": []
+          },
+          {
+            "title": "12.",
+            "slug": "volume5-part1/244",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/244.html",
+            "children": []
+          },
+          {
+            "title": "12-A.",
+            "slug": "volume5-part1/245",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/245.html",
+            "children": []
+          },
+          {
+            "title": "12-B.",
+            "slug": "volume5-part1/246",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/246.html",
+            "children": []
+          },
+          {
+            "title": "12-C.",
+            "slug": "volume5-part1/247",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/247.html",
+            "children": []
+          },
+          {
+            "title": "12-D.",
+            "slug": "volume5-part1/248",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/248.html",
+            "children": []
+          },
+          {
+            "title": "13.",
+            "slug": "volume5-part1/249",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/249.html",
+            "children": []
+          },
+          {
+            "title": "14.",
+            "slug": "volume5-part1/250",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/250.html",
+            "children": []
+          },
+          {
+            "title": "15.",
+            "slug": "volume5-part1/251",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/251.html",
+            "children": []
+          },
+          {
+            "title": "16.",
+            "slug": "volume5-part1/252",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/252.html",
+            "children": []
+          },
+          {
+            "title": "17.",
+            "slug": "volume5-part1/253",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/253.html",
+            "children": []
+          },
+          {
+            "title": "18.",
+            "slug": "volume5-part1/254",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/254.html",
+            "children": []
+          },
+          {
+            "title": "19.",
+            "slug": "volume5-part1/255",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/255.html",
+            "children": []
+          },
+          {
+            "title": "21-A.",
+            "slug": "volume5-part1/256",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/256.html",
+            "children": []
+          },
+          {
+            "title": "21-B.",
+            "slug": "volume5-part1/257",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/257.html",
+            "children": []
+          },
+          {
+            "title": "22.",
+            "slug": "volume5-part1/258",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/258.html",
+            "children": []
+          },
+          {
+            "title": "22-A.",
+            "slug": "volume5-part1/259",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/259.html",
+            "children": []
+          },
+          {
+            "title": "22-B.",
+            "slug": "volume5-part1/260",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/260.html",
+            "children": []
+          },
+          {
+            "title": "22-C.",
+            "slug": "volume5-part1/261",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/261.html",
+            "children": []
+          },
+          {
+            "title": "22-D",
+            "slug": "volume5-part1/262",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/262.html",
+            "children": []
+          },
+          {
+            "title": "22-E",
+            "slug": "volume5-part1/263",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/263.html",
+            "children": []
+          },
+          {
+            "title": "22-F",
+            "slug": "volume5-part1/264",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/264.html",
+            "children": []
+          },
+          {
+            "title": "23.",
+            "slug": "volume5-part1/265",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/265.html",
+            "children": []
+          },
+          {
+            "title": "23-A",
+            "slug": "volume5-part1/266",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/266.html",
+            "children": []
+          },
+          {
+            "title": "24.",
+            "slug": "volume5-part1/267",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/267.html",
+            "children": []
+          },
+          {
+            "title": "24-A",
+            "slug": "volume5-part1/268",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/268.html",
+            "children": []
+          },
+          {
+            "title": "25.",
+            "slug": "volume5-part1/269",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/269.html",
+            "children": []
+          },
+          {
+            "title": "25-A.",
+            "slug": "volume5-part1/270",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/270.html",
+            "children": []
+          },
+          {
+            "title": "25-C.",
+            "slug": "volume5-part1/272",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/272.html",
+            "children": []
+          },
+          {
+            "title": "25-D",
+            "slug": "volume5-part1/273",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/273.html",
+            "children": []
+          },
+          {
+            "title": "25-E",
+            "slug": "volume5-part1/274",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/274.html",
+            "children": []
+          },
+          {
+            "title": "26.",
+            "slug": "volume5-part1/275",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/275.html",
+            "children": []
+          },
+          {
+            "title": "27.",
+            "slug": "volume5-part1/276",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/276.html",
+            "children": []
+          },
+          {
+            "title": "28.",
+            "slug": "volume5-part1/277",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/277.html",
+            "children": []
+          },
+          {
+            "title": "29.",
+            "slug": "volume5-part1/278",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/278.html",
+            "children": []
+          },
+          {
+            "title": "29-A.",
+            "slug": "volume5-part1/279",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/279.html",
+            "children": []
+          },
+          {
+            "title": "30.",
+            "slug": "volume5-part1/280",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/280.html",
+            "children": []
+          },
+          {
+            "title": "30-A.",
+            "slug": "volume5-part1/281",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/281.html",
+            "children": []
+          },
+          {
+            "title": "30-B.",
+            "slug": "volume5-part1/282",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/282.html",
+            "children": []
+          },
+          {
+            "title": "30-C.",
+            "slug": "volume5-part1/283",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/283.html",
+            "children": []
+          },
+          {
+            "title": "30-D.",
+            "slug": "volume5-part1/284",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/284.html",
+            "children": []
+          },
+          {
+            "title": "30-E.",
+            "slug": "volume5-part1/285",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/285.html",
+            "children": []
+          },
+          {
+            "title": "30-F.",
+            "slug": "volume5-part1/286",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/286.html",
+            "children": []
+          },
+          {
+            "title": "30-G.",
+            "slug": "volume5-part1/287",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/287.html",
+            "children": []
+          },
+          {
+            "title": "30-H.",
+            "slug": "volume5-part1/288",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/288.html",
+            "children": []
+          },
+          {
+            "title": "31.",
+            "slug": "volume5-part1/289",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/289.html",
+            "children": []
+          },
+          {
+            "title": "32.",
+            "slug": "volume5-part1/290",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/290.html",
+            "children": []
+          },
+          {
+            "title": "33.",
+            "slug": "volume5-part1/291",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/291.html",
+            "children": []
+          },
+          {
+            "title": "33-A.",
+            "slug": "volume5-part1/292",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/292.html",
+            "children": []
+          },
+          {
+            "title": "34.",
+            "slug": "volume5-part1/293",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/293.html",
+            "children": []
+          },
+          {
+            "title": "35.",
+            "slug": "volume5-part1/294",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/294.html",
+            "children": []
+          },
+          {
+            "title": "38.",
+            "slug": "volume5-part1/295",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/295.html",
+            "children": []
+          },
+          {
+            "title": "39.",
+            "slug": "volume5-part1/296",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/296.html",
+            "children": []
+          },
+          {
+            "title": "41.",
+            "slug": "volume5-part1/297",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/297.html",
+            "children": []
+          },
+          {
+            "title": "42.",
+            "slug": "volume5-part1/298",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/298.html",
+            "children": []
+          },
+          {
+            "title": "42-A.",
+            "slug": "volume5-part1/299",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/299.html",
+            "children": []
+          },
+          {
+            "title": "42-B.",
+            "slug": "volume5-part1/300",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/300.html",
+            "children": []
+          },
+          {
+            "title": "42-B-1.",
+            "slug": "volume5-part1/301",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/301.html",
+            "children": []
+          },
+          {
+            "title": "42-B-2.",
+            "slug": "volume5-part1/302",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/302.html",
+            "children": []
+          },
+          {
+            "title": "42-C.",
+            "slug": "volume5-part1/303",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/303.html",
+            "children": []
+          },
+          {
+            "title": "42-D.",
+            "slug": "volume5-part1/304",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/304.html",
+            "children": []
+          },
+          {
+            "title": "42-E.",
+            "slug": "volume5-part1/305",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/305.html",
+            "children": []
+          },
+          {
+            "title": "42-F.",
+            "slug": "volume5-part1/306",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/306.html",
+            "children": []
+          },
+          {
+            "title": "42-G.",
+            "slug": "volume5-part1/307",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/307.html",
+            "children": []
+          },
+          {
+            "title": "42-H.",
+            "slug": "volume5-part1/308",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/308.html",
+            "children": []
+          },
+          {
+            "title": "42-I.",
+            "slug": "volume5-part1/309",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/309.html",
+            "children": []
+          },
+          {
+            "title": "42-J.",
+            "slug": "volume5-part1/310",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/310.html",
+            "children": []
+          },
+          {
+            "title": "INDEX",
+            "slug": "volume5-part1/311",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/311.html",
+            "children": []
+          },
+          {
+            "title": "SUPPLEMENTARY FORMS",
+            "slug": "volume5-part1/312",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part1/312.HTM",
+            "children": []
+          }
+        ]
+      }
+    },
+    {
+      "key": "volume5-part2",
+      "label": "Volume V Part II — Treasury Procedure",
+      "entrySlug": "volume5-part2",
+      "tree": {
+        "title": "Volume V Part II — Treasury Procedure",
+        "slug": "volume5-part2",
+        "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/PREFACE.htm",
+        "children": [
+          {
+            "title": "XIX—General procedure of Treasuries",
+            "slug": "volume5-part2/001",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/001.htm",
+            "children": []
+          },
+          {
+            "title": "XX—Treasuries banking with a branch of State Bank Of India",
+            "slug": "volume5-part2/002",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/002.htm",
+            "children": []
+          },
+          {
+            "title": "XXI—Pension payments",
+            "slug": "volume5-part2/003",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/003.htm",
+            "children": []
+          },
+          {
+            "title": "XXII—Deposits",
+            "slug": "volume5-part2/004",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/004.htm",
+            "children": []
+          },
+          {
+            "title": "XXIII—(Deleted)",
+            "slug": "volume5-part2/005",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/005.htm",
+            "children": []
+          },
+          {
+            "title": "XXIV—Miscellaneous subjects",
+            "slug": "volume5-part2/006",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/006.htm",
+            "children": []
+          },
+          {
+            "title": "XXV—(Deleted)",
+            "slug": "volume5-part2/007",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/007.htm",
+            "children": []
+          },
+          {
+            "title": "XXVI—Forest Department",
+            "slug": "volume5-part2/008",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/008.htm",
+            "children": []
+          },
+          {
+            "title": "XXVII—(Deleted)",
+            "slug": "volume5-part2/009",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/009.htm",
+            "children": []
+          },
+          {
+            "title": "XXVIII—(Deleted)",
+            "slug": "volume5-part2/010",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/010.htm",
+            "children": []
+          },
+          {
+            "title": "XXIX—Public Works and Irrigation Depart",
+            "slug": "volume5-part2/011",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/011.htm",
+            "children": []
+          },
+          {
+            "title": "XXX—(Deleted)",
+            "slug": "volume5-part2/012",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/012.htm",
+            "children": []
+          },
+          {
+            "title": "XXXI—(Deleted)",
+            "slug": "volume5-part2/013",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/013.htm",
+            "children": []
+          },
+          {
+            "title": "XXXII—(Deleted)",
+            "slug": "volume5-part2/014",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/014.htm",
+            "children": []
+          },
+          {
+            "title": "XXXIII—Local Funds",
+            "slug": "volume5-part2/015",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/015.htm",
+            "children": []
+          },
+          {
+            "title": "Appendix",
+            "slug": "volume5-part2/016",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/016.htm",
+            "children": []
+          },
+          {
+            "title": "XXI—Inspection of District Treasuries by Commissioner of Divisions and District Officers.",
+            "slug": "volume5-part2/017",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/017.htm",
+            "children": []
+          },
+          {
+            "title": "XXII—(Deleted)",
+            "slug": "volume5-part2/018",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/018.htm",
+            "children": []
+          },
+          {
+            "title": "XXIII—Check List of the points to be looked into by the Treasury Officers.",
+            "slug": "volume5-part2/019",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/019.htm",
+            "children": []
+          },
+          {
+            "title": "XXIV—Receipts for bills presented in Treasuries",
+            "slug": "volume5-part2/020",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/020.htm",
+            "children": []
+          },
+          {
+            "title": "XXV—Procedure for payments through cheques in State Treasuries.",
+            "slug": "volume5-part2/021",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/021.htm",
+            "children": []
+          },
+          {
+            "title": "XXVI—Checking Formula of main points to be kept in view by Drawing and Disbursing Officers in connection with their duties and responsibilities towards Account Works.",
+            "slug": "volume5-part2/022",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/022.htm",
+            "children": []
+          },
+          {
+            "title": "XXVII—Scheme for payment of pensions of Uttar Pradesh Government Pensioners by Public Sector Banks",
+            "slug": "volume5-part2/023",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/023.htm",
+            "children": []
+          },
+          {
+            "title": "Annexure-I:",
+            "slug": "volume5-part2/024",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/024.htm",
+            "children": []
+          },
+          {
+            "title": "Annexure-II:",
+            "slug": "volume5-part2/025",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/025.htm",
+            "children": []
+          },
+          {
+            "title": "Extracts from Land Records Manual",
+            "slug": "volume5-part2/025",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/025.HTM",
+            "children": []
+          },
+          {
+            "title": "Annexure-III:",
+            "slug": "volume5-part2/026",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/026.htm",
+            "children": []
+          },
+          {
+            "title": "Extracts from Civil Service Regulations—Payment of Pension and Arrears of Pension.",
+            "slug": "volume5-part2/026",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/026.HTM",
+            "children": []
+          },
+          {
+            "title": "XXVIII—Government Orders and Instructions regarding Letters of Credit",
+            "slug": "volume5-part2/027a",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/027A.HTM",
+            "children": [
+              {
+                "title": "1. O.M. No. A-1/3244/X-73",
+                "slug": "volume5-part2/027a/027",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/027.htm",
+                "children": []
+              },
+              {
+                "title": "2. G.O. No. A-1/ 100/X-74",
+                "slug": "volume5-part2/027a/028",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/028.htm",
+                "children": []
+              },
+              {
+                "title": "3. G.O. No. A-3/2854/X-SA-PA-75",
+                "slug": "volume5-part2/027a/029",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/029.htm",
+                "children": []
+              },
+              {
+                "title": "4. G.O. No. A-3/2007/X-SA-PA-1976-12(4)/76",
+                "slug": "volume5-part2/027a/030",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/030.htm",
+                "children": []
+              },
+              {
+                "title": "5. O.M. No. A-3/2775/X-SA-PA-79",
+                "slug": "volume5-part2/027a/031",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/031.htm",
+                "children": []
+              },
+              {
+                "title": "6. O.M. No. A-2-3021/X-SA-PA-82",
+                "slug": "volume5-part2/027a/032",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/032.htm",
+                "children": []
+              },
+              {
+                "title": "7. G.O. No. A-2-1800/X-83-14(6)-83",
+                "slug": "volume5-part2/027a/033",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/033.htm",
+                "children": []
+              }
+            ]
+          },
+          {
+            "title": "O.M. No. A-1/3244/X-73",
+            "slug": "volume5-part2/027",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/027.HTM",
+            "children": []
+          },
+          {
+            "title": "G.O. No. A-1/100/X-74",
+            "slug": "volume5-part2/028",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/028.HTM",
+            "children": []
+          },
+          {
+            "title": "G.O. No. A-3/2854/X-SA-PA-75",
+            "slug": "volume5-part2/029",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/029.HTM",
+            "children": []
+          },
+          {
+            "title": "„ May 5, 1976",
+            "slug": "volume5-part2/030",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/030.HTM",
+            "children": []
+          },
+          {
+            "title": "O.M. No. A-3/2775/X-SA-PA-79",
+            "slug": "volume5-part2/031",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/031.HTM",
+            "children": []
+          },
+          {
+            "title": "O.M. No. A-2-3021/X-SA-PA",
+            "slug": "volume5-part2/032",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/032.HTM",
+            "children": []
+          },
+          {
+            "title": "G.O. No. A-2-1800/X-83-14(6)-83",
+            "slug": "volume5-part2/033",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/033.HTM",
+            "children": []
+          },
+          {
+            "title": "G.O. No. A-2-1967/X-SA-SI-83-14(6)-83",
+            "slug": "volume5-part2/034",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/034.HTM",
+            "children": []
+          },
+          {
+            "title": ",, July 15, 1983",
+            "slug": "volume5-part2/034",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/034.htm",
+            "children": []
+          },
+          {
+            "title": "G.O. No. A-2-2020/X-SA-SI-83-14(6)/83",
+            "slug": "volume5-part2/035",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/035.htm",
+            "children": []
+          },
+          {
+            "title": "G.O. No. A-2-2429(3)/X-83-SA-PA-14(6)/83",
+            "slug": "volume5-part2/036",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/036.htm",
+            "children": []
+          },
+          {
+            "title": "G.O. No. A-2-2855/X-83-SA-PA-14/83",
+            "slug": "volume5-part2/037",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/037.htm",
+            "children": []
+          },
+          {
+            "title": "XXIX—Duties of Treasury Head Clerks (G.O. No. S-6516/X dated July 24, 1970)",
+            "slug": "volume5-part2/038",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/038.htm",
+            "children": []
+          },
+          {
+            "title": "XXIX-A—Duties and responsibilities of Chief Cashier, Cashier, Deputy Cashier and Assistant Cashier",
+            "slug": "volume5-part2/038a",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/038a.htm",
+            "children": []
+          },
+          {
+            "title": "XXX—Deduction of Income-Tax at Source (G.O. No. S-3-260/X-79 dated January 23, 1979)",
+            "slug": "volume5-part2/039",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/039.htm",
+            "children": []
+          },
+          {
+            "title": "XXXI—List of Major Heads",
+            "slug": "volume5-part2/040",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/040.htm",
+            "children": []
+          },
+          {
+            "title": "XXXII—Extracts from Revenue Manual",
+            "slug": "volume5-part2/041",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/041.htm",
+            "children": []
+          },
+          {
+            "title": "XXXIII—Extracts from U. P. Police Rules for Guards and Escorts",
+            "slug": "volume5-part2/042",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/042.HTM",
+            "children": []
+          },
+          {
+            "title": "FORMS",
+            "slug": "volume5-part2/043",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/043.HTM",
+            "children": [
+              {
+                "title": "43. Cash-book",
+                "slug": "volume5-part2/043/f43",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/F43.HTM",
+                "children": []
+              },
+              {
+                "title": "43-A. Chalan of cash paid into Treasury or Bank",
+                "slug": "volume5-part2/043/f43a",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/F43A.HTM",
+                "children": []
+              },
+              {
+                "title": "43-B. Register of disbursement of pay and travelling allowance etc. of the District Headquarters, non-gazetted establishment",
+                "slug": "volume5-part2/043/f43b",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/F43B.HTM",
+                "children": []
+              },
+              {
+                "title": "44 & 45. [Deleted].",
+                "slug": "volume5-part2/043/f44",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/F44.HTM",
+                "children": []
+              },
+              {
+                "title": "46. Register of receipts",
+                "slug": "volume5-part2/043/f46",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/F46.HTM",
+                "children": []
+              },
+              {
+                "title": "47. Register of expenditure",
+                "slug": "volume5-part2/043/f47",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/F47.HTM",
+                "children": []
+              },
+              {
+                "title": "48. Cash account",
+                "slug": "volume5-part2/043/f48",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/F48.HTM",
+                "children": []
+              },
+              {
+                "title": "49. List of payment",
+                "slug": "volume5-part2/043/f49",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/F49.HTM",
+                "children": []
+              },
+              {
+                "title": "49A. Check register of adjustments by transfers",
+                "slug": "volume5-part2/043/f49a",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/F49A.HTM",
+                "children": []
+              },
+              {
+                "title": "50. Accountant’s daily balance-sheet",
+                "slug": "volume5-part2/043/f50",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/F50.HTM",
+                "children": []
+              },
+              {
+                "title": "50A. Account of single-book balances",
+                "slug": "volume5-part2/043/f50a",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/F50A.HTM",
+                "children": []
+              },
+              {
+                "title": "50B. Register of misclassifications by the Bank",
+                "slug": "volume5-part2/043/f50b",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/F50B.HTM",
+                "children": []
+              },
+              {
+                "title": "50C.Accounts of cash hept in double lock",
+                "slug": "volume5-part2/043/f50c",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/f50c.htm",
+                "children": []
+              },
+              {
+                "title": "51. Register of Pension Payment Orders",
+                "slug": "volume5-part2/043/f51",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/F51.HTM",
+                "children": []
+              },
+              {
+                "title": "52. Bill for pension",
+                "slug": "volume5-part2/043/f52",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/F52.HTM",
+                "children": []
+              },
+              {
+                "title": "52-A. Half-yearly declaration of female pensioners whose pensions are terminable on their marriage",
+                "slug": "volume5-part2/043/f52a",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/F52A.HTM",
+                "children": []
+              },
+              {
+                "title": "52-B. Register of advances drawn for payment of petty pensions at the Banking Treasuries",
+                "slug": "volume5-part2/043/f52b",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/F52B.HTM",
+                "children": []
+              },
+              {
+                "title": "52-C. Register of Treasuries’ account of pension the advances at the Bankings Treasuries",
+                "slug": "volume5-part2/043/f52c",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/F52C.HTM",
+                "children": []
+              },
+              {
+                "title": "53. Notice summoning pensioners for identification",
+                "slug": "volume5-part2/043/f53",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/F53.HTM",
+                "children": []
+              },
+              {
+                "title": "54. Register of deposit receipts",
+                "slug": "volume5-part2/043/f54",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/F54.HTM",
+                "children": []
+              },
+              {
+                "title": "55. Register of personal deposits",
+                "slug": "volume5-part2/043/f55",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/F55.HTM",
+                "children": []
+              },
+              {
+                "title": "56. Register of daily receipts and payments of personal deposits",
+                "slug": "volume5-part2/043/f56",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/F56.HTM",
+                "children": []
+              },
+              {
+                "title": "57. Register of cash orders on Sub-Treasuries",
+                "slug": "volume5-part2/043/f57",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/F57.HTM",
+                "children": []
+              },
+              {
+                "title": "57-A. Advice of cash orders",
+                "slug": "volume5-part2/043/f57a",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/F57A.HTM",
+                "children": []
+              },
+              {
+                "title": "58. [Deleted].",
+                "slug": "volume5-part2/043/f58",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/f58.htm",
+                "children": []
+              },
+              {
+                "title": "59. Extract register of receipts and payments of personal deposit",
+                "slug": "volume5-part2/043/f59",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/f59.htm",
+                "children": []
+              },
+              {
+                "title": "60to 70. [Deleted]",
+                "slug": "volume5-part2/043/f60",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/f60.htm",
+                "children": []
+              },
+              {
+                "title": "71. Schedule of Forest Remittances",
+                "slug": "volume5-part2/043/f71",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/f71.htm",
+                "children": []
+              },
+              {
+                "title": "71A. Consolidated Treasury receipts for Forest cash remittance",
+                "slug": "volume5-part2/043/f71a",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/f71a.htm",
+                "children": []
+              },
+              {
+                "title": "72. Schedule of Forest cheques paid",
+                "slug": "volume5-part2/043/f72",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/f72.htm",
+                "children": []
+              },
+              {
+                "title": "73. [Deleted]",
+                "slug": "volume5-part2/043/f73",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/f73.htm",
+                "children": []
+              },
+              {
+                "title": "74. Register of payments",
+                "slug": "volume5-part2/043/f74",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/f74.htm",
+                "children": []
+              },
+              {
+                "title": "75. Schedule of receipts",
+                "slug": "volume5-part2/043/f75",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/f75.htm",
+                "children": []
+              },
+              {
+                "title": "76. Pass-book",
+                "slug": "volume5-part2/043/f76",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/f76.htm",
+                "children": []
+              },
+              {
+                "title": "77. [Deleted]",
+                "slug": "volume5-part2/043/f77",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/f77.htm",
+                "children": []
+              },
+              {
+                "title": "77A. Certificate of issues of cheques",
+                "slug": "volume5-part2/043/f77a",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/f77a.htm",
+                "children": []
+              },
+              {
+                "title": "77B. [Deleted]",
+                "slug": "volume5-part2/043/f77b",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/f77b.htm",
+                "children": []
+              },
+              {
+                "title": "78. Consolidated Treasury Receipt for Public Works Department",
+                "slug": "volume5-part2/043/f78",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/f78.htm",
+                "children": []
+              },
+              {
+                "title": "78A. to 80B [Deleted]",
+                "slug": "volume5-part2/043/f78a",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/f78a.htm",
+                "children": []
+              },
+              {
+                "title": "81. Register of Deposits",
+                "slug": "volume5-part2/043/f81",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/f81.htm",
+                "children": []
+              },
+              {
+                "title": "82. to 84. [Deleted]",
+                "slug": "volume5-part2/043/f82",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/f82.htm",
+                "children": []
+              },
+              {
+                "title": "85. Letter of Authority",
+                "slug": "volume5-part2/043/f85",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/f85.htm",
+                "children": []
+              },
+              {
+                "title": "86. Payment of Pension at Treasury",
+                "slug": "volume5-part2/043/f86",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/f86.htm",
+                "children": []
+              },
+              {
+                "title": "60S. Posting of cheques of Public Works, Irrigation and Forest Departments in the Treasuries",
+                "slug": "volume5-part2/043/f60s",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/f60s.htm",
+                "children": []
+              },
+              {
+                "title": "82A. Abstract Register of cheques of Public Works, Irrigation and Forest Departments",
+                "slug": "volume5-part2/043/f82a",
+                "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/f82a.htm",
+                "children": []
+              }
+            ]
+          },
+          {
+            "title": "List of Treasury Forms",
+            "slug": "volume5-part2/044",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/044.HTM",
+            "children": []
+          },
+          {
+            "title": "Index",
+            "slug": "volume5-part2/045",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume5/part2/045.HTM",
+            "children": []
+          }
+        ]
+      }
+    },
+    {
+      "key": "volume7",
+      "label": "Volume VII — Forest Department Financial Rules",
+      "entrySlug": "volume7",
+      "tree": {
+        "title": "Volume VII — Forest Department Financial Rules",
+        "slug": "volume7",
+        "url": "https://budget.up.nic.in/Fin_H_Book/volume7/index.html",
+        "children": [
+          {
+            "title": "General",
+            "slug": "volume7/01",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/01.html",
+            "children": []
+          },
+          {
+            "title": "Chief Conservator",
+            "slug": "volume7/02",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/02.html",
+            "children": []
+          },
+          {
+            "title": "Convervator",
+            "slug": "volume7/03",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/03.html",
+            "children": []
+          },
+          {
+            "title": "Divisional Officer",
+            "slug": "volume7/04",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/04.html",
+            "children": []
+          },
+          {
+            "title": "Working Plan Officer",
+            "slug": "volume7/05",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/05.html",
+            "children": []
+          },
+          {
+            "title": "Cash",
+            "slug": "volume7/06",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/06.html",
+            "children": []
+          },
+          {
+            "title": "Custody of cash",
+            "slug": "volume7/07",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/07.html",
+            "children": []
+          },
+          {
+            "title": "Cash-book—General",
+            "slug": "volume7/08",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/08.html",
+            "children": []
+          },
+          {
+            "title": "Record of transactions",
+            "slug": "volume7/09",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/09.html",
+            "children": []
+          },
+          {
+            "title": "Classification of transactions",
+            "slug": "volume7/10",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/10.html",
+            "children": []
+          },
+          {
+            "title": "Inter-divisional transactions",
+            "slug": "volume7/11",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/11.html",
+            "children": []
+          },
+          {
+            "title": "Checking and balancing",
+            "slug": "volume7/12",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/12.html",
+            "children": []
+          },
+          {
+            "title": "Correction of errors",
+            "slug": "volume7/13",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/13.html",
+            "children": []
+          },
+          {
+            "title": "Sale of forest produce",
+            "slug": "volume7/14",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/14.html",
+            "children": []
+          },
+          {
+            "title": "Remittance of cash receipts",
+            "slug": "volume7/15",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/15.html",
+            "children": []
+          },
+          {
+            "title": "Utilization of receipts for departmental expenditure",
+            "slug": "volume7/16",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/16.html",
+            "children": []
+          },
+          {
+            "title": "Entry in accounts",
+            "slug": "volume7/17",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/17.html",
+            "children": []
+          },
+          {
+            "title": "Book adjustment receipts",
+            "slug": "volume7/18",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/18.html",
+            "children": []
+          },
+          {
+            "title": "Recoveries of service payments",
+            "slug": "volume7/19",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/19.html",
+            "children": []
+          },
+          {
+            "title": "Accounts of revenue",
+            "slug": "volume7/20",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/20.html",
+            "children": []
+          },
+          {
+            "title": "Miscellaneous",
+            "slug": "volume7/21",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/21.html",
+            "children": []
+          },
+          {
+            "title": "General",
+            "slug": "volume7/22",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/22.html",
+            "children": []
+          },
+          {
+            "title": "Heads of appropriation",
+            "slug": "volume7/23",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/23.html",
+            "children": []
+          },
+          {
+            "title": "Divisional estimates",
+            "slug": "volume7/24",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/24.html",
+            "children": []
+          },
+          {
+            "title": "Provincial estimates",
+            "slug": "volume7/25",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/25.html",
+            "children": []
+          },
+          {
+            "title": "Schedule of new expenditure",
+            "slug": "volume7/26",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/26.html",
+            "children": []
+          },
+          {
+            "title": "Communication of grants",
+            "slug": "volume7/27",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/27.html",
+            "children": []
+          },
+          {
+            "title": "Control of grants",
+            "slug": "volume7/28",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/28.html",
+            "children": []
+          },
+          {
+            "title": "Re-appropriations",
+            "slug": "volume7/29",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/29.html",
+            "children": []
+          },
+          {
+            "title": "Working plan estimates",
+            "slug": "volume7/30",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/30.html",
+            "children": []
+          },
+          {
+            "title": "Appropriation accounts",
+            "slug": "volume7/31",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/31.html",
+            "children": []
+          },
+          {
+            "title": "Funds",
+            "slug": "volume7/32",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/32.html",
+            "children": []
+          },
+          {
+            "title": "Cheques",
+            "slug": "volume7/33",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/33.html",
+            "children": []
+          },
+          {
+            "title": "Register of cheques drawn",
+            "slug": "volume7/34",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/34.html",
+            "children": []
+          },
+          {
+            "title": "Entry in the accounts",
+            "slug": "volume7/35",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/35.html",
+            "children": []
+          },
+          {
+            "title": "Adjustments of cancelled, lost and lapsed cheques",
+            "slug": "volume7/36",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/36.html",
+            "children": []
+          },
+          {
+            "title": "Classification of expenditure",
+            "slug": "volume7/37",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/37.html",
+            "children": []
+          },
+          {
+            "title": "Sanctions to expenditure",
+            "slug": "volume7/38",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/38.html",
+            "children": []
+          },
+          {
+            "title": "Capital expenditure",
+            "slug": "volume7/39",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/39.html",
+            "children": []
+          },
+          {
+            "title": "Control of expenditure",
+            "slug": "volume7/40",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/40.html",
+            "children": []
+          },
+          {
+            "title": "Vouchers",
+            "slug": "volume7/41",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/41.html",
+            "children": []
+          },
+          {
+            "title": "Issue of duplicates or copies of documents",
+            "slug": "volume7/42",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/42.html",
+            "children": []
+          },
+          {
+            "title": "General",
+            "slug": "volume7/43",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/43.html",
+            "children": []
+          },
+          {
+            "title": "Classes of establishment",
+            "slug": "volume7/44",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/44.html",
+            "children": []
+          },
+          {
+            "title": "Temporary establishment",
+            "slug": "volume7/45",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/45.html",
+            "children": []
+          },
+          {
+            "title": "Establishment return",
+            "slug": "volume7/46",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/46.html",
+            "children": []
+          },
+          {
+            "title": "Changes in establishment",
+            "slug": "volume7/47",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/47.html",
+            "children": []
+          },
+          {
+            "title": "Pay bills",
+            "slug": "volume7/48",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/48.html",
+            "children": []
+          },
+          {
+            "title": "Travelling allowance bills",
+            "slug": "volume7/49",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/49.html",
+            "children": []
+          },
+          {
+            "title": "Entry in accounts",
+            "slug": "volume7/50",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/50.html",
+            "children": []
+          },
+          {
+            "title": "Leave salaries",
+            "slug": "volume7/51",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/51.html",
+            "children": []
+          },
+          {
+            "title": "Compensatory allowances",
+            "slug": "volume7/52",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/52.html",
+            "children": []
+          },
+          {
+            "title": "Miscellaneous",
+            "slug": "volume7/53",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/53.html",
+            "children": []
+          },
+          {
+            "title": "General",
+            "slug": "volume7/54",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/54.html",
+            "children": []
+          },
+          {
+            "title": "Works carried out by departmental labour",
+            "slug": "volume7/55",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/55.html",
+            "children": []
+          },
+          {
+            "title": "Contracts",
+            "slug": "volume7/56",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/56.html",
+            "children": []
+          },
+          {
+            "title": "Estimates",
+            "slug": "volume7/57",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/57.html",
+            "children": []
+          },
+          {
+            "title": "Buildings",
+            "slug": "volume7/58",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/58.html",
+            "children": []
+          },
+          {
+            "title": "Commencement of works",
+            "slug": "volume7/59",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/59.html",
+            "children": []
+          },
+          {
+            "title": "Measurements",
+            "slug": "volume7/60",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/60.html",
+            "children": []
+          },
+          {
+            "title": "Bills",
+            "slug": "volume7/61",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/61.html",
+            "children": []
+          },
+          {
+            "title": "Record of sanction and expenditure",
+            "slug": "volume7/62",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/62.html",
+            "children": []
+          },
+          {
+            "title": "Payments to other departments",
+            "slug": "volume7/63",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/63.html",
+            "children": []
+          },
+          {
+            "title": "Rents",
+            "slug": "volume7/64",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/64.html",
+            "children": []
+          },
+          {
+            "title": "Law charges",
+            "slug": "volume7/65",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/65.html",
+            "children": []
+          },
+          {
+            "title": "Printing charges",
+            "slug": "volume7/66",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/66.html",
+            "children": []
+          },
+          {
+            "title": "Cost of medicines",
+            "slug": "volume7/67",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/67.html",
+            "children": []
+          },
+          {
+            "title": "Miscellaneous charges",
+            "slug": "volume7/68",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/68.html",
+            "children": []
+          },
+          {
+            "title": "General",
+            "slug": "volume7/69",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/69.html",
+            "children": []
+          },
+          {
+            "title": "Advances to non-gazetted servants",
+            "slug": "volume7/70",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/70.html",
+            "children": []
+          },
+          {
+            "title": "Advances to disbursers",
+            "slug": "volume7/71",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/71.html",
+            "children": []
+          },
+          {
+            "title": "Advances to contractors",
+            "slug": "volume7/72",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/72.html",
+            "children": []
+          },
+          {
+            "title": "Intimation of advances",
+            "slug": "volume7/73",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/73.html",
+            "children": []
+          },
+          {
+            "title": "Entry in the accounts",
+            "slug": "volume7/74",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/74.html",
+            "children": []
+          },
+          {
+            "title": "Irrecoverable advances",
+            "slug": "volume7/75",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/75.html",
+            "children": []
+          },
+          {
+            "title": "General",
+            "slug": "volume7/76",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/76.html",
+            "children": []
+          },
+          {
+            "title": "Earnest-money deposits",
+            "slug": "volume7/77",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/77.html",
+            "children": []
+          },
+          {
+            "title": "Forest deposits",
+            "slug": "volume7/78",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/78.html",
+            "children": []
+          },
+          {
+            "title": "General",
+            "slug": "volume7/79",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/79.html",
+            "children": []
+          },
+          {
+            "title": "Incorporation of subordinates accounts",
+            "slug": "volume7/80",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/80.html",
+            "children": []
+          },
+          {
+            "title": "Cash account",
+            "slug": "volume7/81",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/81.html",
+            "children": []
+          },
+          {
+            "title": "Classified abstract of revenue",
+            "slug": "volume7/82",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/82.html",
+            "children": []
+          },
+          {
+            "title": "Schedule of remittances",
+            "slug": "volume7/83",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/83.html",
+            "children": []
+          },
+          {
+            "title": "Classified abstract of expenditure",
+            "slug": "volume7/84",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/84.html",
+            "children": []
+          },
+          {
+            "title": "Ledger of advances",
+            "slug": "volume7/85",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/85.html",
+            "children": []
+          },
+          {
+            "title": "Monthly abstract of ledger",
+            "slug": "volume7/86",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/86.html",
+            "children": []
+          },
+          {
+            "title": "Register of forest deposits",
+            "slug": "volume7/87",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/87.html",
+            "children": []
+          },
+          {
+            "title": "Monthly accounts",
+            "slug": "volume7/88",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/88.html",
+            "children": []
+          },
+          {
+            "title": "Summaries of revenue and expenditure",
+            "slug": "volume7/89",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/89.html",
+            "children": []
+          },
+          {
+            "title": "Objection statement",
+            "slug": "volume7/90",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/90.html",
+            "children": []
+          },
+          {
+            "title": "I—Rules for securities of subordinates",
+            "slug": "volume7/91",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/91.html",
+            "children": []
+          },
+          {
+            "title": "II—Classification of forest revenue and expenditure",
+            "slug": "volume7/92",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/92.html",
+            "children": []
+          },
+          {
+            "title": "III—Rules for remittances of revenue to treasuries and advances to disbursers by postal money orders",
+            "slug": "volume7/93",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/93.html",
+            "children": []
+          },
+          {
+            "title": "IV—List showing the delegation of certain financial powers to the various officers of the Forest Department",
+            "slug": "volume7/94",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/94.html",
+            "children": []
+          },
+          {
+            "title": "F. A. R. 1",
+            "slug": "volume7/95",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/95.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 2",
+            "slug": "volume7/96",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/96.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 3",
+            "slug": "volume7/97",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/97.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 4",
+            "slug": "volume7/98",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/98.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 5",
+            "slug": "volume7/99",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/99.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 6",
+            "slug": "volume7/100",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/100.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 7",
+            "slug": "volume7/101",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/101.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 8",
+            "slug": "volume7/102",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/102.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 9",
+            "slug": "volume7/103",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/103.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 10",
+            "slug": "volume7/104",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/104.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 11",
+            "slug": "volume7/105",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/105.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 12",
+            "slug": "volume7/106",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/106.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 13",
+            "slug": "volume7/107i",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/107i.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 14",
+            "slug": "volume7/108",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/108.html",
+            "children": []
+          },
+          {
+            "title": "F. A. R. 15",
+            "slug": "volume7/109",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/109.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 16",
+            "slug": "volume7/110",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/110.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 17",
+            "slug": "volume7/111",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/111.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 18",
+            "slug": "volume7/112",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/112.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 19",
+            "slug": "volume7/113",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/113.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 20",
+            "slug": "volume7/114",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/114.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 20-A",
+            "slug": "volume7/115",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/115.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 20-B",
+            "slug": "volume7/116",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/116.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 21",
+            "slug": "volume7/117",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/117.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 22",
+            "slug": "volume7/118",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/118.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 23",
+            "slug": "volume7/119",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/119.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 24",
+            "slug": "volume7/120",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/120.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 25",
+            "slug": "volume7/121",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/121.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 26",
+            "slug": "volume7/122",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/122.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 27",
+            "slug": "volume7/123",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/123.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 28",
+            "slug": "volume7/124",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/124.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 29",
+            "slug": "volume7/125",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/125.html",
+            "children": []
+          },
+          {
+            "title": "F. A. R. 30",
+            "slug": "volume7/126",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/126.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 31",
+            "slug": "volume7/127",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/127.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 32",
+            "slug": "volume7/128",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/128.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 33",
+            "slug": "volume7/129",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/129.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 34",
+            "slug": "volume7/130",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/130.html",
+            "children": []
+          },
+          {
+            "title": "Form No. 35",
+            "slug": "volume7/131",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/131.html",
+            "children": []
+          },
+          {
+            "title": "INDEX",
+            "slug": "volume7/132",
+            "url": "https://budget.up.nic.in/Fin_H_Book/volume7/132.html",
+            "children": []
+          }
+        ]
+      }
+    },
+    {
+      "key": "csr",
+      "label": "Civil Service Regulations",
+      "entrySlug": "csr",
+      "tree": {
+        "title": "Civil Service Regulations",
+        "slug": "csr",
+        "url": "https://budget.up.nic.in/Fin_H_Book/CSR/index.html",
+        "children": [
+          {
+            "title": "CHAPTER I—General Scope",
+            "slug": "csr/01",
+            "url": "https://budget.up.nic.in/Fin_H_Book/CSR/01.html",
+            "children": []
+          },
+          {
+            "title": "CHAPTER II—Definitions",
+            "slug": "csr/02",
+            "url": "https://budget.up.nic.in/Fin_H_Book/CSR/02.html",
+            "children": [
+              {
+                "title": "*",
+                "slug": "csr/02/n21",
+                "url": "https://budget.up.nic.in/Fin_H_Book/CSR/n21.html",
+                "children": []
+              },
+              {
+                "title": "*",
+                "slug": "csr/02/n22",
+                "url": "https://budget.up.nic.in/Fin_H_Book/CSR/n22.html",
+                "children": []
+              },
+              {
+                "title": "†",
+                "slug": "csr/02/n23",
+                "url": "https://budget.up.nic.in/Fin_H_Book/CSR/n23.html",
+                "children": []
+              },
+              {
+                "title": "*",
+                "slug": "csr/02/n24",
+                "url": "https://budget.up.nic.in/Fin_H_Book/CSR/n24.html",
+                "children": []
+              }
+            ]
+          },
+          {
+            "title": "CHAPTER XV—General Rules",
+            "slug": "csr/03",
+            "url": "https://budget.up.nic.in/Fin_H_Book/CSR/03.html",
+            "children": [
+              {
+                "title": "*",
+                "slug": "csr/03/n31",
+                "url": "https://budget.up.nic.in/Fin_H_Book/CSR/n31.html",
+                "children": []
+              },
+              {
+                "title": "*",
+                "slug": "csr/03/n32",
+                "url": "https://budget.up.nic.in/Fin_H_Book/CSR/n32.html",
+                "children": []
+              },
+              {
+                "title": "†",
+                "slug": "csr/03/n33",
+                "url": "https://budget.up.nic.in/Fin_H_Book/CSR/n33.html",
+                "children": []
+              },
+              {
+                "title": "*",
+                "slug": "csr/03/n34",
+                "url": "https://budget.up.nic.in/Fin_H_Book/CSR/n34.html",
+                "children": []
+              },
+              {
+                "title": "*",
+                "slug": "csr/03/n35",
+                "url": "https://budget.up.nic.in/Fin_H_Book/CSR/n35.html",
+                "children": []
+              }
+            ]
+          },
+          {
+            "title": "CHAPTER XVI—Conditions of Qualifying Service",
+            "slug": "csr/04",
+            "url": "https://budget.up.nic.in/Fin_H_Book/CSR/04.html",
+            "children": [
+              {
+                "title": "*",
+                "slug": "csr/04/n41",
+                "url": "https://budget.up.nic.in/Fin_H_Book/CSR/n41.html",
+                "children": []
+              }
+            ]
+          },
+          {
+            "title": "CHAPTER XVII—Rules for reckoning service",
+            "slug": "csr/05",
+            "url": "https://budget.up.nic.in/Fin_H_Book/CSR/05.html",
+            "children": [
+              {
+                "title": "*",
+                "slug": "csr/05/n51",
+                "url": "https://budget.up.nic.in/Fin_H_Book/CSR/n51.html",
+                "children": []
+              },
+              {
+                "title": "*",
+                "slug": "csr/05/n52",
+                "url": "https://budget.up.nic.in/Fin_H_Book/CSR/n52.html",
+                "children": []
+              },
+              {
+                "title": "†",
+                "slug": "csr/05/n53",
+                "url": "https://budget.up.nic.in/Fin_H_Book/CSR/n53.html",
+                "children": []
+              },
+              {
+                "title": "††",
+                "slug": "csr/05/n54",
+                "url": "https://budget.up.nic.in/Fin_H_Book/CSR/n54.html",
+                "children": []
+              },
+              {
+                "title": "*",
+                "slug": "csr/05/n55",
+                "url": "https://budget.up.nic.in/Fin_H_Book/CSR/n55.html",
+                "children": []
+              }
+            ]
+          },
+          {
+            "title": "CHAPTER XVIII—Conditions of Grant of Pension",
+            "slug": "csr/06",
+            "url": "https://budget.up.nic.in/Fin_H_Book/CSR/06.html",
+            "children": [
+              {
+                "title": "†",
+                "slug": "csr/06/n61",
+                "url": "https://budget.up.nic.in/Fin_H_Book/CSR/n61.html",
+                "children": []
+              }
+            ]
+          },
+          {
+            "title": "CHAPTER XIX—Amount of Pensions",
+            "slug": "csr/07",
+            "url": "https://budget.up.nic.in/Fin_H_Book/CSR/07.html",
+            "children": [
+              {
+                "title": "**",
+                "slug": "csr/07/n71",
+                "url": "https://budget.up.nic.in/Fin_H_Book/CSR/n71.html",
+                "children": []
+              },
+              {
+                "title": "*",
+                "slug": "csr/07/n72",
+                "url": "https://budget.up.nic.in/Fin_H_Book/CSR/n72.html",
+                "children": []
+              },
+              {
+                "title": "*",
+                "slug": "csr/07/n73",
+                "url": "https://budget.up.nic.in/Fin_H_Book/CSR/n73.html",
+                "children": []
+              },
+              {
+                "title": "†",
+                "slug": "csr/07/n74",
+                "url": "https://budget.up.nic.in/Fin_H_Book/CSR/n74.html",
+                "children": []
+              }
+            ]
+          },
+          {
+            "title": "CHAPTER XX—Special Rules for the Police",
+            "slug": "csr/08",
+            "url": "https://budget.up.nic.in/Fin_H_Book/CSR/08.html",
+            "children": []
+          },
+          {
+            "title": "CHAPTER XXI—Re-employment of Pensioners",
+            "slug": "csr/09",
+            "url": "https://budget.up.nic.in/Fin_H_Book/CSR/09.html",
+            "children": [
+              {
+                "title": "*",
+                "slug": "csr/09/n91",
+                "url": "https://budget.up.nic.in/Fin_H_Book/CSR/n91.html",
+                "children": []
+              },
+              {
+                "title": "*",
+                "slug": "csr/09/n92",
+                "url": "https://budget.up.nic.in/Fin_H_Book/CSR/n92.html",
+                "children": []
+              },
+              {
+                "title": "*",
+                "slug": "csr/09/n93",
+                "url": "https://budget.up.nic.in/Fin_H_Book/CSR/n93.html",
+                "children": []
+              },
+              {
+                "title": "*",
+                "slug": "csr/09/n94",
+                "url": "https://budget.up.nic.in/Fin_H_Book/CSR/n94.html",
+                "children": []
+              }
+            ]
+          },
+          {
+            "title": "CHAPTER XLVII—Applications for and Grant of Pension",
+            "slug": "csr/10",
+            "url": "https://budget.up.nic.in/Fin_H_Book/CSR/10.html",
+            "children": [
+              {
+                "title": "†",
+                "slug": "csr/10/n101",
+                "url": "https://budget.up.nic.in/Fin_H_Book/CSR/n101.html",
+                "children": []
+              }
+            ]
+          },
+          {
+            "title": "CHAPTER XLVIII—Payment of Pensions",
+            "slug": "csr/11",
+            "url": "https://budget.up.nic.in/Fin_H_Book/CSR/11.html",
+            "children": [
+              {
+                "title": "*",
+                "slug": "csr/11/n111",
+                "url": "https://budget.up.nic.in/Fin_H_Book/CSR/n111.html",
+                "children": []
+              },
+              {
+                "title": "†",
+                "slug": "csr/11/n112",
+                "url": "https://budget.up.nic.in/Fin_H_Book/CSR/n112.html",
+                "children": []
+              },
+              {
+                "title": "*",
+                "slug": "csr/11/n113",
+                "url": "https://budget.up.nic.in/Fin_H_Book/CSR/n113.html",
+                "children": []
+              },
+              {
+                "title": "*",
+                "slug": "csr/11/n114",
+                "url": "https://budget.up.nic.in/Fin_H_Book/CSR/n114.html",
+                "children": []
+              },
+              {
+                "title": "*",
+                "slug": "csr/11/n115",
+                "url": "https://budget.up.nic.in/Fin_H_Book/CSR/n115.html",
+                "children": []
+              },
+              {
+                "title": "*",
+                "slug": "csr/11/n116",
+                "url": "https://budget.up.nic.in/Fin_H_Book/CSR/n116.html",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "key": "volume6",
+      "label": "Volume VI — Works Department Financial Rules",
+      "external": {
+        "key": "volume6",
+        "label": "Volume VI — Works Department Financial Rules",
+        "note": "The source publishes this volume as ready-made chapter PDFs rather than HTML pages.",
+        "sourceUrl": "https://budget.up.nic.in/Fin_H_Book/volume6/index.html"
+      }
+    }
+  ]
+}

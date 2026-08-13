@@ -63,68 +63,41 @@
   for this phase — the source is native HTML/text, not scanned images, so
   there's nothing to OCR.
 
-## Phase 3 — Browsable UI (plan)
+## Phase 3 — Browsable UI (built)
 
-Stack decision: **Next.js + `@opennextjs/cloudflare` → Cloudflare Workers**,
-`pnpm`, deployed to `financialhandbook.exciseup.in`. Matches the pattern
-already used by `~/Projects/chinese-intel-pipeline/dashboard` (and other
-`~/Projects/*` repos live on Cloudflare with custom domains) — same
-`opennextjs-cloudflare build && deploy` flow, same `wrangler.jsonc` shape,
-so nothing new to learn operationally. UI takes visual/structural cues from
-that dashboard: Tailwind v4, shadcn components, `lucide-react`/tabler icons,
-sidebar-nav + content-pane layout.
+Lives in `web/` (this repo, not a separate one). Next.js (App Router) +
+Tailwind v4 + `@opennextjs/cloudflare` → one Cloudflare Worker, `pnpm`.
+Design system (theme toggle, reading-customization FAB with font/size/
+line-height/width/accent controls, warm paper-textured light mode) ported
+from `~/Projects/chinese-intel-pipeline/dashboard`.
 
-Source data: **not** the heavy per-volume PDFs (`pdf/`, `pdf_pages/`) — those
-are gitignored and out of scope here per your note. The UI reads from the
-already-mirrored `raw/` HTML + `manifest.json` hierarchy instead.
-
-### Recommended shape (static, no DB)
-
-The handbook doesn't change — it's a legacy static site, rebuilt only when
-re-crawled. That means the lazy-correct option is to bake content in at
-build time rather than stand up a database for it:
-
-1. **Seed step** (`web/scripts/build-content.ts` or reuse Python): walk
-   `manifest.json`, for each HTML page strip the old table-nav chrome
-   (back/home button rows, stray `<font>` tags) and keep the body content +
-   title, emit one JSON/MDX file per page under `web/content/<volume>/...`
-   plus a `nav.json` tree per volume (reusing the same `parent` chain
-   Phase 2's `merge.py` already walks — CSR's 3-level nesting included for
-   free, no special-casing).
-2. **Search**: prebuild a client-side index (`flexsearch` or `minisearch`,
-   a few MB gzipped for ~723 pages of legal text) at the same seed step —
-   no D1/FTS5, no server round-trip, no cold-start query cost. Good enough
-   at this content size; this is the one rung *below* what the sibling repos
-   use (they need D1 because their content is live/growing — this handbook
-   is neither).
-3. **Routes**: `/[volume]/[...slug]` — static/ISR page per content page,
-   sidebar tree from `nav.json`, breadcrumbs, a "view original on
-   budget.up.nic.in" link for provenance. `/search` client-side over the
-   prebuilt index.
-4. **Deploy**: `wrangler.jsonc` with just the `assets` binding (no `d1_databases`
-   block needed under this option) — `pnpm run deploy` →
-   `opennextjs-cloudflare build && opennextjs-cloudflare deploy`. Attach
-   `financialhandbook.exciseup.in` as a custom domain the same way the other
-   `~/Projects` repos do (Cloudflare dashboard → Workers → custom domains,
-   or `wrangler`); should be a five-minute step given it's already a known
-   pattern on this account.
-
-### If you want server-side/DB search instead
-
-Drop in **D1 + `drizzle-orm` + FTS5** (same as `chinese-intel-pipeline`'s
-`dashboard`): one `pages` table (slug, volume, title, breadcrumb, html) +
-one FTS5 virtual table, seeded once from the same walk as above. Worth it
-only if the UI grows features that need a real query layer (tagging,
-cross-references, admin edits) — not needed just to serve/search a fixed
-~723-page static corpus. Say the word and I'll scaffold this variant
-instead.
-
-### Open before building
-
-- New repo, or a `web/` subdirectory in this one? Sibling `~/Projects` repos
-  are one-repo-per-app; matching that means a new `up-finance-handbook-web`
-  (or similar) repo rather than nesting a pnpm/Next app inside this Python
-  crawler repo.
+- **Content**: `build_content.py` (repo root) walks `manifest.json`'s crawl
+  tree — the same `url -> parent` structure `merge.py` uses for PDF
+  bookmarks — strips the legacy back/home nav chrome from each page, and
+  emits `web/content/pages/*.json` (one per content page) + `web/content/
+  nav.json` (the full sidebar tree, CSR's 3-level nesting included for
+  free) + `web/public/search-index.json` (flat text index). 715 content
+  pages, 12 MiB. Volume VI (no HTML content on the source, pre-made chapter
+  PDFs instead) shows up in the nav as a straight link to the source.
+- **Rendering**: every content page is prerendered at build time via
+  `generateStaticParams` — no database. Confirmed working end-to-end under
+  the actual Workers runtime locally (`wrangler dev` + `populateCache
+  local`), not just `next dev`.
+- **Search**: client-side, `flexsearch` over the prebuilt index fetched
+  lazily from `/search-index.json` — no D1/FTS5, no server round-trip.
+- **Cache**: prerendered pages are served from an R2-backed incremental
+  cache (`@opennextjs/cloudflare/overrides/incremental-cache/r2-incremental-
+  cache`) rather than re-rendering per request — this was the one piece
+  that needed real infra: tested it, a bare static-assets binding 404s on
+  every dynamic-route page (only the true root route serves as a static
+  asset) until the R2 cache is populated. One R2 bucket, no ongoing
+  maintenance. See `web/README.md` for the "why not fully static" tradeoff
+  note if that bucket ever feels like overkill.
+- **Deploy**: `pnpm run deploy` (`opennextjs-cloudflare build && deploy`),
+  one Worker for UI + any future API routes. Custom domain
+  `financialhandbook.exciseup.in` attaches via the Cloudflare dashboard the
+  same way other `~/Projects/*` Workers do — not yet done (needs your
+  Cloudflare login), see `web/README.md`.
 
 ## Open questions to resolve during Phase 1 — answered
 
@@ -181,4 +154,6 @@ Volume VI's own TOC table happens to list original page ranges per
 chapter). Not implemented to avoid fabricating numbers the data doesn't
 actually support.
 
-Next action: Phase 3 (browsable UI) — lowest priority, not started.
+**Phase 3 built.** See the Phase 3 section above and `web/README.md`.
+Next action: attach the `financialhandbook.exciseup.in` custom domain and
+run the first real `pnpm run deploy` (needs your Cloudflare login).
