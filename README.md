@@ -1,0 +1,47 @@
+# UP Finance Handbook Archive
+
+The UP Finance Department's Financial Handbook (Volumes I–VII + Civil Service
+Regulations) is published publicly at
+[budget.up.nic.in/finhando.htm](https://budget.up.nic.in/finhando.htm) as a
+sprawling, decades-old table-based HTML site — thousands of individual
+`.htm`/`.html` pages nested under per-volume/per-chapter index pages, no
+search, no unified document, inconsistent encoding.
+
+This project mirrors that site, converts it into a small number of clean,
+bookmarked PDFs (one per volume, ideally), and — as a later, lower-priority
+phase — a browsable UI on top of the same crawled content.
+
+See [ROADMAP.md](ROADMAP.md) for the plan and current status.
+
+## Source structure (as surveyed 2026-08-13)
+
+`finhando.htm` is the top-level index, linking to per-volume indexes:
+
+| Volume | Entry point | Subject |
+|---|---|---|
+| Vol II (Part 2-4) | `Fin_H_Book/volume2/financial handbook ii.html` | Service conditions & allowances |
+| Vol III | `Fin_H_Book/volume3/financial handbook1.html` | Travelling Allowance Rules |
+| Vol V (Part I) | `Fin_H_Book/volume5/part1/index.html` | Account Rules |
+| Vol V (Part II) | `Fin_H_Book/volume5/part2/PREFACE.htm` | Treasury Procedure |
+| Vol VI | `Fin_H_Book/volume6/index.html` | Works department financial rules |
+| Vol VII | `Fin_H_Book/volume7/index.html` | Forest Department financial rules |
+| Civil Service Regulation | `Fin_H_Book/CSR/index.html` | Civil Services rules |
+
+Volume I and one other listed entry have no live link on the index page (dead
+in the source itself, not a crawl bug).
+
+Each volume index (e.g. `volume5/part1/index.html`) is itself a table of
+contents (chapters → sections → paragraph refs, plus appendices and forms)
+linking straight to numbered content pages (`001.html`, `002.html`, ...) —
+two levels of index, not deeper.
+
+## Related projects
+
+- `~/Projects/chinese-intel-pipeline` — has a working scraper/fetch-engine
+  pattern worth borrowing conventions from (polite fetching, no headless
+  browser unless needed, idempotent re-runs).
+- `~/Sites/pdf-markdown-pipeline` — this repo's own PDF/OCR/markdown
+  conversion pipeline exposes an API that can optionally be reused here if
+  a markdown/searchable-text layer is wanted later; not required for the
+  core "clean PDF" goal since the source is already plain HTML/text, not
+  scanned documents.
