@@ -247,6 +247,15 @@ html:not(.dark)::after {
   display: block;
   margin: 1.25rem 0 0.5rem;
 }
+/* A bare `<font face>` presentational hint is the weakest declaration in the whole
+   cascade — weaker than even an inherited author rule (.reading-content's
+   font-family, set by the reading-customization font picker). Without this rule,
+   picking any non-default reading font silently reverts Kruti Dev pages back to
+   raw ASCII. Target the element directly so it wins regardless of that picker. */
+.handbook-content font[face="Kruti Dev 010"],
+.handbook-content font[face="Kruti Dev 020"] {
+  font-family: 'Kruti Dev 020', 'Kruti Dev 010';
+}
 .handbook-content p {
   margin: 0.75rem 0;
 }

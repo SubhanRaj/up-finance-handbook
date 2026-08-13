@@ -98,6 +98,16 @@ flowchart TD
   the same encoding). This is scoped by construction — nothing in the app's own UI ever sets
   font-family to either name, so it can never leak into real Unicode Hindi or the general UI font
   stack. Don't add a second real Devanagari webfont under either of these two family names.
+- **The reading-customization font picker can silently break Kruti Dev pages — `globals.css` has
+  an explicit guard, don't remove it.** A bare `<font face="…">` attribute is the *weakest*
+  declaration in the entire CSS cascade — weaker than even an inherited author rule — so
+  `.reading-content`'s `font-family: var(--reading-font-family)` (set by `CustomizationPanel.tsx`)
+  was overriding it as soon as a user picked any non-default reading font, reverting Kruti Dev text
+  back to raw ASCII gibberish. Fixed with `.handbook-content font[face="Kruti Dev 010"/"020"]`
+  rules that target the element directly, which always outranks a presentational hint regardless of
+  ancestor rules. Verify any future reading-customization change against a Kruti Dev page (e.g.
+  `/volume5-part1/supplementary-forms`) with the font picker set to something other than the
+  default.
 - **Offline fallback is a plain HTML+vanilla-JS file (`public/offline-shell.html`), not a Next.js
   route** — it has to work when the Next.js RSC/D1 request has already failed, so it can't depend
   on the framework being reachable. It reads the requested page straight out of the raw IndexedDB
