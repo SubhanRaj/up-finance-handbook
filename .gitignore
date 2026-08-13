@@ -1,0 +1,7 @@
+.venv/
+raw/
+pdf_pages/
+pdf/
+crawl.log
+render.log
+__pycache__/

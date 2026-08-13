@@ -13,6 +13,21 @@ phase — a browsable UI on top of the same crawled content.
 
 See [ROADMAP.md](ROADMAP.md) for the plan and current status.
 
+## Usage
+
+Phases 1 and 2 are done. Requires the venv (`python3 -m venv .venv && .venv/bin/pip
+install requests beautifulsoup4 lxml chardet playwright pypdf reportlab &&
+.venv/bin/playwright install chromium`):
+
+```
+.venv/bin/python crawl.py    # Phase 1: mirror the site -> raw/ + manifest.json (resumable)
+.venv/bin/python render.py   # Phase 2a: render every content page to PDF -> pdf_pages/
+.venv/bin/python merge.py    # Phase 2b: build bookmarked, TOC'd volume PDFs + combined.pdf -> pdf/
+```
+
+`raw/`, `pdf_pages/`, and `pdf/` are gitignored (184 MiB / large PDFs) —
+not checked into this repo.
+
 ## Source structure (as surveyed 2026-08-13)
 
 `finhando.htm` is the top-level index, linking to per-volume indexes:
