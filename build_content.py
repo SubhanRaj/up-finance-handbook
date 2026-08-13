@@ -39,16 +39,27 @@ VOLUME6 = {
 }
 
 
-def slugify(text, fallback):
-    text = re.sub(r"\s+", "-", (text or "").strip().lower())
-    text = re.sub(r"[^a-z0-9\-]", "", text)
-    text = re.sub(r"-+", "-", text).strip("-")
+def slugify(text, fallback, max_len=60):
+    text = (text or "").strip().lower()
+    text = re.sub(r"[^a-z0-9]+", "-", text).strip("-")
+    text = text[:max_len].rstrip("-")
     return text or fallback
 
 
 def clean_title(text, fallback):
     text = re.sub(r"\s+", " ", (text or "")).strip()
     return text or fallback
+
+
+def is_weak_label(label):
+    """True for TOC link text that's just a bare ordinal/footnote marker
+    ("001", "01A", "*", "") rather than an actual descriptive title. Deliberately
+    narrow (mostly-digits, or a lone footnote symbol) so real short words like
+    "Fund" or "Rent" aren't mistaken for weak labels."""
+    stripped = re.sub(r"\s+", "", label or "")
+    if not stripped:
+        return True
+    return bool(re.fullmatch(r"\d{1,4}[A-Za-z]?", stripped) or re.fullmatch(r"[*†‡]{1,2}", stripped))
 
 
 def anchor_text_map(url, encoding):
@@ -94,9 +105,36 @@ def clean_body_html(raw_bytes, encoding):
     for tag in body.find_all(["meta", "script", "style"]):
         tag.decompose()
 
+    # Drop literal presentational colors from the 2000s-era source (dozens of
+    # near-random <font color="#..."> / bgcolor / align values with no contrast
+    # guarantee against a dark background) — keep `size` (drives the heading-like
+    # CSS rules) and drop everything else so text just inherits the site's own
+    # theme colors in both light and dark mode. Doesn't touch any text content.
+    for tag in body.find_all(True):
+        for attr in ("color", "bgcolor"):
+            if tag.has_attr(attr):
+                del tag[attr]
+        if tag.has_attr("style"):
+            tag["style"] = re.sub(r"color\s*:\s*[^;]+;?", "", tag["style"], flags=re.I)
+
+    # Chapter/section heading, if the page has one — its own large-font opening
+    # lines (e.g. "CHAPTER I" / "EXTENT OF APPLICATION"), used as a fallback
+    # title when the linking TOC page only gave us a bare number like "001".
+    heading = None
+    big_font = body.find_all("font", attrs={"size": ["4", "5"]}, limit=4)
+    parts = []
+    for f in big_font:
+        t = f.get_text(" ", strip=True)
+        if t:
+            parts.append(t)
+        if sum(len(p) for p in parts) > 80:
+            break
+    if parts:
+        heading = " — ".join(parts[:2])
+
     inner_html = body.decode_contents().strip()
     text = body.get_text(" ", strip=True)
-    return inner_html, text
+    return inner_html, text, heading
 
 
 class Builder:
@@ -108,6 +146,19 @@ class Builder:
             if parent:
                 self.children_map.setdefault(parent, []).append(url)
         self.search_rows = []
+        self.used_slugs = {}  # slug_prefix -> set of leaf slugs already taken, for dedup
+        self.order_counter = 0  # global document-order sequence, for prev/next + section ordering
+
+    def unique_leaf_slug(self, slug_prefix, title, fallback):
+        base = slugify(title, fallback)
+        used = self.used_slugs.setdefault(slug_prefix, set())
+        leaf = base
+        n = 2
+        while leaf in used:
+            leaf = f"{base}-{n}"
+            n += 1
+        used.add(leaf)
+        return leaf
 
     def walk(self, url, volume_key, slug_prefix, label_override=None):
         entry = self.pages.get(url)
@@ -116,9 +167,25 @@ class Builder:
 
         local = RAW_DIR / Path(entry["local_path"]).relative_to("raw")
         raw_bytes = local.read_bytes()
-        html_body, text = clean_body_html(raw_bytes, entry.get("encoding"))
-        title = clean_title(label_override or entry.get("title"), local.stem)
-        slug = f"{slug_prefix}/{slugify(local.stem, local.stem)}" if slug_prefix else volume_key
+        html_body, text, heading = clean_body_html(raw_bytes, entry.get("encoding"))
+        # The linking TOC page's anchor text is often just a bare number ("001") for
+        # several volumes (vol2/vol3/vol7/CSR don't give real link text like vol5's
+        # does) — prefer the page's own chapter heading in that case. Footnote-style
+        # pages (CSR's *, † note pages) have no real heading — their biggest <font>
+        # block is the footnote body itself, so only trust "heading" when it's
+        # short enough to plausibly be a title, not a paragraph.
+        best_label = label_override
+        if is_weak_label(best_label):
+            short_heading = heading if heading and len(heading) <= 100 else None
+            best_label = short_heading or entry.get("title")
+        title = clean_title(best_label, local.stem)
+        if slug_prefix:
+            leaf = self.unique_leaf_slug(slug_prefix, title, local.stem)
+            slug = f"{slug_prefix}/{leaf}"
+        else:
+            slug = volume_key
+        self.order_counter += 1
+        order = self.order_counter
 
         node = {"title": title, "slug": slug, "url": url, "children": []}
 
@@ -130,6 +197,7 @@ class Builder:
             "volume": volume_key,
             "sourceUrl": url,
             "html": html_body,
+            "order": order,
         }, ensure_ascii=False))
 
         if text.strip():

@@ -3,7 +3,8 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
 import Link from 'next/link';
 import { Document, type DocumentValue } from 'flexsearch';
-import { IconSearch, IconLoader2, IconFileText } from '@tabler/icons-react';
+import { IconSearch, IconLoader2, IconFileText, IconDatabase } from '@tabler/icons-react';
+import { db } from '@/lib/client-db';
 
 interface Row {
 	slug: string;
@@ -15,6 +16,7 @@ interface Row {
 
 export default function SearchPage() {
 	const [rows, setRows] = useState<Row[] | null>(null);
+	const [fullText, setFullText] = useState(false);
 	const [query, setQuery] = useState('');
 	const [results, setResults] = useState<Row[]>([]);
 	const indexRef = useRef<Document<Row, true> | null>(null);
@@ -24,22 +26,38 @@ export default function SearchPage() {
 		return m;
 	}, [rows]);
 
+	const buildIndex = (data: Row[], isFullText: boolean) => {
+		const index = new Document<Row, true>({
+			document: {
+				id: 'slug',
+				index: ['title', 'text'],
+				store: true,
+			},
+			tokenize: 'forward',
+		});
+		data.forEach((row, i) => index.add({ ...row, slug: row.slug || String(i) }));
+		indexRef.current = index;
+		setRows(data);
+		setFullText(isFullText);
+	};
+
 	useEffect(() => {
-		fetch('/search-index.json')
-			.then(r => r.json() as Promise<Row[]>)
-			.then((data) => {
-				const index = new Document<Row, true>({
-					document: {
-						id: 'slug',
-						index: ['title', 'text'],
-						store: true,
-					},
-					tokenize: 'forward',
-				});
-				data.forEach((row, i) => index.add({ ...row, slug: row.slug || String(i) }));
-				indexRef.current = index;
-				setRows(data);
-			});
+		// Prefer the full-corpus IndexedDB cache (CorpusSync.tsx) — full page text,
+		// not the ~4000-char excerpts in the prebuilt index. Falls back to that
+		// smaller prebuilt index (fetched immediately, no IndexedDB wait) if the
+		// background cache hasn't finished yet, or storage is unavailable.
+		(async () => {
+			try {
+				const cached = await db.pages.toArray();
+				if (cached.length > 0) {
+					buildIndex(cached, true);
+					return;
+				}
+			} catch { /* IndexedDB unavailable (private browsing etc.) */ }
+
+			const res = await fetch('/search-index.json');
+			buildIndex(await res.json(), false);
+		})();
 	}, []);
 
 	useEffect(() => {
@@ -62,15 +80,26 @@ export default function SearchPage() {
 	}, [query, rowsBySlug]);
 
 	return (
-		<div className="mx-auto px-4 sm:px-10 py-10" style={{ maxWidth: 'var(--reading-width, 48rem)' }}>
+		<div className="mx-auto px-4 sm:px-10 py-10 page-transition" style={{ maxWidth: 'var(--reading-width, 48rem)' }}>
 			<header className="mb-8 pb-6 border-b border-slate-200 dark:border-slate-800">
 				<p className="text-xs font-bold tracking-widest uppercase text-accent mb-2 flex items-center gap-1.5">
 					<IconSearch size={13} />
 					Search
 				</p>
-				<h1 className="font-serif text-4xl text-slate-900 dark:text-slate-100 tracking-tight mb-4">
-					Search the Handbook
-				</h1>
+				<div className="flex items-center gap-3 mb-4">
+					<h1 className="font-serif text-4xl text-slate-900 dark:text-slate-100 tracking-tight">
+						Search the Handbook
+					</h1>
+					{fullText && (
+						<span
+							className="inline-flex items-center gap-1 text-[10px] font-bold tracking-wide uppercase px-2 py-1 rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-400"
+							title="Searching the full text of every page, cached on your device"
+						>
+							<IconDatabase size={11} />
+							Full text
+						</span>
+					)}
+				</div>
 				<div className="relative">
 					<IconSearch size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
 					<input

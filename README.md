@@ -30,13 +30,18 @@ not checked into this repo.
 
 ### Web UI (`web/`)
 
+**Live: [financialhandbook.exciseup.in](https://financialhandbook.exciseup.in)**
+
 ```
 .venv/bin/python build_content.py    # raw/ + manifest.json -> web/content/ + web/public/search-index.json
 cd web && pnpm install && pnpm dev   # http://localhost:3000
 ```
 
-See [web/README.md](web/README.md) for local dev and Cloudflare Workers
-deploy instructions.
+Content is served from Cloudflare D1, not from static files — see
+[web/README.md](web/README.md) for the full regenerate/seed/deploy flow and
+[CLAUDE.md](CLAUDE.md) / [web/CLAUDE.md](web/CLAUDE.md) for the rules an AI
+agent must follow when working in this repo (includes architecture
+diagrams).
 
 ## Source structure (as surveyed 2026-08-13)
 

@@ -6,7 +6,7 @@ export default function HomePage() {
 	const { volumes } = getNav();
 
 	return (
-		<div className="mx-auto px-4 sm:px-10 py-10" style={{ maxWidth: 'var(--reading-width, 48rem)' }}>
+		<div className="mx-auto px-4 sm:px-10 py-10 page-transition" style={{ maxWidth: 'var(--reading-width, 48rem)' }}>
 			<header className="mb-10 pb-6 border-b border-slate-200 dark:border-slate-800">
 				<p className="text-xs font-bold tracking-widest uppercase text-accent mb-2 flex items-center gap-1.5">
 					<IconBook2 size={13} />

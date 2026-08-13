@@ -73,31 +73,39 @@ from `~/Projects/chinese-intel-pipeline/dashboard`.
 
 - **Content**: `build_content.py` (repo root) walks `manifest.json`'s crawl
   tree — the same `url -> parent` structure `merge.py` uses for PDF
-  bookmarks — strips the legacy back/home nav chrome from each page, and
-  emits `web/content/pages/*.json` (one per content page) + `web/content/
-  nav.json` (the full sidebar tree, CSR's 3-level nesting included for
-  free) + `web/public/search-index.json` (flat text index). 715 content
-  pages, 12 MiB. Volume VI (no HTML content on the source, pre-made chapter
-  PDFs instead) shows up in the nav as a straight link to the source.
-- **Rendering**: every content page is prerendered at build time via
-  `generateStaticParams` — no database. Confirmed working end-to-end under
-  the actual Workers runtime locally (`wrangler dev` + `populateCache
-  local`), not just `next dev`.
+  bookmarks — strips the legacy back/home nav chrome *and* literal inline
+  colors (2000s-era `color`/`bgcolor` attributes with no dark-mode contrast
+  guarantee — text now just inherits the site's own theme) from each page,
+  and emits `web/content/pages/*.json` (regenerable intermediate, gitignored)
+  + `web/content/nav.json` (the committed sidebar tree, CSR's 3-level
+  nesting included for free) + `web/public/search-index.json`. 715 content
+  pages. Volume VI (no HTML content on the source, pre-made chapter PDFs
+  instead) shows up in the nav as a straight link to the source. Sidebar
+  titles prefer each page's own chapter heading over bare TOC numbers
+  ("001") where the source's own link text is too weak to use.
+- **Storage**: `generate_seed_sql.py` turns those page JSONs into
+  `web/seed.sql`, applied to **Cloudflare D1** (`web/src/db/schema.ts`, one
+  `pages` table, Drizzle ORM) via `wrangler d1 execute`. Content routes
+  render dynamically per request from D1 — deliberately *not*
+  statically generated. An earlier version used `generateStaticParams` +
+  an R2-backed incremental cache, but R2 requires a card on file even for
+  free-tier usage; D1 doesn't, matching every other `~/Projects/*` app on
+  this account. See `web/README.md`'s "Why D1 and not R2" note.
 - **Search**: client-side, `flexsearch` over the prebuilt index fetched
-  lazily from `/search-index.json` — no D1/FTS5, no server round-trip.
-- **Cache**: prerendered pages are served from an R2-backed incremental
-  cache (`@opennextjs/cloudflare/overrides/incremental-cache/r2-incremental-
-  cache`) rather than re-rendering per request — this was the one piece
-  that needed real infra: tested it, a bare static-assets binding 404s on
-  every dynamic-route page (only the true root route serves as a static
-  asset) until the R2 cache is populated. One R2 bucket, no ongoing
-  maintenance. See `web/README.md` for the "why not fully static" tradeoff
-  note if that bucket ever feels like overkill.
+  lazily from `/search-index.json` — no D1 query for search.
+- **Download**: `/api/download/[...slug]` converts a page's (or, with
+  `?scope=section`, a whole chapter's) D1-stored HTML to Markdown on
+  request via `node-html-markdown` (DOM-free, Workers-safe) — no separate
+  Markdown storage.
+- **PWA/meta**: generated icon set (amber book glyph, matching the app's
+  accent color), `manifest.json`, a network-first service worker, dynamic
+  per-page OG/Twitter tags.
 - **Deploy**: `pnpm run deploy` (`opennextjs-cloudflare build && deploy`),
-  one Worker for UI + any future API routes. Custom domain
-  `financialhandbook.exciseup.in` attaches via the Cloudflare dashboard the
-  same way other `~/Projects/*` Workers do — not yet done (needs your
-  Cloudflare login), see `web/README.md`.
+  one Worker for UI + any future API routes. Custom domain wired via
+  `wrangler.jsonc`'s `routes: [{ pattern: "financialhandbook.exciseup.in",
+  custom_domain: true }]`, same pattern as `pac-recovery-portal` /
+  `up-excise-spatial-revenue-optimizer`. **Live at
+  [financialhandbook.exciseup.in](https://financialhandbook.exciseup.in).**
 
 ## Open questions to resolve during Phase 1 — answered
 
@@ -154,6 +162,8 @@ Volume VI's own TOC table happens to list original page ranges per
 chapter). Not implemented to avoid fabricating numbers the data doesn't
 actually support.
 
-**Phase 3 built.** See the Phase 3 section above and `web/README.md`.
-Next action: attach the `financialhandbook.exciseup.in` custom domain and
-run the first real `pnpm run deploy` (needs your Cloudflare login).
+**Phase 3 built and deployed.** Live at
+[financialhandbook.exciseup.in](https://financialhandbook.exciseup.in). See
+the Phase 3 section above, `web/README.md`, and `web/CLAUDE.md` (request-flow
+diagram + rules to preserve). No further action needed; future work is
+incremental UI/content polish, not infrastructure.

@@ -5,14 +5,22 @@
 	"compatibility_flags": [
 		"nodejs_compat"
 	],
+	// matches the other exciseup.in workers (pac-recovery-portal, sro) — the *.workers.dev
+	// URL is retired in favour of the custom domain from the start.
+	"workers_dev": false,
+	"routes": [
+		{ "pattern": "financialhandbook.exciseup.in", "custom_domain": true }
+	],
 	"assets": {
 		"directory": ".open-next/assets",
 		"binding": "ASSETS"
 	},
-	"r2_buckets": [
+	"d1_databases": [
 		{
-			"binding": "NEXT_INC_CACHE_R2_BUCKET",
-			"bucket_name": "up-finance-handbook-cache"
+			"binding": "DB",
+			"database_name": "up-finance-handbook-db",
+			"database_id": "4699709e-001c-4af1-9649-b5e2cb79df60",
+			"migrations_dir": "migrations"
 		}
 	]
 }

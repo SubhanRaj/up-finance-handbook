@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -14,14 +14,44 @@ import {
 } from '@tabler/icons-react';
 import ThemeToggle from './ThemeToggle';
 import NavTree from './NavTree';
-import type { NavVolume } from '@/lib/content';
+import type { NavNode, NavVolume } from '@/lib/content';
 
 const CustomizationPanel = dynamic(() => import('./CustomizationPanel'), { ssr: false });
+const CorpusSync = dynamic(() => import('./CorpusSync'), { ssr: false });
+
+function findTitle(node: NavNode, slug: string): string | null {
+	if (node.slug === slug) return node.title;
+	for (const child of node.children) {
+		const found = findTitle(child, slug);
+		if (found) return found;
+	}
+	return null;
+}
+
+function volumeKeyForSlug(volumes: NavVolume[], slug: string): string | null {
+	const vol = volumes.find(v => v.tree && (v.tree.slug === slug || slug.startsWith(v.tree.slug + '/')));
+	return vol?.key ?? null;
+}
 
 export default function Shell({ volumes, children }: { volumes: NavVolume[]; children: React.ReactNode }) {
 	const [sidebarOpen, setSidebarOpen] = useState(false);
 	const pathname = usePathname();
 	const activeSlug = pathname === '/' ? null : pathname.replace(/^\//, '');
+	const activeTitle = activeSlug
+		? volumes.map(v => v.tree && findTitle(v.tree, activeSlug)).find(Boolean) ?? null
+		: null;
+
+	// Accordion: only one volume's chapter tree open at a time. Starts on whichever
+	// volume the current page belongs to; switches along as navigation moves between
+	// volumes (breadcrumb, search, prev/next), without fighting a manual toggle click.
+	const [expandedVolume, setExpandedVolume] = useState<string | null>(() => activeSlug ? volumeKeyForSlug(volumes, activeSlug) : null);
+	useEffect(() => {
+		if (activeSlug) {
+			const vk = volumeKeyForSlug(volumes, activeSlug);
+			if (vk) setExpandedVolume(vk);
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [activeSlug]);
 
 	const closeSidebarMobile = () => { if (window.innerWidth < 768) setSidebarOpen(false); };
 
@@ -75,7 +105,13 @@ export default function Shell({ volumes, children }: { volumes: NavVolume[]; chi
 					{volumes.map(vol => (
 						<div key={vol.key} className="mb-3">
 							{vol.tree ? (
-								<NavTree node={vol.tree} depth={0} activeSlug={activeSlug} onNavigate={closeSidebarMobile} />
+								<NavTree
+								node={vol.tree} depth={0} activeSlug={activeSlug} onNavigate={closeSidebarMobile}
+								controlled={{
+									open: expandedVolume === vol.key,
+									onToggle: () => setExpandedVolume(v => v === vol.key ? null : vol.key),
+								}}
+							/>
 							) : vol.external ? (
 								<a
 									href={vol.external.sourceUrl}
@@ -123,10 +159,10 @@ export default function Shell({ volumes, children }: { volumes: NavVolume[]; chi
 				<IconMenu2 size={20} />
 			</button>
 			<div className="flex-1 min-w-0">
-				<p className="text-xs font-bold tracking-widest uppercase text-accent leading-none mb-0.5">
-					UP Finance Handbook
+				<p className="text-[10px] font-bold tracking-widest uppercase text-accent leading-none mb-0.5">
+					{activeTitle ? 'UP Finance Handbook' : 'UP Finance Handbook Archive'}
 				</p>
-				<p className="text-sm font-medium text-slate-900 dark:text-slate-100 truncate">Archive</p>
+				<p className="text-sm font-medium text-slate-900 dark:text-slate-100 truncate">{activeTitle ?? 'Archive'}</p>
 			</div>
 			<Link href="/search" className="p-2 rounded-md text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="Search">
 				<IconSearch size={18} />
@@ -144,6 +180,7 @@ export default function Shell({ volumes, children }: { volumes: NavVolume[]; chi
 				</div>
 			</main>
 			<CustomizationPanel drawerOpen={false} />
+			<CorpusSync />
 		</div>
 	);
 }
