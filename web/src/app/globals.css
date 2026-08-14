@@ -52,7 +52,7 @@
 	--color-border: var(--border);
 	--color-destructive: var(--destructive);
 	--color-accent-foreground: var(--accent-foreground);
-	--color-accent: var(--accent);
+	--color-accent: var(--ui-accent);
 	--color-muted-foreground: var(--muted-foreground);
 	--color-muted: var(--muted);
 	--color-secondary-foreground: var(--secondary-foreground);
@@ -129,6 +129,11 @@ html[data-accent="red"]     { --ui-accent: #dc2626; --ui-accent-dark: #ef4444; }
 html[data-accent="blue"]    { --ui-accent: #2563eb; --ui-accent-dark: #60a5fa; }
 html[data-accent="emerald"] { --ui-accent: #059669; --ui-accent-dark: #34d399; }
 html[data-accent="violet"]  { --ui-accent: #7c3aed; --ui-accent-dark: #a78bfa; }
+/* Makes --ui-accent itself theme-aware (not just the manual .text-accent/.dark
+   .text-accent pairs below), so Tailwind-generated utilities that read the
+   --color-accent theme token (e.g. prose-a:text-accent, which can't be given a
+   manual override the same way) also get the right dark-mode contrast. */
+.dark { --ui-accent: var(--ui-accent-dark); }
 
 .text-accent              { color: var(--ui-accent); }
 .dark .text-accent        { color: var(--ui-accent-dark); }

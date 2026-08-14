@@ -148,6 +148,21 @@ flowchart TD
   *and* `[...slug]/page.tsx`'s `generateMetadata`, both pointing at `/icon-512.png` — Next's
   metadata merging replaces a parent's whole `openGraph` object when a child route defines its own,
   so the image has to be set in both places, not just the root).
+- **There are two unrelated things both called "accent" — know which one a given class touches.**
+  `--accent`/`--accent-foreground` (defined in `:root`/`.dark` near the top of `globals.css`) are
+  shadcn scaffold tokens, a neutral near-white/near-black pair meant for subtle hover backgrounds;
+  nothing in this app's own components actually uses them. `--ui-accent`/`--ui-accent-dark` are the
+  real brand accent (amber by default, switchable via `data-accent`), consumed by this app's own
+  hand-written `.text-accent`/`.bg-accent`/`.border-accent`/etc. classes further down the file. The
+  `@theme inline` block's `--color-accent: var(--ui-accent)` line is what makes *Tailwind-generated*
+  utilities that reference the theme's "accent" color — anything using a `text-accent`/`bg-accent`
+  class Tailwind itself resolves, including compound modifiers like `prose-a:text-accent` that can't
+  be given a hand-written override — pick up the brand color instead of the unused shadcn one. Don't
+  point `--color-accent` back at shadcn's `--accent`; a class name matching "accent" anywhere in
+  this app should always mean the brand color. `.dark { --ui-accent: var(--ui-accent-dark); }` is
+  what makes `--ui-accent` itself resolve to the correct value per theme for those Tailwind-derived
+  utilities — the hand-written classes additionally hardcode their own `.dark` variant for the same
+  reason, which is redundant with this rule but harmless.
 
 ## Design system
 
