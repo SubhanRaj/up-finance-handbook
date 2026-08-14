@@ -160,6 +160,32 @@ def rewrite_links(html_fragment, own_url, url_to_slug):
             a["href"] = f"/{slug}"
         else:
             a.unwrap()
+
+    # TOC table cells commonly look like "<a>020</a>1—7" — the crawled page's own
+    # link code immediately followed, with no separating space, by the *original
+    # printed book*'s page range (meaningless on the web, nothing paginates here).
+    # Rendered raw that reads as one garbled number ("0201—7"). Fold it into the
+    # link instead of leaving it dangling: any <td> with exactly one internal link
+    # plus other text becomes one link over the whole cell, so the old page
+    # numbers are still visible but are now part of a working link to our page
+    # rather than dead trailing digits. Formatting (font size etc.) is untouched —
+    # only an <a> wrapper is added around the cell's existing children.
+    for td in soup.find_all("td"):
+        links = td.find_all("a", href=True)
+        if len(links) != 1:
+            continue
+        a = links[0]
+        href = a["href"]
+        if not href.startswith("/"):
+            continue
+        if td.get_text(strip=True) == a.get_text(strip=True):
+            continue
+        a.unwrap()
+        wrapper = soup.new_tag("a", href=href)
+        for child in list(td.children):
+            wrapper.append(child.extract())
+        td.append(wrapper)
+
     return soup.div.decode_contents().strip()
 
 

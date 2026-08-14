@@ -74,6 +74,15 @@ Rules to preserve:
   page we built (genuinely dead even on the source) get unwrapped to plain text, and real
   external links are left alone. Don't collapse this back into a single pass — a page can link
   forward to a sibling slug that isn't known yet mid-walk.
+- **TOC reference cells with dangling old book page numbers get folded into the link, not left
+  bare.** A typical index-table cell is `<a>020</a>1—7` — the crawled page's own link code
+  immediately followed by the *original printed book*'s page range, with no separating space,
+  which rendered as one garbled number ("0201—7"). `rewrite_links()`'s second pass finds every
+  `<td>` with exactly one internal link plus other text and wraps the whole cell (link + trailing
+  page range) in a single `<a>`, so the old page numbers stay visible but are now part of a
+  working link instead of dead trailing digits. Only fires when the link doesn't already cover
+  the whole cell (`td.get_text() != a.get_text()`), so already-fully-linked chapter titles are
+  untouched.
 
 ## Design system
 
