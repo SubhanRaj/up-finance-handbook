@@ -24,7 +24,7 @@ flowchart LR
     Content -->|generate_seed_sql.py| Seed["web/seed.sql\n(gitignored)"]
     Seed -->|wrangler d1 execute| D1[("Cloudflare D1\npages table")]
     D1 --> Worker["Next.js Worker\n(@opennextjs/cloudflare)"]
-    Content -.nav.json only.-> Worker
+    Content -.nav data only.-> Worker
     Worker --> Live(["financialhandbook.exciseup.in"])
 
     style Live fill:#16a34a,color:#fff
