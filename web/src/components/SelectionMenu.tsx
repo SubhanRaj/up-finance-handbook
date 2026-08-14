@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { usePathname } from 'next/navigation';
-import { IconCopy, IconBookmark, IconCheck } from '@tabler/icons-react';
+import { IconCopy, IconBookmark, IconCheck, IconShare2 } from '@tabler/icons-react';
 import { db, notifyBookmarksChanged } from '@/lib/client-db';
 import { findPageContext } from '@/lib/page-context';
 import type { NavVolume } from '@/lib/content';
@@ -15,12 +15,14 @@ interface MenuState {
 
 export default function SelectionMenu({ volumes }: { volumes: NavVolume[] }) {
 	const [menu, setMenu] = useState<MenuState | null>(null);
-	const [feedback, setFeedback] = useState<'copied' | 'saved' | null>(null);
+	const [feedback, setFeedback] = useState<'copied' | 'saved' | 'shared' | null>(null);
+	const [canShare, setCanShare] = useState(false);
 	const pathname = usePathname();
 	const menuRef = useRef<HTMLDivElement>(null);
 
 	const hide = useCallback(() => { setMenu(null); setFeedback(null); }, []);
 
+	useEffect(() => { setCanShare(!!navigator.share); }, []);
 	useEffect(() => { hide(); }, [pathname, hide]);
 
 	useEffect(() => {
@@ -34,7 +36,7 @@ export default function SelectionMenu({ volumes }: { volumes: NavVolume[] }) {
 
 			const rect = sel.getRangeAt(0).getBoundingClientRect();
 			if (rect.width === 0 && rect.height === 0) { hide(); return; }
-			const MENU_WIDTH = 96;
+			const MENU_WIDTH = canShare ? 148 : 96;
 			const left = Math.min(Math.max(rect.left + rect.width / 2 - MENU_WIDTH / 2, 8), window.innerWidth - MENU_WIDTH - 8);
 			const top = Math.max(rect.top - 44, 8);
 			setFeedback(null);
@@ -47,7 +49,7 @@ export default function SelectionMenu({ volumes }: { volumes: NavVolume[] }) {
 			document.removeEventListener('mouseup', onSelect);
 			document.removeEventListener('touchend', onSelect);
 		};
-	}, [hide]);
+	}, [hide, canShare]);
 
 	useEffect(() => {
 		if (!menu) return;
@@ -75,6 +77,15 @@ export default function SelectionMenu({ volumes }: { volumes: NavVolume[] }) {
 		} catch { /* clipboard unavailable */ }
 	};
 
+	const handleShare = async () => {
+		const ctx = findPageContext(volumes, pathname.replace(/^\//, ''));
+		try {
+			await navigator.share({ text: menu.text, title: ctx?.title, url: window.location.href });
+		} catch { /* user cancelled */ return; }
+		setFeedback('shared');
+		setTimeout(hide, 700);
+	};
+
 	const handleBookmark = async () => {
 		const ctx = findPageContext(volumes, pathname.replace(/^\//, ''));
 		await db.bookmarks.add({
@@ -98,7 +109,7 @@ export default function SelectionMenu({ volumes }: { volumes: NavVolume[] }) {
 			{feedback ? (
 				<span className="flex items-center gap-1 px-2 py-1 text-xs text-emerald-600 dark:text-emerald-400">
 					<IconCheck size={13} />
-					{feedback === 'copied' ? 'Copied' : 'Saved'}
+					{feedback === 'copied' ? 'Copied' : feedback === 'shared' ? 'Shared' : 'Saved'}
 				</span>
 			) : (
 				<>
@@ -117,6 +128,18 @@ export default function SelectionMenu({ volumes }: { volumes: NavVolume[] }) {
 					>
 						<IconBookmark size={13} /> Bookmark
 					</button>
+					{canShare && (
+						<>
+							<div className="w-px h-4 bg-slate-200 dark:bg-slate-700" />
+							<button
+								onMouseDown={guard}
+								onClick={handleShare}
+								className="flex items-center gap-1 px-2 py-1.5 rounded-md text-xs text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+							>
+								<IconShare2 size={13} /> Share
+							</button>
+						</>
+					)}
 				</>
 			)}
 		</div>

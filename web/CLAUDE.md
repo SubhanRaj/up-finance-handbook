@@ -122,6 +122,12 @@ flowchart TD
   `src/lib/page-context.ts`, which only imports `NavNode`/`NavVolume` as types from
   `content.ts` — never import `content.ts` itself into a client component, it also pulls in
   `@opennextjs/cloudflare` and Drizzle, which are server/Workers-only.
+- **Share uses the Web Share API with a clipboard fallback, since PWA-installed users have no
+  address bar to copy a URL from.** `ShareButton.tsx` (page/chapter/volume header — the same
+  `[...slug]` route serves all three, so one button covers them) and `SelectionMenu.tsx`'s Share
+  action (selected text) both call `navigator.share()` when present and fall back to
+  `navigator.clipboard.writeText()` with a "Link copied" confirmation when it isn't (most desktop
+  browsers). Feature-detect with `!!navigator.share`, not a UA check.
 - **Offline fallback is a plain HTML+vanilla-JS file (`public/offline-shell.html`), not a Next.js
   route** — it has to work when the Next.js RSC/D1 request has already failed, so it can't depend
   on the framework being reachable. It reads the requested page straight out of the raw IndexedDB

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { IconExternalLink, IconChevronRight, IconChevronLeft, IconDownload, IconFileDownload } from '@tabler/icons-react';
 import { loadPage, flattenNav, getPrevNext } from '@/lib/content';
+import ShareButton from '@/components/ShareButton';
 import type { Metadata } from 'next';
 
 async function resolve(slugParts: string[]) {
@@ -55,6 +56,7 @@ export default async function ContentPage({ params }: { params: Promise<{ slug: 
 					{page.title}
 				</h1>
 				<div className="flex flex-wrap items-center gap-x-5 gap-y-2 mt-3">
+					<ShareButton title={page.title} path={page.slug} />
 					<a
 						href={page.sourceUrl}
 						target="_blank"
