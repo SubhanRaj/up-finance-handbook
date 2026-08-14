@@ -33,11 +33,13 @@ export const metadata: Metadata = {
 		siteName: "UP Finance Handbook Archive",
 		title: "UP Finance Handbook Archive",
 		description: "A clean, searchable mirror of the UP Finance Department's Financial Handbook.",
+		images: [{ url: "/icon-512.png", width: 512, height: 512 }],
 	},
 	twitter: {
 		card: "summary",
 		title: "UP Finance Handbook Archive",
 		description: "A clean, searchable mirror of the UP Finance Department's Financial Handbook.",
+		images: ["/icon-512.png"],
 	},
 	icons: {
 		icon: [

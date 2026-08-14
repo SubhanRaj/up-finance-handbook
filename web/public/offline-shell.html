@@ -25,23 +25,39 @@
     border-bottom: 3px solid #b45309;
     padding-bottom: 0.75rem;
     margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
   }
+  .banner a { font-family: system-ui, sans-serif; text-transform: none; letter-spacing: normal; font-weight: 600; }
   h1 { font-size: 1.75rem; margin-bottom: 0.25rem; }
   a { color: #b45309; }
   table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
   td, th { border: 1px solid light-dark(#d6d3d1, #404040); padding: 0.4rem 0.6rem; vertical-align: top; }
   #status { font-family: system-ui, sans-serif; font-size: 0.95rem; opacity: 0.7; }
+  #browse { font-family: system-ui, sans-serif; font-size: 0.9rem; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid light-dark(#d6d3d1, #404040); }
+  #browse h2 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; margin-bottom: 0.75rem; }
+  #browse .volume { margin-bottom: 1rem; }
+  #browse .volume-label { font-weight: 600; opacity: 0.8; margin-bottom: 0.3rem; }
+  #browse ul { list-style: none; margin: 0; padding: 0; }
+  #browse li { padding: 0.15rem 0; }
 </style>
 </head>
 <body>
-  <p class="banner">Offline — showing a cached copy</p>
+  <p class="banner">
+    <span>Offline — showing a cached copy</span>
+    <a href="/">&larr; Home</a>
+  </p>
   <div id="status">Looking for this page in your offline cache…</div>
   <div id="content"></div>
+  <div id="browse"></div>
   <script>
     (function () {
       var slug = location.pathname.replace(/^\/+/, '');
       var statusEl = document.getElementById('status');
       var contentEl = document.getElementById('content');
+      var browseEl = document.getElementById('browse');
 
       function show(page) {
         statusEl.style.display = 'none';
@@ -59,17 +75,60 @@
         statusEl.textContent = "This page hasn't been cached on this device yet — reconnect once to make it available offline.";
       }
 
-      if (!('indexedDB' in window) || !slug) { notFound(); return; }
+      // No sidebar/nav tree here (that's nav.json, only bundled into the Next.js
+      // app), but every cached page's own `volume` field is enough to build a
+      // flat "what's available right now" list from the same IndexedDB store.
+      function renderBrowseList(pages) {
+        if (!pages.length) return;
+        var byVolume = {};
+        pages.forEach(function (p) {
+          (byVolume[p.volume] = byVolume[p.volume] || []).push(p);
+        });
+        var h2 = document.createElement('h2');
+        h2.textContent = 'Available offline (' + pages.length + ' pages)';
+        browseEl.appendChild(h2);
+        Object.keys(byVolume).sort().forEach(function (vol) {
+          var group = document.createElement('div');
+          group.className = 'volume';
+          var label = document.createElement('div');
+          label.className = 'volume-label';
+          label.textContent = vol;
+          var ul = document.createElement('ul');
+          byVolume[vol]
+            .sort(function (a, b) { return a.title.localeCompare(b.title); })
+            .forEach(function (p) {
+              var li = document.createElement('li');
+              var a = document.createElement('a');
+              a.href = '/' + p.slug;
+              a.textContent = p.title;
+              li.appendChild(a);
+              ul.appendChild(li);
+            });
+          group.append(label, ul);
+          browseEl.appendChild(group);
+        });
+      }
+
+      if (!('indexedDB' in window)) { notFound(); return; }
       var req = indexedDB.open('up-finance-handbook');
       req.onerror = notFound;
       req.onsuccess = function () {
         try {
           var tx = req.result.transaction('pages', 'readonly');
-          var getReq = tx.objectStore('pages').get(slug);
-          getReq.onsuccess = function () {
-            if (getReq.result) show(getReq.result); else notFound();
-          };
-          getReq.onerror = notFound;
+          var store = tx.objectStore('pages');
+
+          if (slug) {
+            var getReq = store.get(slug);
+            getReq.onsuccess = function () {
+              if (getReq.result) show(getReq.result); else notFound();
+            };
+            getReq.onerror = notFound;
+          } else {
+            statusEl.style.display = 'none';
+          }
+
+          var allReq = store.getAll();
+          allReq.onsuccess = function () { renderBrowseList(allReq.result || []); };
         } catch (e) { notFound(); }
       };
     })();

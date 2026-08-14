@@ -136,7 +136,20 @@ flowchart TD
   content for it. **Reference it as `/offline-shell` (no extension) everywhere** (`sw.js`'s
   `PRECACHE` array and its fetch-fallback `caches.match(...)`) — requesting the `.html` URL
   directly gets a 307 to the extensionless path (Next.js's public-folder clean-URL behavior), and
-  a cached 307 doesn't serve real content when the service worker looks it up.
+  a cached 307 doesn't serve real content when the service worker looks it up. It has no sidebar
+  (no access to `nav.json`, which is only bundled into the Next.js app) but does have a Home link
+  and a flat "Available offline" list built at runtime from the same `pages` IndexedDB store
+  (`store.getAll()`, grouped by each cached row's own `volume` field) — don't mistake the missing
+  sidebar for a missing feature; it's a deliberate, framework-free substitute.
+- **`src/app/favicon.ico` must not come back.** It was a leftover `create-next-app` scaffold file
+  (the default Vercel triangle icon) that Next.js's file-convention system serves and links
+  regardless of the real icon set already registered via `metadata.icons` — some link-preview
+  scrapers fall back to the favicon when no `og:image` is present, which is how the Vercel logo
+  ended up in share previews. The real icons are `metadata.icons` (root `layout.tsx`) plus
+  `openGraph.images`/`twitter.images` (root `layout.tsx` and `[...slug]/page.tsx`'s
+  `generateMetadata`, both pointing at `/icon-512.png` — Next.js metadata merging replaces a
+  parent's whole `openGraph` object when a child route defines its own, so the image has to be set
+  in both places, not just the root).
 
 ## Design system
 
