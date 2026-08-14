@@ -1,4 +1,14 @@
-# UP Finance Handbook Archive
+<p align="center">
+  <img src="web/public/icon-512.png" alt="UP Finance Handbook Archive logo" width="96" height="96">
+</p>
+
+<h1 align="center">UP Finance Handbook Archive</h1>
+
+<p align="center">
+  <a href="https://financialhandbook.exciseup.in"><img alt="Live site" src="https://img.shields.io/badge/live-financialhandbook.exciseup.in-16a34a"></a>
+  <img alt="Built with Next.js" src="https://img.shields.io/badge/web-Next.js%20%2B%20Cloudflare%20Workers-b45309">
+  <img alt="Pipeline" src="https://img.shields.io/badge/pipeline-Python-3776AB">
+</p>
 
 The UP Finance Department's Financial Handbook (Volumes I–VII + Civil Service
 Regulations) is published publicly at
@@ -12,6 +22,33 @@ bookmarked PDFs (one per volume, ideally), and provides a browsable,
 searchable web UI (`web/`) on top of the same crawled content.
 
 See [ROADMAP.md](ROADMAP.md) for the plan and current status.
+
+## How it works
+
+```mermaid
+flowchart LR
+    Site[("budget.up.nic.in\n(live site)")] -->|crawl.py| Raw["raw/\n+ manifest.json"]
+
+    Raw -->|render.py + Chromium| PdfPages["pdf_pages/"]
+    PdfPages -->|merge.py| PDFs["pdf/*.pdf\nbookmarked, per volume"]
+
+    Raw -->|build_content.py| Content["web/content/\nnav.json + pages/*.json"]
+    Content -->|generate_seed_sql.py| Seed["web/seed.sql"]
+    Seed -->|wrangler d1 execute| D1[("Cloudflare D1\npages table")]
+    D1 --> Worker["Next.js Worker\n(@opennextjs/cloudflare)"]
+    Content -.nav.json only.-> Worker
+    Worker --> Live(["financialhandbook.exciseup.in"])
+
+    style Live fill:#16a34a,color:#fff
+    style D1 fill:#b45309,color:#fff
+```
+
+Phase 1 crawls the site once into a local mirror; Phase 2 turns that into
+bookmarked, TOC'd PDFs (one per volume); Phase 3 turns the same crawl into a
+searchable web app backed by Cloudflare D1. Phases 1–2 are Python scripts run
+by hand, not a service — see [CLAUDE.md](CLAUDE.md) for the full pipeline
+rules and [web/CLAUDE.md](web/CLAUDE.md) for the web app's request-flow
+diagram.
 
 ## Usage
 
@@ -64,14 +101,3 @@ Each volume index (e.g. `volume5/part1/index.html`) is itself a table of
 contents (chapters → sections → paragraph refs, plus appendices and forms)
 linking straight to numbered content pages (`001.html`, `002.html`, ...) —
 two levels of index, not deeper.
-
-## Related projects
-
-- `~/Projects/chinese-intel-pipeline` — has a working scraper/fetch-engine
-  pattern worth borrowing conventions from (polite fetching, no headless
-  browser unless needed, idempotent re-runs).
-- `~/Sites/pdf-markdown-pipeline` — this repo's own PDF/OCR/markdown
-  conversion pipeline exposes an API that can optionally be reused here if
-  a markdown/searchable-text layer is wanted later; not required for the
-  core "clean PDF" goal since the source is already plain HTML/text, not
-  scanned documents.

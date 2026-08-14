@@ -47,11 +47,11 @@ flowchart TD
   user explicitly saying so for that specific change.** This is a live public site
   (financialhandbook.exciseup.in). Local `--local` D1 work, `pnpm dev`, and `pnpm run preview`
   (real Workers runtime, local D1) don't need to ask.
-- **Content routes are intentionally NOT statically generated.** An earlier version used
-  `generateStaticParams` + OpenNext's incremental cache, which required an R2 bucket (needs a
-  Cloudflare card on file even on the free tier) just to avoid 404s on cache misses. Don't
-  reintroduce `generateStaticParams` on `[...slug]/page.tsx` without also reintroducing that cache
-  — a bare static-assets binding does not serve dynamic-route pages.
+- **Content routes are intentionally NOT statically generated** (no `generateStaticParams` on
+  `[...slug]/page.tsx`). Static generation on OpenNext needs its incremental cache, which needs an
+  R2 bucket — R2 requires a Cloudflare card on file even on the free tier, which this project
+  avoids. Don't add `generateStaticParams` without also adding that cache; a bare static-assets
+  binding does not serve dynamic-route pages on its own.
 - **`nav.json` is bundled/imported directly (`src/lib/content.ts`'s `getNav()`), not stored in
   D1.** It's small (~160 KB) and needed on every request for the sidebar/breadcrumbs; only page
   *body HTML* lives in D1. Don't move it into D1 "for consistency" — that would add a query to
@@ -98,16 +98,15 @@ flowchart TD
   the same encoding). This is scoped by construction — nothing in the app's own UI ever sets
   font-family to either name, so it can never leak into real Unicode Hindi or the general UI font
   stack. Don't add a second real Devanagari webfont under either of these two family names.
-- **The reading-customization font picker can silently break Kruti Dev pages — `globals.css` has
-  an explicit guard, don't remove it.** A bare `<font face="…">` attribute is the *weakest*
-  declaration in the entire CSS cascade — weaker than even an inherited author rule — so
+- **`globals.css`'s `.handbook-content font[face="Kruti Dev 010"/"020"]` rules are load-bearing —
+  don't remove them.** A bare `<font face="…">` attribute is the *weakest* declaration in the
+  entire CSS cascade, weaker than even an inherited author rule, so without these rules
   `.reading-content`'s `font-family: var(--reading-font-family)` (set by `CustomizationPanel.tsx`)
-  was overriding it as soon as a user picked any non-default reading font, reverting Kruti Dev text
-  back to raw ASCII gibberish. Fixed with `.handbook-content font[face="Kruti Dev 010"/"020"]`
-  rules that target the element directly, which always outranks a presentational hint regardless of
-  ancestor rules. Verify any future reading-customization change against a Kruti Dev page (e.g.
-  `/volume5-part1/supplementary-forms`) with the font picker set to something other than the
-  default.
+  would win over it the moment a user picks any non-default reading font, turning Kruti Dev text
+  back into raw ASCII gibberish. Targeting the element directly (`font[face=...]`) always outranks
+  a presentational hint regardless of ancestor rules. Verify any future reading-customization change
+  against a Kruti Dev page (e.g. `/volume5-part1/supplementary-forms`) with the font picker set to
+  something other than the default.
 - **Bookmarks are local-only, stored in the same Dexie/IndexedDB database as the offline corpus
   cache (`src/lib/client-db.ts`'s `bookmarks` table, version 2), never D1 or any server.**
   `SelectionMenu.tsx` shows a small Copy/Bookmark popup on any text selection inside
@@ -141,20 +140,19 @@ flowchart TD
   and a flat "Available offline" list built at runtime from the same `pages` IndexedDB store
   (`store.getAll()`, grouped by each cached row's own `volume` field) — don't mistake the missing
   sidebar for a missing feature; it's a deliberate, framework-free substitute.
-- **`src/app/favicon.ico` must not come back.** It was a leftover `create-next-app` scaffold file
-  (the default Vercel triangle icon) that Next.js's file-convention system serves and links
-  regardless of the real icon set already registered via `metadata.icons` — some link-preview
-  scrapers fall back to the favicon when no `og:image` is present, which is how the Vercel logo
-  ended up in share previews. The real icons are `metadata.icons` (root `layout.tsx`) plus
-  `openGraph.images`/`twitter.images` (root `layout.tsx` and `[...slug]/page.tsx`'s
-  `generateMetadata`, both pointing at `/icon-512.png` — Next.js metadata merging replaces a
-  parent's whole `openGraph` object when a child route defines its own, so the image has to be set
-  in both places, not just the root).
+- **Don't add `src/app/favicon.ico`.** Next.js's file-convention system serves and links any file
+  at that path regardless of the real icon set already registered via `metadata.icons`, and some
+  link-preview scrapers fall back to the favicon when no `og:image` is present — a stray
+  `create-next-app` default there is enough to leak into share previews. The real icons are
+  `metadata.icons` (root `layout.tsx`) plus `openGraph.images`/`twitter.images` (root `layout.tsx`
+  *and* `[...slug]/page.tsx`'s `generateMetadata`, both pointing at `/icon-512.png` — Next's
+  metadata merging replaces a parent's whole `openGraph` object when a child route defines its own,
+  so the image has to be set in both places, not just the root).
 
 ## Design system
 
-Ported from `~/Projects/chinese-intel-pipeline/dashboard`: `globals.css` token system (light/dark
-OKLCH palette, `--ui-accent` color switcher, `--reading-*` customization variables),
-`ThemeToggle.tsx`, `CustomizationPanel.tsx` (font/size/line-height/width/accent FAB), `ui/button.tsx`
-+ `ui/card.tsx` (`@base-ui/react` + `class-variance-authority`). Check that dashboard first before
-adding a new UI pattern — the two apps are meant to look like the same product family.
+`globals.css`'s token system (light/dark OKLCH palette, `--ui-accent` color switcher,
+`--reading-*` customization variables), `ThemeToggle.tsx`, `CustomizationPanel.tsx` (font/size/
+line-height/width/accent FAB), and `ui/button.tsx` + `ui/card.tsx` (`@base-ui/react` +
+`class-variance-authority`) are the source of truth for this app's look. Check these existing
+components first before adding a new UI pattern.

@@ -74,36 +74,29 @@ Rules to preserve:
   page we built (genuinely dead even on the source) get unwrapped to plain text, and real
   external links are left alone. Don't collapse this back into a single pass — a page can link
   forward to a sibling slug that isn't known yet mid-walk.
-- **TOC reference cells drop the old printed book's page numbers entirely, keeping only the
-  link.** A typical index-table cell is `<a>020</a>1—7` — the crawled page's own link code
-  immediately followed, with no separating space, by the *original printed book*'s page range,
-  which is meaningless on the web (nothing here is paginated) and rendered as one garbled number
-  ("0201—7"). `rewrite_links()`'s second pass finds every `<td>` with exactly one internal link
-  and deletes any sibling content appended after it at every level up to the `<td>`, leaving just
-  the clean link (e.g. `020`) in its original font/size/style — nothing about the anchor's own
-  formatting is touched, only the dead trailing text is removed. Don't go back to folding the page
-  range into the link (an earlier version of this did) — the ask was to remove it, not keep it
-  clickable. The reference code itself was also wrapped in `<small>` in the source, specifically to
-  shrink it *relative to* the bigger page-range text that used to sit next to it — with that text
-  gone the lone `<small>` just made the number look disproportionately tiny, so the same pass
-  unwraps it too (a bare `<font>` with color already stripped defaults to the same `size="3"` the
-  title columns use explicitly, so unwrapping is what actually matches them, not an added style).
-- **Some TOC rows have a genuinely empty title cell in the source itself** (e.g. volume2's Chapter
-  IV row: numeral + link, no title text between them — not something the crawl broke, the original
-  site shipped it that way). `rewrite_links()`'s third pass fills these in using the linked page's
-  own already-known title, stripping a `CHAPTER <roman>—` prefix and calling `.capitalize()` — this
-  exact transform turns `CHAPTER IV—PAY` into `Pay`, matching the casing convention every
-  already-filled sibling row uses (verified against volume2's own Chapter I row, whose source HTML
-  independently has `Extent of application` for a title of `CHAPTER I—EXTENT OF APPLICATION`). Fires
-  on a row with exactly one internal link and one or two empty non-link `<td>`s — some chapters
-  (volume2's "Leave") span several linked sub-pages, where *both* the numeral and title cells are
-  correctly blank for every row after the first (no new chapter numeral for a continuation); only
-  the title-position cell (the one immediately before the link column) gets filled in, the numeral
-  cell is deliberately left alone.
+- **TOC reference-column cells show only the clean internal link, nothing else.** The source's own
+  cell is `<a>020</a>1—7` — the crawled page's link code immediately followed, with no separating
+  space, by the *original printed book*'s page range (meaningless on the web, since nothing here is
+  paginated). `rewrite_links()`'s second pass deletes that trailing content — every level of sibling
+  content after the `<a>` up to the `<td>` — leaving just the link in its original font/size/style.
+  It also unwraps the `<small>` tag the source wraps the reference code in: that sizing only makes
+  sense next to the (now-removed) larger page-range text, and a bare `<font>` with color stripped
+  already defaults to the same `size="3"` the title columns use, so unwrapping is what actually
+  matches them. Keep this as delete-and-unwrap, not fold-into-link — the reference column should
+  read as a plain page-number link, not a link with dead digits glued to it.
+- **Some TOC rows have a genuinely empty title cell in the source itself** — e.g. volume2's Chapter
+  IV row has a numeral and a link but no title text between them, and every row after the first in a
+  multi-page chapter (volume2's "Leave" spans several linked sub-pages) has *both* the numeral and
+  title cells blank, correctly, since there's no new chapter numeral for a continuation.
+  `rewrite_links()`'s third pass fills the title-position cell (never the numeral cell) using the
+  linked page's own known title, stripping a `CHAPTER <roman>—` prefix and calling `.capitalize()`
+  — this transform turns `CHAPTER IV—PAY` into `Pay`, matching the exact casing convention every
+  already-filled sibling row in the same table already uses on its own.
 
 ## Design system
 
-The web app's UI (theme toggle, reading-customization panel, color tokens, warm paper-textured
-light mode) was deliberately ported from `~/Projects/chinese-intel-pipeline/dashboard` — same
-Tailwind v4 token setup, same component patterns. When touching UI, check that dashboard's
-equivalent component first rather than inventing a new pattern.
+The web app's design system — theme toggle, reading-customization panel (font/size/line-height/
+width/accent controls), light/dark OKLCH color tokens, warm paper-textured light mode — lives in
+`web/src/app/globals.css` and `web/src/components/CustomizationPanel.tsx`. Treat these as the
+source of truth for the token-based Tailwind v4 conventions and match them when extending the UI,
+rather than inventing a new pattern.
