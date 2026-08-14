@@ -74,15 +74,25 @@ Rules to preserve:
   page we built (genuinely dead even on the source) get unwrapped to plain text, and real
   external links are left alone. Don't collapse this back into a single pass — a page can link
   forward to a sibling slug that isn't known yet mid-walk.
-- **TOC reference cells with dangling old book page numbers get folded into the link, not left
-  bare.** A typical index-table cell is `<a>020</a>1—7` — the crawled page's own link code
-  immediately followed by the *original printed book*'s page range, with no separating space,
-  which rendered as one garbled number ("0201—7"). `rewrite_links()`'s second pass finds every
-  `<td>` with exactly one internal link plus other text and wraps the whole cell (link + trailing
-  page range) in a single `<a>`, so the old page numbers stay visible but are now part of a
-  working link instead of dead trailing digits. Only fires when the link doesn't already cover
-  the whole cell (`td.get_text() != a.get_text()`), so already-fully-linked chapter titles are
-  untouched.
+- **TOC reference cells drop the old printed book's page numbers entirely, keeping only the
+  link.** A typical index-table cell is `<a>020</a>1—7` — the crawled page's own link code
+  immediately followed, with no separating space, by the *original printed book*'s page range,
+  which is meaningless on the web (nothing here is paginated) and rendered as one garbled number
+  ("0201—7"). `rewrite_links()`'s second pass finds every `<td>` with exactly one internal link
+  and deletes any sibling content appended after it at every level up to the `<td>`, leaving just
+  the clean link (e.g. `020`) in its original font/size/style — nothing about the anchor's own
+  formatting is touched, only the dead trailing text is removed. Don't go back to folding the page
+  range into the link (an earlier version of this did) — the ask was to remove it, not keep it
+  clickable.
+- **Some TOC rows have a genuinely empty title cell in the source itself** (e.g. volume2's Chapter
+  IV row: numeral + link, no title text between them — not something the crawl broke, the original
+  site shipped it that way). `rewrite_links()`'s third pass fills these in using the linked page's
+  own already-known title, stripping a `CHAPTER <roman>—` prefix and calling `.capitalize()` — this
+  exact transform turns `CHAPTER IV—PAY` into `Pay`, matching the casing convention every
+  already-filled sibling row uses (verified against volume2's own Chapter I row, whose source HTML
+  independently has `Extent of application` for a title of `CHAPTER I—EXTENT OF APPLICATION`). Only
+  fires when a table row has exactly one internal link and exactly one empty non-link `<td>`, so it
+  can't misfire on rows that already have a title or on unrelated tables.
 
 ## Design system
 

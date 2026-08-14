@@ -137,7 +137,10 @@ def clean_body_html(raw_bytes, encoding):
     return inner_html, text, heading
 
 
-def rewrite_links(html_fragment, own_url, url_to_slug):
+CHAPTER_PREFIX_RE = re.compile(r"^CHAPTER\s+[IVXLCDM]+[\-A]*\s*[—–-]?\s*", re.I)
+
+
+def rewrite_links(html_fragment, own_url, url_to_slug, slug_to_title):
     """TOC/index pages keep the legacy site's own <a href> targets (relative
     filenames like "02.html", or absolute dead links back to budget.up.nic.in) —
     none of those resolve to our title-derived slugs, so every one 404s on the
@@ -162,29 +165,61 @@ def rewrite_links(html_fragment, own_url, url_to_slug):
             a.unwrap()
 
     # TOC table cells commonly look like "<a>020</a>1—7" — the crawled page's own
-    # link code immediately followed, with no separating space, by the *original
-    # printed book*'s page range (meaningless on the web, nothing paginates here).
-    # Rendered raw that reads as one garbled number ("0201—7"). Fold it into the
-    # link instead of leaving it dangling: any <td> with exactly one internal link
-    # plus other text becomes one link over the whole cell, so the old page
-    # numbers are still visible but are now part of a working link to our page
-    # rather than dead trailing digits. Formatting (font size etc.) is untouched —
-    # only an <a> wrapper is added around the cell's existing children.
+    # link code (its old numbered filename) immediately followed, with no
+    # separating space, by the *original printed book*'s page range — meaningless
+    # on the web, nothing here is paginated. Drop that trailing dead text
+    # entirely and keep only the link itself, so the column just shows a clean
+    # working link (e.g. "020") in whatever font/size/style it already had —
+    # nothing about the anchor's own formatting is touched, only the extra
+    # sibling content appended after it within the cell is removed.
     for td in soup.find_all("td"):
         links = td.find_all("a", href=True)
         if len(links) != 1:
             continue
         a = links[0]
-        href = a["href"]
-        if not href.startswith("/"):
+        if not a["href"].startswith("/"):
             continue
-        if td.get_text(strip=True) == a.get_text(strip=True):
+        node = a
+        while node is not None and node.parent is not td:
+            for sibling in list(node.find_next_siblings()):
+                sibling.extract()
+            node = node.parent
+        if node is not None:
+            for sibling in list(node.find_next_siblings()):
+                sibling.extract()
+
+    # Some TOC rows have a genuinely empty title cell in the source itself (e.g.
+    # volume2's Chapter IV row: numeral + link, no title in between) — not
+    # something we broke, the original site shipped it that way. We already know
+    # the real title from the linked page's own heading, so fill it in rather
+    # than leave the row blank. Match the sibling rows' own casing convention
+    # ("CHAPTER IV—PAY" -> "Pay", same transform that turns "CHAPTER
+    # I—EXTENT OF APPLICATION" into the "Extent of application" already present
+    # verbatim in a filled-in sibling row) and wrap in the same <font size="3">
+    # sibling title cells use, so it's indistinguishable in style from the rest
+    # of the table.
+    for tr in soup.find_all("tr"):
+        tds = tr.find_all("td", recursive=False)
+        if len(tds) < 2:
             continue
-        a.unwrap()
-        wrapper = soup.new_tag("a", href=href)
-        for child in list(td.children):
-            wrapper.append(child.extract())
-        td.append(wrapper)
+        links = tr.find_all("a", href=True)
+        internal = [a for a in links if a["href"].startswith("/")]
+        if len(internal) != 1:
+            continue
+        slug = internal[0]["href"].lstrip("/")
+        title = slug_to_title.get(slug)
+        if not title:
+            continue
+        link_td = next((td for td in tds if internal[0] in td.find_all("a")), None)
+        empty_tds = [td for td in tds if td is not link_td and not td.get_text(strip=True)]
+        if len(empty_tds) != 1:
+            continue
+        clean = CHAPTER_PREFIX_RE.sub("", title).strip().capitalize()
+        if not clean:
+            continue
+        font = soup.new_tag("font", attrs={"size": "3"})
+        font.string = clean
+        empty_tds[0].append(font)
 
     return soup.div.decode_contents().strip()
 
@@ -269,10 +304,11 @@ class Builder:
         """Rewrite legacy <a href> targets to internal /slug links now that every
         page in the tree has a known slug, then write content/pages/*.json."""
         url_to_slug = {url: d["slug"] for url, d in self.built.items()}
+        slug_to_title = {d["slug"]: d["title"] for d in self.built.values()}
         page_dir = WEB_DIR / "content" / "pages"
         page_dir.mkdir(parents=True, exist_ok=True)
         for url, d in self.built.items():
-            html = rewrite_links(d["html"], url, url_to_slug)
+            html = rewrite_links(d["html"], url, url_to_slug, slug_to_title)
             (page_dir / f"{d['slug'].replace('/', '__')}.json").write_text(json.dumps({
                 "slug": d["slug"],
                 "title": d["title"],
