@@ -21,7 +21,7 @@
   discover the volume indexes, then each volume's chapter/section index, then
   every content page. Two known levels of nesting (top index → volume index
   → content pages) — verify this holds for every volume, some may differ
-  (Vol V Part I/II both live under `volume5/`, CSR has its own subtree).
+  (Vol V Part I/II both live under `volume5/`, Civil Service Regulations has its own subtree).
 - Mirror to disk preserving the site's own path structure (e.g.
   `raw/Fin_H_Book/volume5/part1/001.html`), so the folder tree doubles as
   the crawl manifest — no need for a separate database for this phase.
@@ -77,7 +77,7 @@ from `~/Projects/chinese-intel-pipeline/dashboard`.
   colors (2000s-era `color`/`bgcolor` attributes with no dark-mode contrast
   guarantee — text now just inherits the site's own theme) from each page,
   and emits `web/content/pages/*.json` (regenerable intermediate, gitignored)
-  + `web/content/nav.json` (the committed sidebar tree, CSR's 3-level
+  + `web/content/nav.json` (the committed sidebar tree, Civil Service Regulations' 3-level
   nesting included for free) + `web/public/search-index.json`. 715 content
   pages. Volume VI (no HTML content on the source, pre-made chapter PDFs
   instead) shows up in the nav as a straight link to the source. Sidebar
@@ -126,7 +126,7 @@ from `~/Projects/chinese-intel-pipeline/dashboard`.
   below). No scanned-image content pages found — everything is native
   text/table HTML, so no OCR needed anywhere.
 - Per-volume page counts: vol5/part1 = 319 (largest by far), vol7 = 135,
-  vol5/part2 = 108, vol2 = 72, CSR = 43, vol3 = 60, vol6 = 39 (PDFs).
+  vol5/part2 = 108, vol2 = 72, Civil Service Regulations = 43, vol3 = 60, vol6 = 39 (PDFs).
 
 ## Status
 

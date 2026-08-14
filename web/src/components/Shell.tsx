@@ -11,6 +11,7 @@ import {
 	IconBook2,
 	IconExternalLink,
 	IconBrandGithub,
+	IconBookmark,
 } from '@tabler/icons-react';
 import ThemeToggle from './ThemeToggle';
 import NavTree from './NavTree';
@@ -18,6 +19,8 @@ import type { NavNode, NavVolume } from '@/lib/content';
 
 const CustomizationPanel = dynamic(() => import('./CustomizationPanel'), { ssr: false });
 const CorpusSync = dynamic(() => import('./CorpusSync'), { ssr: false });
+const SelectionMenu = dynamic(() => import('./SelectionMenu'), { ssr: false });
+const BookmarksDrawer = dynamic(() => import('./BookmarksDrawer'), { ssr: false });
 
 function findTitle(node: NavNode, slug: string): string | null {
 	if (node.slug === slug) return node.title;
@@ -35,6 +38,7 @@ function volumeKeyForSlug(volumes: NavVolume[], slug: string): string | null {
 
 export default function Shell({ volumes, children }: { volumes: NavVolume[]; children: React.ReactNode }) {
 	const [sidebarOpen, setSidebarOpen] = useState(false);
+	const [bookmarksOpen, setBookmarksOpen] = useState(false);
 	const pathname = usePathname();
 	const activeSlug = pathname === '/' ? null : pathname.replace(/^\//, '');
 	const activeTitle = activeSlug
@@ -179,7 +183,20 @@ export default function Shell({ volumes, children }: { volumes: NavVolume[]; chi
 					{children}
 				</div>
 			</main>
-			<CustomizationPanel drawerOpen={false} />
+
+			<button
+				onClick={() => setBookmarksOpen(true)}
+				className="fixed right-4 sm:right-6 z-30 w-11 h-11 rounded-full shadow-lg flex items-center justify-center border bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:shadow-xl transition-all duration-200 print:hidden"
+				style={{ bottom: 'max(4.75rem, calc(env(safe-area-inset-bottom, 0px) + 4.75rem))' }}
+				aria-label="Open bookmarks"
+				title="Bookmarks"
+			>
+				<IconBookmark size={18} />
+			</button>
+			<BookmarksDrawer open={bookmarksOpen} onClose={() => setBookmarksOpen(false)} />
+			<SelectionMenu volumes={volumes} />
+
+			<CustomizationPanel drawerOpen={bookmarksOpen} onOpenChange={() => setBookmarksOpen(false)} />
 			<CorpusSync />
 		</div>
 	);

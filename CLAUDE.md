@@ -46,7 +46,7 @@ Rules to preserve:
 - **Never run `wrangler d1 execute --remote` or `wrangler deploy` without the user explicitly
   saying so for that specific change.** This is a live public site. Local `--local` D1 work,
   `pnpm dev`, and `pnpm run preview` don't need to ask.
-- **CSR nests 3 levels deep** (chapter → chapter page → footnote/note page), every other volume
+- **Civil Service Regulations nests 3 levels deep** (chapter → chapter page → footnote/note page), every other volume
   nests 2. Don't hardcode a depth assumption anywhere — `manifest.json`'s `parent` chain and
   `build_content.py`'s recursive walk already handle arbitrary depth; this was verified by
   crawling the real site, not assumed.
@@ -60,9 +60,20 @@ Rules to preserve:
   guarantee) — it never rewrites or drops actual paragraph/table content. If dark-mode contrast
   ever regresses again, fix it here, not with CSS overrides fighting inline attributes.
 - **Sidebar titles**: prefer the *linking* page's anchor text; several volumes (II, III, VII,
-  CSR) only link with bare numbers ("001"), so `is_weak_label()` falls back to the page's own
-  large-font heading — capped at 100 chars so CSR's footnote-only note pages (whose biggest
+  Civil Service Regulations) only link with bare numbers ("001"), so `is_weak_label()` falls back to the page's own
+  large-font heading — capped at 100 chars so Civil Service Regulations' footnote-only note pages (whose biggest
   `<font>` block is the footnote body itself, not a heading) don't get a paragraph as a title.
+- **Legacy `<a href>` targets are rewritten to internal `/slug` links, not left as-is.** Every
+  volume's index/TOC page (and plenty of in-body cross-references) originally linked to the
+  source site's own filenames (`02.html`, `../../finhando.htm`) — none of those resolve to our
+  title-derived slugs, so left untouched they render as live, permanently-dead links on the web
+  app. `build_content.py`'s `Builder` runs in two passes for this reason: `walk()` collects every
+  page's cleaned HTML *and* its slug into `self.built` first (without writing anything), then
+  `write_pages()` runs once the full `url -> slug` map is known and rewrites each page's `<a
+  href>` via `rewrite_links()` — matched hrefs become `/slug`, hrefs that don't resolve to any
+  page we built (genuinely dead even on the source) get unwrapped to plain text, and real
+  external links are left alone. Don't collapse this back into a single pass — a page can link
+  forward to a sibling slug that isn't known yet mid-walk.
 
 ## Design system
 

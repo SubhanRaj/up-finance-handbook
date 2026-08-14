@@ -55,7 +55,7 @@ diagrams).
 | Vol V (Part II) | `Fin_H_Book/volume5/part2/PREFACE.htm` | Treasury Procedure |
 | Vol VI | `Fin_H_Book/volume6/index.html` | Works department financial rules |
 | Vol VII | `Fin_H_Book/volume7/index.html` | Forest Department financial rules |
-| Civil Service Regulation | `Fin_H_Book/CSR/index.html` | Civil Services rules |
+| Civil Service Regulations | `Fin_H_Book/CSR/index.html` | Civil Service Regulations |
 
 Volume I and one other listed entry have no live link on the index page (dead
 in the source itself, not a crawl bug).

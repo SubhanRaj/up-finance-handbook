@@ -14,6 +14,7 @@ a content page.
 """
 import json
 import re
+import urllib.parse
 from pathlib import Path
 
 from bs4 import BeautifulSoup
@@ -73,7 +74,6 @@ def anchor_text_map(url, encoding):
         html = raw.decode("windows-1252", errors="replace")
     soup = BeautifulSoup(html, "lxml")
     mapping = {}
-    import urllib.parse
     for a in soup.find_all("a", href=True):
         href = urllib.parse.urljoin(url, a["href"].strip()).split("#")[0]
         if href not in mapping:
@@ -137,6 +137,32 @@ def clean_body_html(raw_bytes, encoding):
     return inner_html, text, heading
 
 
+def rewrite_links(html_fragment, own_url, url_to_slug):
+    """TOC/index pages keep the legacy site's own <a href> targets (relative
+    filenames like "02.html", or absolute dead links back to budget.up.nic.in) —
+    none of those resolve to our title-derived slugs, so every one 404s on the
+    web app. Rewrite anything that resolves to a page we actually built into an
+    internal /slug link; anything on the source site that *doesn't* resolve
+    (genuinely dead, even in the original) gets unwrapped to plain text instead
+    of left as a dead link. Real external links (not on budget.up.nic.in) and
+    mailto:/javascript: hrefs are left untouched."""
+    soup = BeautifulSoup(f"<div>{html_fragment}</div>", "lxml")
+    for a in soup.find_all("a", href=True):
+        href = a["href"].strip()
+        if not href or href.startswith("javascript:") or href.startswith("mailto:"):
+            continue
+        resolved = urllib.parse.urljoin(own_url, href)
+        parsed = urllib.parse.urlparse(resolved)
+        if parsed.netloc and parsed.netloc != "budget.up.nic.in":
+            continue
+        slug = url_to_slug.get(resolved.split("#")[0])
+        if slug:
+            a["href"] = f"/{slug}"
+        else:
+            a.unwrap()
+    return soup.div.decode_contents().strip()
+
+
 class Builder:
     def __init__(self, pages):
         self.pages = pages
@@ -148,6 +174,7 @@ class Builder:
         self.search_rows = []
         self.used_slugs = {}  # slug_prefix -> set of leaf slugs already taken, for dedup
         self.order_counter = 0  # global document-order sequence, for prev/next + section ordering
+        self.built = {}  # url -> page data, written to disk only after the whole tree is known
 
     def unique_leaf_slug(self, slug_prefix, title, fallback):
         base = slugify(title, fallback)
@@ -189,16 +216,10 @@ class Builder:
 
         node = {"title": title, "slug": slug, "url": url, "children": []}
 
-        page_dir = WEB_DIR / "content" / "pages"
-        page_dir.mkdir(parents=True, exist_ok=True)
-        (page_dir / f"{slug.replace('/', '__')}.json").write_text(json.dumps({
-            "slug": slug,
-            "title": title,
-            "volume": volume_key,
-            "sourceUrl": url,
-            "html": html_body,
-            "order": order,
-        }, ensure_ascii=False))
+        self.built[url] = {
+            "slug": slug, "title": title, "volume": volume_key,
+            "sourceUrl": url, "html": html_body, "order": order,
+        }
 
         if text.strip():
             self.search_rows.append({
@@ -218,6 +239,23 @@ class Builder:
                     node["children"].append(child_node)
         return node
 
+    def write_pages(self):
+        """Rewrite legacy <a href> targets to internal /slug links now that every
+        page in the tree has a known slug, then write content/pages/*.json."""
+        url_to_slug = {url: d["slug"] for url, d in self.built.items()}
+        page_dir = WEB_DIR / "content" / "pages"
+        page_dir.mkdir(parents=True, exist_ok=True)
+        for url, d in self.built.items():
+            html = rewrite_links(d["html"], url, url_to_slug)
+            (page_dir / f"{d['slug'].replace('/', '__')}.json").write_text(json.dumps({
+                "slug": d["slug"],
+                "title": d["title"],
+                "volume": d["volume"],
+                "sourceUrl": d["sourceUrl"],
+                "html": html,
+                "order": d["order"],
+            }, ensure_ascii=False))
+
 
 def main():
     manifest = json.loads(MANIFEST_PATH.read_text())
@@ -233,6 +271,8 @@ def main():
         nav_volumes.append({"key": key, "label": label, "entrySlug": tree["slug"], "tree": tree})
 
     nav_volumes.append({"key": VOLUME6["key"], "label": VOLUME6["label"], "external": VOLUME6})
+
+    builder.write_pages()
 
     nav_path = WEB_DIR / "content" / "nav.json"
     nav_path.parent.mkdir(parents=True, exist_ok=True)

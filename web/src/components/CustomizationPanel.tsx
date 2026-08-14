@@ -132,9 +132,10 @@ async function loadGoogleFont(url: string, familyName: string): Promise<void> {
 
 interface Props {
 	drawerOpen: boolean;
+	onOpenChange?: (open: boolean) => void;
 }
 
-export default function CustomizationPanel({ drawerOpen }: Props) {
+export default function CustomizationPanel({ drawerOpen, onOpenChange }: Props) {
 	const [open, setOpen]             = useState(false);
 	const [prefs, setPrefs]           = useState<Prefs>(DEFAULTS);
 	const [ready, setReady]           = useState(false);
@@ -389,7 +390,11 @@ export default function CustomizationPanel({ drawerOpen }: Props) {
 			</div>
 
 			<button
-				onClick={() => setOpen(o => !o)}
+				onClick={() => setOpen(o => {
+					const next = !o;
+					if (next) onOpenChange?.(true);
+					return next;
+				})}
 				className={[
 					'pointer-events-auto w-11 h-11 rounded-full shadow-lg flex items-center justify-center transition-all duration-200 border',
 					open

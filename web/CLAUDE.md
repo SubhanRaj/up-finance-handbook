@@ -108,6 +108,20 @@ flowchart TD
   ancestor rules. Verify any future reading-customization change against a Kruti Dev page (e.g.
   `/volume5-part1/supplementary-forms`) with the font picker set to something other than the
   default.
+- **Bookmarks are local-only, stored in the same Dexie/IndexedDB database as the offline corpus
+  cache (`src/lib/client-db.ts`'s `bookmarks` table, version 2), never D1 or any server.**
+  `SelectionMenu.tsx` shows a small Copy/Bookmark popup on any text selection inside
+  `.handbook-content` (scoped via `closest('.handbook-content')` so selecting sidebar/customize-
+  panel text never triggers it); its buttons use `onMouseDown={e => e.preventDefault()}` to stop
+  the browser from collapsing the selection before `onClick` fires — don't remove that guard, it's
+  not decorative. `BookmarksDrawer.tsx` mirrors `Shell.tsx`'s sidebar slide pattern
+  (`translate-x-full`/`translate-x-0`, right-anchored instead of left) and refetches on the
+  `handbook-bookmarks-changed` window event (`notifyBookmarksChanged()`) rather than a live-query
+  library, since `dexie-react-hooks` isn't a dependency and a plain event is enough for this one
+  drawer. Page context (title/volume label) for a saved bookmark comes from
+  `src/lib/page-context.ts`, which only imports `NavNode`/`NavVolume` as types from
+  `content.ts` — never import `content.ts` itself into a client component, it also pulls in
+  `@opennextjs/cloudflare` and Drizzle, which are server/Workers-only.
 - **Offline fallback is a plain HTML+vanilla-JS file (`public/offline-shell.html`), not a Next.js
   route** — it has to work when the Next.js RSC/D1 request has already failed, so it can't depend
   on the framework being reachable. It reads the requested page straight out of the raw IndexedDB
