@@ -187,6 +187,15 @@ def rewrite_links(html_fragment, own_url, url_to_slug, slug_to_title):
         if node is not None:
             for sibling in list(node.find_next_siblings()):
                 sibling.extract()
+        # The source wraps the reference code in <small> specifically to shrink
+        # it *relative to* the bigger page-range text that used to sit next to
+        # it ("<small>020</small><font size=3>1—7</font>") — now that the dead
+        # page range is gone, the lone <small> just makes the number look
+        # disproportionately tiny. Unwrap it; a bare <font> (color already
+        # stripped by clean_body_html) defaults to the same size="3" the title
+        # columns use explicitly, so this is what actually matches them.
+        for small in td.find_all("small"):
+            small.unwrap()
 
     # Some TOC rows have a genuinely empty title cell in the source itself (e.g.
     # volume2's Chapter IV row: numeral + link, no title in between) — not
@@ -212,14 +221,20 @@ def rewrite_links(html_fragment, own_url, url_to_slug, slug_to_title):
             continue
         link_td = next((td for td in tds if internal[0] in td.find_all("a")), None)
         empty_tds = [td for td in tds if td is not link_td and not td.get_text(strip=True)]
-        if len(empty_tds) != 1:
+        if not empty_tds or len(empty_tds) > 2:
             continue
+        # A continuation row (e.g. volume2's "Leave" chapter spans several
+        # linked sub-pages) has *both* the numeral and title cells blank —
+        # correctly so, there's no new chapter numeral for it. Only fill the
+        # title cell, the one immediately before the link column in document
+        # order; leave the numeral cell (if also blank) alone.
+        target_td = empty_tds[-1]
         clean = CHAPTER_PREFIX_RE.sub("", title).strip().capitalize()
         if not clean:
             continue
         font = soup.new_tag("font", attrs={"size": "3"})
         font.string = clean
-        empty_tds[0].append(font)
+        target_td.append(font)
 
     return soup.div.decode_contents().strip()
 

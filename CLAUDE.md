@@ -83,16 +83,23 @@ Rules to preserve:
   the clean link (e.g. `020`) in its original font/size/style — nothing about the anchor's own
   formatting is touched, only the dead trailing text is removed. Don't go back to folding the page
   range into the link (an earlier version of this did) — the ask was to remove it, not keep it
-  clickable.
+  clickable. The reference code itself was also wrapped in `<small>` in the source, specifically to
+  shrink it *relative to* the bigger page-range text that used to sit next to it — with that text
+  gone the lone `<small>` just made the number look disproportionately tiny, so the same pass
+  unwraps it too (a bare `<font>` with color already stripped defaults to the same `size="3"` the
+  title columns use explicitly, so unwrapping is what actually matches them, not an added style).
 - **Some TOC rows have a genuinely empty title cell in the source itself** (e.g. volume2's Chapter
   IV row: numeral + link, no title text between them — not something the crawl broke, the original
   site shipped it that way). `rewrite_links()`'s third pass fills these in using the linked page's
   own already-known title, stripping a `CHAPTER <roman>—` prefix and calling `.capitalize()` — this
   exact transform turns `CHAPTER IV—PAY` into `Pay`, matching the casing convention every
   already-filled sibling row uses (verified against volume2's own Chapter I row, whose source HTML
-  independently has `Extent of application` for a title of `CHAPTER I—EXTENT OF APPLICATION`). Only
-  fires when a table row has exactly one internal link and exactly one empty non-link `<td>`, so it
-  can't misfire on rows that already have a title or on unrelated tables.
+  independently has `Extent of application` for a title of `CHAPTER I—EXTENT OF APPLICATION`). Fires
+  on a row with exactly one internal link and one or two empty non-link `<td>`s — some chapters
+  (volume2's "Leave") span several linked sub-pages, where *both* the numeral and title cells are
+  correctly blank for every row after the first (no new chapter numeral for a continuation); only
+  the title-position cell (the one immediately before the link column) gets filled in, the numeral
+  cell is deliberately left alone.
 
 ## Design system
 
